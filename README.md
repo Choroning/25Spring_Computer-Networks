@@ -51,9 +51,7 @@ The course covers the TCP/IP protocol suite from the data link layer through the
 <br><a name="prerequisites"></a>
 ## ✅ Prerequisites
 
-- Basic understanding of computer systems and operating systems
-- Familiarity with binary and hexadecimal number systems
-- Understanding of basic programming concepts
+- Interest in computer networking and communication protocols
 
 - **💻 Development Environment**
 
