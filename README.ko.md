@@ -45,7 +45,7 @@
 | 유형 | 내용 |
 |:----:|:---------|
 |교재|"TCP/IP Protocol Suite, 4th Edition" by Behrouz A. Forouzan (McGraw-Hill)|
-|교재|"Computer Networking: A Top-Down Approach, 7th Edition" by Kurose and Ross|
+|참고도서|"Computer Networking: A Top-Down Approach, 7th Edition" by Kurose and Ross|
 |강의자료|교수자 제공 슬라이드 및 필기 노트|
 
 <br><a name="prerequisites"></a>

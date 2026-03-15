@@ -45,7 +45,7 @@ The course covers the TCP/IP protocol suite from the data link layer through the
 | Type | Contents |
 |:----:|:---------|
 |Textbook|"TCP/IP Protocol Suite, 4th Edition" by Behrouz A. Forouzan (McGraw-Hill)|
-|Textbook|"Computer Networking: A Top-Down Approach, 7th Edition" by Kurose and Ross|
+|Reference|"Computer Networking: A Top-Down Approach, 7th Edition" by Kurose and Ross|
 |Lecture Notes|Slides and handwritten notes provided by instructor|
 
 <br><a name="prerequisites"></a>
