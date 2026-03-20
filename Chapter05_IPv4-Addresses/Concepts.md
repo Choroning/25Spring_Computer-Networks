@@ -1,4 +1,4 @@
-# Chapter 05 -- IPv4 Addresses
+# Chapter 05 — IPv4 Addresses
 
 > **Last Updated:** 2026-03-21
 

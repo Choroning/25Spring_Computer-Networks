@@ -1,4 +1,4 @@
-# Chapter 09 -- Internet Control Message Protocol Version 4 (ICMPv4)
+# Chapter 09 — Internet Control Message Protocol Version 4 (ICMPv4)
 
 > **Last Updated:** 2026-03-21
 

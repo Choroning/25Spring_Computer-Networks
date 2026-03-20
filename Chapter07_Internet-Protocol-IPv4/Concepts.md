@@ -1,4 +1,4 @@
-# Chapter 07 -- Internet Protocol Version 4 (IPv4)
+# Chapter 07 — Internet Protocol Version 4 (IPv4)
 
 > **Last Updated:** 2026-03-21
 

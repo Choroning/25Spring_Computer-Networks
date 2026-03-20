@@ -1,4 +1,4 @@
-# Chapter 06 -- Delivery and Forwarding of IP Packets
+# Chapter 06 — Delivery and Forwarding of IP Packets
 
 > **Last Updated:** 2026-03-21
 

@@ -1,4 +1,4 @@
-# Chapter 14 -- User Datagram Protocol (UDP)
+# Chapter 14 — User Datagram Protocol (UDP)
 
 > **Last Updated:** 2026-03-21
 

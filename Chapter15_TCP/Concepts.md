@@ -1,4 +1,4 @@
-# Chapter 15 -- Transmission Control Protocol (TCP)
+# Chapter 15 — Transmission Control Protocol (TCP)
 
 > **Last Updated:** 2026-03-21
 

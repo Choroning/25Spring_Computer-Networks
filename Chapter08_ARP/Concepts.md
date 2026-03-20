@@ -1,4 +1,4 @@
-# Chapter 08 -- Address Resolution Protocol (ARP)
+# Chapter 08 — Address Resolution Protocol (ARP)
 
 > **Last Updated:** 2026-03-21
 

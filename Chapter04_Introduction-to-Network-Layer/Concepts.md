@@ -1,4 +1,4 @@
-# Chapter 04 -- Introduction to Network Layer
+# Chapter 04 — Introduction to Network Layer
 
 > **Last Updated:** 2026-03-21
 

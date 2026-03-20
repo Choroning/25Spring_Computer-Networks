@@ -1,4 +1,4 @@
-# Chapter 01-02 -- Introduction to the Internet and Network Models
+# Chapter 01-02 — Introduction to the Internet and Network Models
 
 > **Last Updated:** 2026-03-21
 
