@@ -1,4 +1,4 @@
-# Chapter 13 -- Introduction to the Transport Layer
+# Chapter 13 — Introduction to the Transport Layer
 
 > **Last Updated:** 2026-03-21
 

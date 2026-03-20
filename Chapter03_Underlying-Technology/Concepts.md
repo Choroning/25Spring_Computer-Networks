@@ -1,4 +1,4 @@
-# Chapter 03 -- Underlying Technology
+# Chapter 03 — Underlying Technology
 
 > **Last Updated:** 2026-03-21
 

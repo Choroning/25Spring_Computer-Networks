@@ -1,4 +1,4 @@
-# Chapter 14 -- User Datagram Protocol (UDP)
+# Chapter 14 — User Datagram Protocol (UDP)
 
 > **Last Updated:** 2026-03-21
 
@@ -53,7 +53,7 @@ Key characteristics:
 +-------------------+
 ```
 
-> **Key Point:** UDP provides a minimal transport service -- just enough to deliver data from one process to another with optional error detection. It trades reliability for speed and simplicity.
+> **Key Point:** UDP provides a minimal transport service — just enough to deliver data from one process to another with optional error detection. It trades reliability for speed and simplicity.
 
 ---
 
