@@ -204,7 +204,7 @@ Physical:       101010011101...             --> Bits
 
 **Decapsulation** is the reverse process at the receiving end, where each layer strips its header and passes the remaining data upward.
 
-> **Key Point:** Encapsulation provides modularity -- each layer only needs to understand its own header format, enabling independent evolution of protocols at each layer.
+> **Key Point:** Encapsulation provides modularity — each layer only needs to understand its own header format, enabling independent evolution of protocols at each layer.
 
 ---
 
@@ -251,9 +251,9 @@ The protocol field (or type field) in each layer's header identifies which upper
 ### A. RFC Process
 
 The Internet standards process follows these maturity levels:
-1. **Internet Draft** -- Work in progress, no official status
-2. **Proposed Standard** -- Stable, well-reviewed specification
-3. **Internet Standard** -- Mature specification with significant implementation experience
+1. **Internet Draft** — Work in progress, no official status
+2. **Proposed Standard** — Stable, well-reviewed specification
+3. **Internet Standard** — Mature specification with significant implementation experience
 
 ### B. Well-Known Port Numbers
 

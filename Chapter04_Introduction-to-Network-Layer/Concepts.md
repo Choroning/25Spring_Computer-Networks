@@ -97,7 +97,7 @@ Key characteristics:
 2. **Data Transfer**: Data flows along the established path
 3. **Teardown**: The circuit is released after communication ends
 
-**Example:** The early telephone system -- a path was established between caller and callee when the number was dialed. The circuit remained dedicated until one party hung up.
+**Example:** The early telephone system — a path was established between caller and callee when the number was dialed. The circuit remained dedicated until one party hung up.
 
 ### 2.2 Packet Switching
 
@@ -293,9 +293,9 @@ graph LR
 
 | Class | Range | CIDR | Number of Addresses |
 |-------|-------|------|-------------------|
-| A | 10.0.0.0 -- 10.255.255.255 | 10.0.0.0/8 | 16,777,216 |
-| B | 172.16.0.0 -- 172.31.255.255 | 172.16.0.0/12 | 1,048,576 |
-| C | 192.168.0.0 -- 192.168.255.255 | 192.168.0.0/16 | 65,536 |
+| A | 10.0.0.0–10.255.255.255 | 10.0.0.0/8 | 16,777,216 |
+| B | 172.16.0.0–172.31.255.255 | 172.16.0.0/12 | 1,048,576 |
+| C | 192.168.0.0–192.168.255.255 | 192.168.0.0/16 | 65,536 |
 
 ### B. NAT Traversal Techniques
 

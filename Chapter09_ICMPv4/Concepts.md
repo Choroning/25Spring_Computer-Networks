@@ -42,7 +42,7 @@ IP is an **unreliable and connectionless** datagram delivery protocol with sever
 - **No error-reporting** and error-correcting mechanism
 - **No mechanism** for host and management queries
 
-**ICMP has been designed to compensate for the above deficiencies.** However, ICMP does not correct errors -- it simply reports them. Error correction is left to the higher-layer protocols.
+**ICMP has been designed to compensate for the above deficiencies.** However, ICMP does not correct errors — it simply reports them. Error correction is left to the higher-layer protocols.
 
 ### 1.2 ICMP Position in TCP/IP
 
@@ -156,7 +156,7 @@ The data section of an error message always includes:
 - Type 4, Code 0
 - Originally used for flow/congestion control
 - A router could send this when discarding datagrams due to congestion
-- **Deprecated by RFC 6633** -- considered ineffective and potentially harmful
+- **Deprecated by RFC 6633** — considered ineffective and potentially harmful
 - Modern congestion control uses TCP mechanisms (ECN, slow start)
 
 ### 3.3 Time Exceeded

@@ -150,7 +150,7 @@ The IPv4 header format (minimum 20 bytes, maximum 60 bytes):
 
 ### 3.1 Maximum Transfer Unit (MTU)
 
-Each network technology has a **Maximum Transfer Unit (MTU)** -- the maximum data size that can be encapsulated in a frame:
+Each network technology has a **Maximum Transfer Unit (MTU)** — the maximum data size that can be encapsulated in a frame:
 
 | Network | MTU (bytes) |
 |---------|-------------|

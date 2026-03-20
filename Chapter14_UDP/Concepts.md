@@ -53,7 +53,7 @@ Key characteristics:
 +-------------------+
 ```
 
-> **Key Point:** UDP provides a minimal transport service -- just enough to deliver data from one process to another with optional error detection. It trades reliability for speed and simplicity.
+> **Key Point:** UDP provides a minimal transport service — just enough to deliver data from one process to another with optional error detection. It trades reliability for speed and simplicity.
 
 ---
 
