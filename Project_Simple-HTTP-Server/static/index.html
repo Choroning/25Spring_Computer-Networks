@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple HTTP Server</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Simple HTTP/1.1 Server</h1>
+            <p class="subtitle">Built with Python sockets</p>
+        </header>
+
+        <main>
+            <section class="info">
+                <h2>About This Server</h2>
+                <p>
+                    This is a basic HTTP/1.1 server implemented using raw Python sockets.
+                    It supports <strong>GET</strong> and <strong>POST</strong> requests,
+                    serves static files, and uses multi-threaded connection handling.
+                </p>
+            </section>
+
+            <section class="features">
+                <h2>Features</h2>
+                <ul>
+                    <li>HTTP/1.1 request parsing (method, headers, body)</li>
+                    <li>GET and POST request handling</li>
+                    <li>Static file serving (HTML, CSS, JS, images)</li>
+                    <li>Proper HTTP status codes (200, 404, 405, 500)</li>
+                    <li>Multi-threaded: one thread per connection</li>
+                    <li>URL routing with path matching</li>
+                </ul>
+            </section>
+
+            <section class="test">
+                <h2>Test POST Request</h2>
+                <form id="test-form" action="/api/echo" method="POST">
+                    <label for="message">Message:</label>
+                    <input type="text" id="message" name="message" placeholder="Type a message...">
+                    <button type="submit">Send POST</button>
+                </form>
+                <div id="response-area"></div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Computer Networks Project</p>
+        </footer>
+    </div>
+</body>
+</html>
