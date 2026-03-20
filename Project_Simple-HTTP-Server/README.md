@@ -1,6 +1,6 @@
 # Project: Simple HTTP Server
-
-> **Last Updated:** 2025-06-15
+> **Author:** Cheolwon Park  
+> **Date:** 2025-06-15
 
 ---
 
