@@ -88,7 +88,7 @@ A UDP user datagram has a fixed **8-byte header** plus variable-length data:
 
 - **Minimum length**: 8 bytes (header only, no data)
 - **Maximum length**: 65,535 bytes (limited by the 16-bit length field)
-- In practice, limited to 65,535 - 20 (IP header) = 65,515 bytes
+- In practice, limited to 65,535 - 20 (IP header) - 8 (UDP header) = 65,507 bytes
 
 ---
 

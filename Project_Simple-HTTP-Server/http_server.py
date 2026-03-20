@@ -164,19 +164,48 @@ def handle_client(client_socket: socket.socket, client_addr: tuple,
         router: The application router for dispatching requests.
     """
     try:
-        # Receive data from the client
+        # Receive data from the client using proper HTTP parsing:
+        # 1. Read until we find the end-of-headers marker (\r\n\r\n).
+        # 2. If a Content-Length header is present, read exactly that
+        #    many additional bytes for the body.
         raw_data = b""
         client_socket.settimeout(5.0)
+        header_end = -1
+
+        # Phase 1: read until headers are complete
         while True:
             try:
                 chunk = client_socket.recv(BUFFER_SIZE)
+                if not chunk:
+                    break
                 raw_data += chunk
-                # If we received less than BUFFER_SIZE, we likely have the
-                # full request (simple heuristic for this project)
-                if len(chunk) < BUFFER_SIZE:
+                header_end = raw_data.find(b"\r\n\r\n")
+                if header_end != -1:
                     break
             except socket.timeout:
                 break
+
+        # Phase 2: if headers were received, check for a body
+        if header_end != -1:
+            header_section = raw_data[:header_end].decode("utf-8", errors="replace")
+            content_length = 0
+            for line in header_section.split("\r\n"):
+                if line.lower().startswith("content-length:"):
+                    try:
+                        content_length = int(line.split(":", 1)[1].strip())
+                    except ValueError:
+                        content_length = 0
+                    break
+
+            body_start = header_end + 4  # skip \r\n\r\n
+            while len(raw_data) - body_start < content_length:
+                try:
+                    chunk = client_socket.recv(BUFFER_SIZE)
+                    if not chunk:
+                        break
+                    raw_data += chunk
+                except socket.timeout:
+                    break
 
         if not raw_data:
             return

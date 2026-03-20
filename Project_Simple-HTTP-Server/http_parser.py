@@ -119,6 +119,14 @@ def parse_request(raw_data: bytes) -> Optional[HTTPRequest]:
                 key, value = line.split(":", 1)
                 request.headers[key.strip()] = value.strip()
 
+        # Honor Content-Length: truncate body if the header is present
+        cl = request.headers.get("Content-Length")
+        if cl is not None:
+            try:
+                body = body[:int(cl)]
+            except ValueError:
+                pass
+
         request.body = body
         return request
 

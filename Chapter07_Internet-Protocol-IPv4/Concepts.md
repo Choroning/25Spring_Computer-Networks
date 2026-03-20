@@ -106,7 +106,7 @@ The IPv4 header format (minimum 20 bytes, maximum 60 bytes):
 
 ```
 +---+---+---+---+---+---+---+---+
-|     Codepoint (6 bits)  | Unused|
+|     Codepoint (6 bits)  | ECN (Explicit Congestion Notification)|
 +---+---+---+---+---+---+---+---+
 ```
 
