@@ -24,9 +24,10 @@ This repository organizes and stores networking concepts and protocol analyses w
 
 This repository contains materials and implementations developed for a university-level Computer Networks course, including:
 
-- Lecture notes and protocol analyses
-- Student presentation materials (DHCP, NAT, ARP, DNS, VPN, Tunneling)
-- Additional practice exercises
+- **Concepts.md** files for each chapter with comprehensive explanations of networking protocols and theories
+- Lecture notes, protocol analyses, and student presentation materials (DHCP, NAT, ARP, DNS, VPN, Tunneling)
+- Improved Python code files with **Doxygen-style headers** documenting purpose, usage, and structure
+- A **term project** (Simple HTTP Server) designed with references to CS curricula at top universities
 
 The course covers the TCP/IP protocol suite from the data link layer through the application layer, including IP addressing, routing, transport protocols, and network security.
 
