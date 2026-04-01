@@ -1,6 +1,15 @@
 # Chapter 14 — User Datagram Protocol (UDP)
 
-> **Last Updated:** 2026-03-21
+> **Last Updated:** 2026-04-01
+>
+> Forouzan, TCP/IP Protocol Suite 4th Ed. Ch 14
+
+> **Prerequisites**: [Computer Networks] Transport layer basics (Ch 13).
+>
+> **Learning Objectives**:
+> 1. Analyze UDP header format and checksum calculation
+> 2. Compare UDP with TCP characteristics
+> 3. Identify appropriate use cases for UDP
 
 ---
 
@@ -27,6 +36,8 @@
 - [Appendix](#appendix)
 
 ---
+
+<br>
 
 ## 1. Introduction
 
@@ -56,6 +67,8 @@ Key characteristics:
 > **Key Point:** UDP provides a minimal transport service — just enough to deliver data from one process to another with optional error detection. It trades reliability for speed and simplicity.
 
 ---
+
+<br>
 
 ## 2. User Datagram
 
@@ -91,6 +104,8 @@ A UDP user datagram has a fixed **8-byte header** plus variable-length data:
 - In practice, limited to 65,535 - 20 (IP header) - 8 (UDP header) = 65,507 bytes
 
 ---
+
+<br>
 
 ## 3. UDP Services
 
@@ -192,6 +207,8 @@ Sender side (Multiplexing):        Receiver side (Demultiplexing):
 
 ---
 
+<br>
+
 ## 4. Checksum Calculation
 
 ### 4.1 Pseudoheader
@@ -248,6 +265,8 @@ Checksum = 01101001 00010100 (one's complement)
 
 ---
 
+<br>
+
 ## 5. UDP Applications
 
 ### 5.1 DNS
@@ -301,6 +320,8 @@ graph LR
 
 ---
 
+<br>
+
 ## Summary
 
 | Concept | Key Point |
@@ -315,6 +336,8 @@ graph LR
 | DNS | Primary UDP application; translates domain names to IP addresses |
 
 ---
+
+<br>
 
 ## Appendix
 

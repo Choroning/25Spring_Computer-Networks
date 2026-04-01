@@ -1,6 +1,15 @@
 # Chapter 03 — 기반 기술
 
-> **최종 수정일:** 2026-03-21
+> **최종 수정일:** 2026-04-01
+>
+> Forouzan, TCP/IP Protocol Suite 4th Ed. Ch 3
+
+> **선수 지식**: [컴퓨터네트워크] 네트워크 모델과 계층화 (제1-2장).
+>
+> **학습 목표**:
+> 1. 이더넷과 Wi-Fi를 포함한 LAN 기술을 설명할 수 있다
+> 2. MAC 주소 체계와 프레임 포맷을 설명할 수 있다
+> 3. 연결 지향과 비연결 서비스를 비교할 수 있다
 
 ---
 
@@ -29,6 +38,8 @@
 - [부록](#부록)
 
 ---
+
+<br>
 
 ## 1. 근거리 통신망 (LAN)
 
@@ -124,6 +135,8 @@ graph TD
 
 ---
 
+<br>
+
 ## 2. CSMA/CD 접근 방법
 
 **반송파 감지 다중 접속/충돌 감지(Carrier Sense Multiple Access with Collision Detection, CSMA/CD)**는 Standard Ethernet에서 사용되는 접근 방법이다. 원칙은 **"전송 전에 들어라(listen before talk)"**이다.
@@ -170,6 +183,8 @@ T_frame >= 2 x T_propagation
 
 ---
 
+<br>
+
 ## 3. 브리지 및 스위치 Ethernet
 
 ### 3.1 브리지
@@ -204,6 +219,8 @@ T_frame >= 2 x T_propagation
 - VLAN 멤버십 식별을 위해 IEEE 802.1Q 태깅 사용
 
 ---
+
+<br>
 
 ## 4. 무선 LAN
 
@@ -241,6 +258,8 @@ Bluetooth는 소규모 무선 LAN(WPAN)을 위한 무선 기술이다:
 
 ---
 
+<br>
+
 ## 5. 광역 통신망 (WAN)
 
 ### 5.1 점대점 WAN
@@ -258,6 +277,8 @@ Bluetooth는 소규모 무선 LAN(WPAN)을 위한 무선 기술이다:
 - **ATM (Asynchronous Transfer Mode)**: 고정 53바이트 셀 기반의 셀 스위칭
 
 ---
+
+<br>
 
 ## 6. 연결 장치
 
@@ -283,6 +304,8 @@ graph TD
 
 ---
 
+<br>
+
 ## 요약
 
 | 개념 | 핵심 포인트 |
@@ -298,6 +321,8 @@ graph TD
 | WAN | 지리적으로 떨어진 사이트를 연결하는 광역 통신망 |
 
 ---
+
+<br>
 
 ## 부록
 

@@ -1,6 +1,15 @@
 # Chapter 06 — Delivery and Forwarding of IP Packets
 
-> **Last Updated:** 2026-03-21
+> **Last Updated:** 2026-04-01
+>
+> Forouzan, TCP/IP Protocol Suite 4th Ed. Ch 6
+
+> **Prerequisites**: [Computer Networks] IPv4 addressing (Ch 5).
+>
+> **Learning Objectives**:
+> 1. Distinguish direct and indirect delivery of packets
+> 2. Explain forwarding table lookup and longest prefix matching
+> 3. Describe routing table structure and next-hop determination
 
 ---
 
@@ -21,6 +30,8 @@
 - [Appendix](#appendix)
 
 ---
+
+<br>
 
 ## 1. Delivery
 
@@ -64,6 +75,8 @@ Key characteristics:
 > **Key Point:** In indirect delivery, the sender and intermediate routers pass the packet from one router to the next. Only the final delivery (from the last router to the destination host) is direct.
 
 ---
+
+<br>
 
 ## 2. Forwarding
 
@@ -154,6 +167,8 @@ In classless addressing, there is **one table** that contains the network addres
 
 ---
 
+<br>
+
 ## 3. Routing Table Structure
 
 ### 3.1 Routing Table Columns
@@ -203,6 +218,8 @@ For destination 192.168.1.200:
 
 ---
 
+<br>
+
 ## Summary
 
 | Concept | Key Point |
@@ -218,6 +235,8 @@ For destination 192.168.1.200:
 | Address Aggregation | Combine contiguous networks to reduce table size |
 
 ---
+
+<br>
 
 ## Appendix
 

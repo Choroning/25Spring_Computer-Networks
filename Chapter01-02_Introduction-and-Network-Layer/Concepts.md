@@ -1,6 +1,15 @@
 # Chapter 01-02 — Introduction to the Internet and Network Models
 
-> **Last Updated:** 2026-03-21
+> **Last Updated:** 2026-04-01
+>
+> Forouzan, TCP/IP Protocol Suite 4th Ed. Ch 1-2
+
+> **Prerequisites**: [Computer Networks] No prior networking knowledge required.
+>
+> **Learning Objectives**:
+> 1. Describe the OSI and TCP/IP network layer models
+> 2. Classify networks by size (LAN, MAN, WAN)
+> 3. Explain the concept of protocol layering and encapsulation
 
 ---
 
@@ -21,6 +30,8 @@
 - [Appendix](#appendix)
 
 ---
+
+<br>
 
 ## 1. Introduction to the Internet
 
@@ -78,6 +89,8 @@ A **protocol** defines the rules governing communication between entities. Proto
 > **Key Point:** Standards ensure interoperability between different vendors and systems. The RFC (Request for Comments) process is how Internet standards are proposed, discussed, and adopted.
 
 ---
+
+<br>
 
 ## 2. Network Models
 
@@ -186,6 +199,8 @@ The TCP/IP protocol suite uses four levels of addressing:
 
 ---
 
+<br>
+
 ## 3. Encapsulation and Decapsulation
 
 **Encapsulation** is the process of adding protocol information (headers/trailers) at each layer as data moves down the protocol stack.
@@ -207,6 +222,8 @@ Physical:       101010011101...             --> Bits
 > **Key Point:** Encapsulation provides modularity — each layer only needs to understand its own header format, enabling independent evolution of protocols at each layer.
 
 ---
+
+<br>
 
 ## 4. Multiplexing and Demultiplexing
 
@@ -231,6 +248,8 @@ The protocol field (or type field) in each layer's header identifies which upper
 
 ---
 
+<br>
+
 ## Summary
 
 | Concept | Key Point |
@@ -245,6 +264,8 @@ The protocol field (or type field) in each layer's header identifies which upper
 | Multiplexing | Multiple protocols sharing a common lower layer |
 
 ---
+
+<br>
 
 ## Appendix
 

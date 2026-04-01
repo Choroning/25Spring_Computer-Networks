@@ -1,6 +1,15 @@
 # Chapter 04 — Introduction to Network Layer
 
-> **Last Updated:** 2026-03-21
+> **Last Updated:** 2026-04-01
+>
+> Forouzan, TCP/IP Protocol Suite 4th Ed. Ch 4
+
+> **Prerequisites**: [Computer Networks] Underlying technologies (Ch 1-3).
+>
+> **Learning Objectives**:
+> 1. Explain the role of the network layer in TCP/IP
+> 2. Distinguish between switching techniques (circuit, packet)
+> 3. Describe the network layer service model
 
 ---
 
@@ -30,6 +39,8 @@
 - [Appendix](#appendix)
 
 ---
+
+<br>
 
 ## 1. Introduction
 
@@ -69,6 +80,8 @@ graph LR
 > **Key Point:** Each router connects to at least two networks (links). The router examines the destination IP address and forwards the packet to the appropriate next hop.
 
 ---
+
+<br>
 
 ## 2. Switching
 
@@ -128,6 +141,8 @@ In message switching:
 
 ---
 
+<br>
+
 ## 3. Packet Switching in Detail
 
 ### 3.1 Datagram Networks (Connectionless)
@@ -181,6 +196,8 @@ In a **connection-oriented** approach, a virtual path is established before data
 
 ---
 
+<br>
+
 ## 4. Network Layer Performance
 
 ### 4.1 Delay
@@ -213,6 +230,8 @@ Packets can be lost due to:
 - TTL expiration
 
 ---
+
+<br>
 
 ## 5. NAT (Network Address Translation)
 
@@ -272,6 +291,8 @@ graph LR
 
 ---
 
+<br>
+
 ## Summary
 
 | Concept | Key Point |
@@ -286,6 +307,8 @@ graph LR
 | NAT | Translates private IPs to public IP; solves IPv4 exhaustion |
 
 ---
+
+<br>
 
 ## Appendix
 

@@ -1,6 +1,15 @@
 # Chapter 09 — Internet Control Message Protocol Version 4 (ICMPv4)
 
-> **Last Updated:** 2026-03-21
+> **Last Updated:** 2026-04-01
+>
+> Forouzan, TCP/IP Protocol Suite 4th Ed. Ch 9
+
+> **Prerequisites**: [Computer Networks] IPv4 and ARP (Ch 7-8).
+>
+> **Learning Objectives**:
+> 1. Classify ICMP message types (error reporting, query)
+> 2. Explain ping and traceroute using ICMP
+> 3. Analyze ICMP error message format and processing
 
 ---
 
@@ -32,6 +41,8 @@
 - [Appendix](#appendix)
 
 ---
+
+<br>
 
 ## 1. Introduction
 
@@ -76,6 +87,8 @@ The value of the **protocol field** in the IP datagram is **1** to indicate that
 > **Key Point:** ICMP is carried within IP datagrams (protocol number 1) but is considered a network-layer protocol, not a transport-layer protocol.
 
 ---
+
+<br>
 
 ## 2. ICMP Messages
 
@@ -129,6 +142,8 @@ The data section of an error message always includes:
 **Query messages** occur in pairs (request and reply). They help a host or a network manager get specific information from a router or another host. Hosts can discover and learn about routers on their network, and routers can help a node redirect its messages.
 
 ---
+
+<br>
 
 ## 3. Error-Reporting Messages in Detail
 
@@ -195,6 +210,8 @@ The data section of an error message always includes:
 
 ---
 
+<br>
+
 ## 4. Query Messages in Detail
 
 ### 4.1 Echo Request and Reply
@@ -230,6 +247,8 @@ The data section of an error message always includes:
 - Routers periodically advertise their presence
 
 ---
+
+<br>
 
 ## 5. ICMP Applications
 
@@ -284,6 +303,8 @@ $ traceroute 8.8.8.8
 
 ---
 
+<br>
+
 ## 6. ICMP Security Considerations
 
 | Threat | Description | Mitigation |
@@ -297,6 +318,8 @@ $ traceroute 8.8.8.8
 > **Key Point:** While ICMP is essential for network diagnostics, many organizations filter ICMP at their firewalls to reduce attack surface. However, completely blocking ICMP can break Path MTU Discovery and network troubleshooting.
 
 ---
+
+<br>
 
 ## Summary
 
@@ -313,6 +336,8 @@ $ traceroute 8.8.8.8
 | Traceroute | Discovers path using incrementing TTL values |
 
 ---
+
+<br>
 
 ## Appendix
 

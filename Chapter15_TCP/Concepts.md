@@ -1,6 +1,15 @@
 # Chapter 15 — Transmission Control Protocol (TCP)
 
-> **Last Updated:** 2026-03-21
+> **Last Updated:** 2026-04-01
+>
+> Forouzan, TCP/IP Protocol Suite 4th Ed. Ch 15
+
+> **Prerequisites**: [Computer Networks] UDP and transport layer (Ch 13-14).
+>
+> **Learning Objectives**:
+> 1. Explain TCP connection establishment (three-way handshake) and termination
+> 2. Describe TCP flow control and sliding window mechanism
+> 3. Analyze TCP congestion control algorithms
 
 ---
 
@@ -44,6 +53,8 @@
 - [Appendix](#appendix)
 
 ---
+
+<br>
 
 ## 1. TCP Services
 
@@ -118,6 +129,8 @@ TCP provides **reliable** delivery:
 
 ---
 
+<br>
+
 ## 2. TCP Segment Format
 
 ### 2.1 Header Fields
@@ -166,6 +179,8 @@ TCP provides **reliable** delivery:
 
 ---
 
+<br>
+
 ## 3. TCP Numbering System
 
 TCP keeps track of segments using **sequence numbers** and **acknowledgment numbers**, not packet sequence numbers (as in the data link layer).
@@ -193,6 +208,8 @@ The value of the **acknowledgment field** in a segment defines the **number of t
 > **Key Point:** The acknowledgment number is **cumulative**. ACK = 1200 means "I have received all bytes up to 1199, send me byte 1200 next."
 
 ---
+
+<br>
 
 ## 4. TCP Connection Management
 
@@ -262,6 +279,8 @@ TCP supports **half-close**, where one side can stop sending while still receivi
 
 ---
 
+<br>
+
 ## 5. TCP Flow Control
 
 ### 5.1 Sliding Window in TCP
@@ -286,6 +305,8 @@ TCP uses a **sliding window** protocol for flow control:
 - **Silly window syndrome**: Problem where tiny segments are sent; solved by Nagle's algorithm (sender) and Clark's solution (receiver)
 
 ---
+
+<br>
 
 ## 6. TCP Error Control
 
@@ -327,6 +348,8 @@ sequenceDiagram
 ```
 
 ---
+
+<br>
 
 ## 7. TCP Congestion Control
 
@@ -378,6 +401,8 @@ cwnd
 
 ---
 
+<br>
+
 ## 8. TCP vs. UDP Communication
 
 | Feature | TCP | UDP |
@@ -393,6 +418,8 @@ cwnd
 | Multiplexing | Stream-based | Message-based |
 
 ---
+
+<br>
 
 ## 9. VPN and Tunneling
 
@@ -458,6 +485,8 @@ Tunneled packet:  [New IP Hdr | Tunnel Hdr | IP Header | TCP | Data]
 
 ---
 
+<br>
+
 ## Summary
 
 | Concept | Key Point |
@@ -474,6 +503,8 @@ Tunneled packet:  [New IP Hdr | Tunnel Hdr | IP Header | TCP | Data]
 | VPN | Encrypted tunnel over public network for secure communication |
 
 ---
+
+<br>
 
 ## Appendix
 

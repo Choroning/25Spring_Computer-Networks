@@ -1,6 +1,15 @@
 # Chapter 13 — Introduction to the Transport Layer
 
-> **Last Updated:** 2026-03-21
+> **Last Updated:** 2026-04-01
+>
+> Forouzan, TCP/IP Protocol Suite 4th Ed. Ch 13
+
+> **Prerequisites**: [Computer Networks] Network layer protocols (Ch 4-9).
+>
+> **Learning Objectives**:
+> 1. Explain the role of the transport layer
+> 2. Distinguish process-to-process vs host-to-host delivery
+> 3. Describe port numbers and socket addressing
 
 ---
 
@@ -28,6 +37,8 @@
 - [Appendix](#appendix)
 
 ---
+
+<br>
 
 ## 1. Transport-Layer Services
 
@@ -97,6 +108,8 @@ Socket address: 200.23.56.8:69
 
 ---
 
+<br>
+
 ## 2. Transport-Layer Protocols
 
 ### 2.1 Connectionless vs. Connection-Oriented
@@ -122,6 +135,8 @@ Socket address: 200.23.56.8:69
 | Order guarantee | No | Yes |
 
 ---
+
+<br>
 
 ## 3. Flow Control
 
@@ -153,6 +168,8 @@ Flow control is implemented using **two buffers** (sender and receiver):
 
 ---
 
+<br>
+
 ## 4. Error Control
 
 Error control at the transport layer is responsible for:
@@ -182,6 +199,8 @@ ACK mechanisms:
 > **Key Point:** Sequence numbers and acknowledgments together provide the foundation for reliable data transfer over unreliable networks.
 
 ---
+
+<br>
 
 ## 5. Combination of Flow and Error Control
 
@@ -227,6 +246,8 @@ Linear representation:
 
 ---
 
+<br>
+
 ## 6. Congestion Control
 
 **Congestion control** refers to the mechanisms and techniques to control congestion and keep the network load below capacity.
@@ -250,6 +271,8 @@ Tries to alleviate congestion **after it happens**:
 
 ---
 
+<br>
+
 ## Summary
 
 | Concept | Key Point |
@@ -263,6 +286,8 @@ Tries to alleviate congestion **after it happens**:
 | Congestion Control | Open-loop (prevention) and closed-loop (mitigation) |
 
 ---
+
+<br>
 
 ## Appendix
 
