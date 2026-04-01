@@ -1,6 +1,15 @@
 # Chapter 05 — IPv4 Addresses
 
-> **Last Updated:** 2026-03-21
+> **Last Updated:** 2026-04-01
+>
+> Forouzan, TCP/IP Protocol Suite 4th Ed. Ch 5
+
+> **Prerequisites**: [Computer Networks] Network layer basics (Ch 4).
+>
+> **Learning Objectives**:
+> 1. Apply classful and classless IPv4 addressing
+> 2. Perform subnetting and supernetting calculations
+> 3. Convert between binary and dotted-decimal notation
 
 ---
 
@@ -34,6 +43,8 @@
 
 ---
 
+<br>
+
 ## 1. Introduction
 
 The identifier used in the IP layer of the TCP/IP protocol suite to identify each device connected to the Internet is called the **Internet address** or **IP address**.
@@ -43,6 +54,8 @@ An IPv4 address is a **32-bit** address that uniquely and universally defines th
 > **Key Point:** IPv4 addresses are unique and universal. The address space of IPv4 is 2^32 = 4,294,967,296 addresses.
 
 ---
+
+<br>
 
 ## 2. Address Notation
 
@@ -85,6 +98,8 @@ Result: 0x75951DEA
 
 ---
 
+<br>
+
 ## 3. Classful Addressing
 
 ### 3.1 Classes A through E
@@ -114,6 +129,8 @@ Class E: 1111|      Reserved (28)                |   240.0.0.0 - 255.255.255.255
 - **Routing table explosion**: Too many Class C networks
 
 ---
+
+<br>
 
 ## 4. Classless Addressing (CIDR)
 
@@ -186,6 +203,8 @@ Four /24 networks combined into one /22:
 
 ---
 
+<br>
+
 ## 5. Bitwise Operations for IP Addressing
 
 ### 5.1 NOT Operation
@@ -227,6 +246,8 @@ Used to find the **broadcast address**: IP OR (NOT Mask) = Broadcast Address.
 
 ---
 
+<br>
+
 ## 6. Special Addresses
 
 | Address | Meaning |
@@ -240,6 +261,8 @@ Used to find the **broadcast address**: IP OR (NOT Mask) = Broadcast Address.
 | 169.254.0.0/16 | Link-local (APIPA) |
 
 ---
+
+<br>
 
 ## 7. DHCP (Dynamic Host Configuration Protocol)
 
@@ -321,6 +344,8 @@ sequenceDiagram
 
 ---
 
+<br>
+
 ## Summary
 
 | Concept | Key Point |
@@ -335,6 +360,8 @@ sequenceDiagram
 | DHCP | Automatic IP configuration via DORA process (Discover, Offer, Request, Ack) |
 
 ---
+
+<br>
 
 ## Appendix
 

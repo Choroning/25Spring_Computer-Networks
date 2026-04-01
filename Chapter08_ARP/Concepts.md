@@ -1,6 +1,15 @@
 # Chapter 08 — Address Resolution Protocol (ARP)
 
-> **Last Updated:** 2026-03-21
+> **Last Updated:** 2026-04-01
+>
+> Forouzan, TCP/IP Protocol Suite 4th Ed. Ch 8
+
+> **Prerequisites**: [Computer Networks] IPv4 protocol (Ch 5-7).
+>
+> **Learning Objectives**:
+> 1. Explain the Address Resolution Protocol (ARP) process
+> 2. Describe ARP cache management and timeouts
+> 3. Distinguish ARP from RARP and proxy ARP
 
 ---
 
@@ -23,6 +32,8 @@
 - [Appendix](#appendix)
 
 ---
+
+<br>
 
 ## 1. Address Mapping
 
@@ -56,6 +67,8 @@ graph TD
 > **Key Point:** ARP dynamically maps IP addresses to MAC addresses, eliminating the need for static address tables.
 
 ---
+
+<br>
 
 ## 2. The ARP Protocol
 
@@ -168,6 +181,8 @@ $ arp -a
 
 ---
 
+<br>
+
 ## 3. Four Cases Using ARP
 
 ARP is used in four different scenarios depending on the relationship between sender and receiver:
@@ -200,6 +215,8 @@ graph TD
 
 ---
 
+<br>
+
 ## 4. Proxy ARP
 
 **Proxy ARP** allows a router to respond to ARP requests on behalf of hosts on another network:
@@ -209,6 +226,8 @@ graph TD
 - Can create security concerns if misused
 
 ---
+
+<br>
 
 ## 5. ARP Security
 
@@ -252,6 +271,8 @@ sequenceDiagram
 
 ---
 
+<br>
+
 ## Summary
 
 | Concept | Key Point |
@@ -266,6 +287,8 @@ sequenceDiagram
 | ARP Spoofing | Forged ARP replies enable MITM attacks |
 
 ---
+
+<br>
 
 ## Appendix
 

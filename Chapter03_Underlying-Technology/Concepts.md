@@ -1,6 +1,15 @@
 # Chapter 03 — Underlying Technology
 
-> **Last Updated:** 2026-03-21
+> **Last Updated:** 2026-04-01
+>
+> Forouzan, TCP/IP Protocol Suite 4th Ed. Ch 3
+
+> **Prerequisites**: [Computer Networks] Network models and layering (Ch 1-2).
+>
+> **Learning Objectives**:
+> 1. Describe LAN technologies including Ethernet and Wi-Fi
+> 2. Explain MAC addressing and frame formats
+> 3. Compare connection-oriented and connectionless services
 
 ---
 
@@ -29,6 +38,8 @@
 - [Appendix](#appendix)
 
 ---
+
+<br>
 
 ## 1. Local Area Networks (LANs)
 
@@ -124,6 +135,8 @@ graph TD
 
 ---
 
+<br>
+
 ## 2. CSMA/CD Access Method
 
 **Carrier Sense Multiple Access with Collision Detection (CSMA/CD)** is the access method used by Standard Ethernet. The principle is **"listen before talk"**.
@@ -170,6 +183,8 @@ This is why the minimum Ethernet frame size is 64 bytes.
 
 ---
 
+<br>
+
 ## 3. Bridged and Switched Ethernet
 
 ### 3.1 Bridges
@@ -204,6 +219,8 @@ A **Virtual LAN (VLAN)** is a logical grouping of stations that can span multipl
 - Uses IEEE 802.1Q tagging to identify VLAN membership
 
 ---
+
+<br>
 
 ## 4. Wireless LANs
 
@@ -241,6 +258,8 @@ Bluetooth is a wireless technology for small wireless LANs (WPANs):
 
 ---
 
+<br>
+
 ## 5. Wide Area Networks (WANs)
 
 ### 5.1 Point-to-Point WANs
@@ -258,6 +277,8 @@ Switched WANs connect multiple points through switching devices:
 - **ATM (Asynchronous Transfer Mode)**: Cell-based switching with fixed 53-byte cells
 
 ---
+
+<br>
 
 ## 6. Connecting Devices
 
@@ -283,6 +304,8 @@ graph TD
 
 ---
 
+<br>
+
 ## Summary
 
 | Concept | Key Point |
@@ -298,6 +321,8 @@ graph TD
 | WAN | Wide area network connecting geographically distant sites |
 
 ---
+
+<br>
 
 ## Appendix
 

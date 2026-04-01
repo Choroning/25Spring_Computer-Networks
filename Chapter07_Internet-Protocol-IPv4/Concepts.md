@@ -1,6 +1,15 @@
 # Chapter 07 — Internet Protocol Version 4 (IPv4)
 
-> **Last Updated:** 2026-03-21
+> **Last Updated:** 2026-04-01
+>
+> Forouzan, TCP/IP Protocol Suite 4th Ed. Ch 7
+
+> **Prerequisites**: [Computer Networks] Delivery and forwarding (Ch 5-6).
+>
+> **Learning Objectives**:
+> 1. Analyze IPv4 packet header fields and their purposes
+> 2. Explain IP fragmentation and reassembly
+> 3. Describe IPv4 options and their uses
 
 ---
 
@@ -25,6 +34,8 @@
 - [Appendix](#appendix)
 
 ---
+
+<br>
 
 ## 1. Introduction
 
@@ -52,6 +63,8 @@ Key characteristics:
 > **Key Point:** IP provides the foundation for all Internet communication. Its simplicity and connectionless nature allow the Internet to scale, while upper-layer protocols (TCP) add reliability when needed.
 
 ---
+
+<br>
 
 ## 2. Datagram
 
@@ -146,6 +159,8 @@ The IPv4 header format (minimum 20 bytes, maximum 60 bytes):
 
 ---
 
+<br>
+
 ## 3. Fragmentation
 
 ### 3.1 Maximum Transfer Unit (MTU)
@@ -211,6 +226,8 @@ Reassembly is performed **only at the destination** (not at intermediate routers
 
 ---
 
+<br>
+
 ## 4. Options
 
 IP options provide additional functionality but are rarely used. They appear after the standard 20-byte header:
@@ -225,6 +242,8 @@ IP options provide additional functionality but are rarely used. They appear aft
 | Timestamp | Records timestamps at each router |
 
 ---
+
+<br>
 
 ## 5. Checksum
 
@@ -242,6 +261,8 @@ The **header checksum** protects against corruption of the IP header during tran
 4. Take the one's complement of the sum
 
 ---
+
+<br>
 
 ## 6. IP Processing
 
@@ -284,6 +305,8 @@ flowchart TD
 
 ---
 
+<br>
+
 ## Summary
 
 | Concept | Key Point |
@@ -298,6 +321,8 @@ flowchart TD
 | Source/Dest IP | Remain unchanged during entire transit |
 
 ---
+
+<br>
 
 ## Appendix
 
