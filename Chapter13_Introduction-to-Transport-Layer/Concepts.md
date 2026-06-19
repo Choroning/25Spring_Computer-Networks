@@ -1,8 +1,8 @@
 # Chapter 13 — Introduction to the Transport Layer
 
-> **Last Updated:** 2026-04-01
+> **Last Updated:** 2026-06-19
 >
-> Forouzan, TCP/IP Protocol Suite 4th Ed. Ch 13
+> TCP/IP Protocol Suite, Forouzan (4th Ed.) - Ch 13
 
 > **Prerequisites**: [Computer Networks] Network layer protocols (Ch 4-9).
 >

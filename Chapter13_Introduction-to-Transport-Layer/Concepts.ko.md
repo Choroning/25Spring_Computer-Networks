@@ -1,8 +1,8 @@
 # Chapter 13 — 전송 계층 소개
 
-> **최종 수정일:** 2026-04-01
+> **최종 수정일:** 2026-06-19
 >
-> Forouzan, TCP/IP Protocol Suite 4th Ed. Ch 13
+> TCP/IP Protocol Suite, Forouzan (4th Ed.) - Ch 13
 
 > **선수 지식**: [컴퓨터네트워크] 네트워크 계층 프로토콜 (제4-9장).
 >

@@ -1,8 +1,8 @@
 # Chapter 09 — Internet Control Message Protocol Version 4 (ICMPv4)
 
-> **Last Updated:** 2026-04-01
+> **Last Updated:** 2026-06-19
 >
-> Forouzan, TCP/IP Protocol Suite 4th Ed. Ch 9
+> TCP/IP Protocol Suite, Forouzan (4th Ed.) - Ch 9
 
 > **Prerequisites**: [Computer Networks] IPv4 and ARP (Ch 7-8).
 >

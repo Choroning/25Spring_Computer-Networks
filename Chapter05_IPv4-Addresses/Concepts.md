@@ -1,8 +1,8 @@
 # Chapter 05 — IPv4 Addresses
 
-> **Last Updated:** 2026-04-01
+> **Last Updated:** 2026-06-19
 >
-> Forouzan, TCP/IP Protocol Suite 4th Ed. Ch 5
+> TCP/IP Protocol Suite, Forouzan (4th Ed.) - Ch 5
 
 > **Prerequisites**: [Computer Networks] Network layer basics (Ch 4).
 >

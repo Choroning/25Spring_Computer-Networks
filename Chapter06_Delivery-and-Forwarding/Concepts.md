@@ -1,8 +1,8 @@
 # Chapter 06 — Delivery and Forwarding of IP Packets
 
-> **Last Updated:** 2026-04-01
+> **Last Updated:** 2026-06-19
 >
-> Forouzan, TCP/IP Protocol Suite 4th Ed. Ch 6
+> TCP/IP Protocol Suite, Forouzan (4th Ed.) - Ch 6
 
 > **Prerequisites**: [Computer Networks] IPv4 addressing (Ch 5).
 >

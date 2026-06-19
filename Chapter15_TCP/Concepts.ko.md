@@ -1,8 +1,8 @@
 # Chapter 15 — 전송 제어 프로토콜 (TCP)
 
-> **최종 수정일:** 2026-04-01
+> **최종 수정일:** 2026-06-19
 >
-> Forouzan, TCP/IP Protocol Suite 4th Ed. Ch 15
+> TCP/IP Protocol Suite, Forouzan (4th Ed.) - Ch 15
 
 > **선수 지식**: [컴퓨터네트워크] UDP와 전송 계층 (제13-14장).
 >

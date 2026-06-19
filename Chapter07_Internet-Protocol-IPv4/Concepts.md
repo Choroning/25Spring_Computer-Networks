@@ -1,8 +1,8 @@
 # Chapter 07 — Internet Protocol Version 4 (IPv4)
 
-> **Last Updated:** 2026-04-01
+> **Last Updated:** 2026-06-19
 >
-> Forouzan, TCP/IP Protocol Suite 4th Ed. Ch 7
+> TCP/IP Protocol Suite, Forouzan (4th Ed.) - Ch 7
 
 > **Prerequisites**: [Computer Networks] Delivery and forwarding (Ch 5-6).
 >

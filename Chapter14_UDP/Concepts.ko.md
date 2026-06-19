@@ -1,8 +1,8 @@
 # Chapter 14 — 사용자 데이터그램 프로토콜 (UDP)
 
-> **최종 수정일:** 2026-04-01
+> **최종 수정일:** 2026-06-19
 >
-> Forouzan, TCP/IP Protocol Suite 4th Ed. Ch 14
+> TCP/IP Protocol Suite, Forouzan (4th Ed.) - Ch 14
 
 > **선수 지식**: [컴퓨터네트워크] 전송 계층 기초 (제13장).
 >

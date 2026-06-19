@@ -1,8 +1,8 @@
 # Chapter 01-02 — Introduction to the Internet and Network Models
 
-> **Last Updated:** 2026-04-01
+> **Last Updated:** 2026-06-19
 >
-> Forouzan, TCP/IP Protocol Suite 4th Ed. Ch 1-2
+> TCP/IP Protocol Suite, Forouzan (4th Ed.) - Ch 1-2
 
 > **Prerequisites**: [Computer Networks] No prior networking knowledge required.
 >

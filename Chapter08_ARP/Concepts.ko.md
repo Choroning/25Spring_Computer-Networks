@@ -1,8 +1,8 @@
 # Chapter 08 — 주소 결정 프로토콜 (ARP)
 
-> **최종 수정일:** 2026-04-01
+> **최종 수정일:** 2026-06-19
 >
-> Forouzan, TCP/IP Protocol Suite 4th Ed. Ch 8
+> TCP/IP Protocol Suite, Forouzan (4th Ed.) - Ch 8
 
 > **선수 지식**: [컴퓨터네트워크] IPv4 프로토콜 (제5-7장).
 >

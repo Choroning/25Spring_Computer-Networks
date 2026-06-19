@@ -1,8 +1,8 @@
 # Chapter 03 — Underlying Technology
 
-> **Last Updated:** 2026-04-01
+> **Last Updated:** 2026-06-19
 >
-> Forouzan, TCP/IP Protocol Suite 4th Ed. Ch 3
+> TCP/IP Protocol Suite, Forouzan (4th Ed.) - Ch 3
 
 > **Prerequisites**: [Computer Networks] Network models and layering (Ch 1-2).
 >
