@@ -1,8 +1,8 @@
 # Chapter 09 — 인터넷 제어 메시지 프로토콜 버전 4 (ICMPv4)
 
-> **최종 수정일:** 2026-04-01
+> **최종 수정일:** 2026-06-19
 >
-> Forouzan, TCP/IP Protocol Suite 4th Ed. Ch 9
+> TCP/IP Protocol Suite, Forouzan (4th Ed.) - Ch 9
 
 > **선수 지식**: [컴퓨터네트워크] IPv4와 ARP (제7-8장).
 >

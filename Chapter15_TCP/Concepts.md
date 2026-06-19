@@ -1,8 +1,8 @@
 # Chapter 15 — Transmission Control Protocol (TCP)
 
-> **Last Updated:** 2026-04-01
+> **Last Updated:** 2026-06-19
 >
-> Forouzan, TCP/IP Protocol Suite 4th Ed. Ch 15
+> TCP/IP Protocol Suite, Forouzan (4th Ed.) - Ch 15
 
 > **Prerequisites**: [Computer Networks] UDP and transport layer (Ch 13-14).
 >

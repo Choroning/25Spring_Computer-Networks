@@ -1,8 +1,8 @@
 # Chapter 01-02 — 인터넷과 네트워크 모델 개론
 
-> **최종 수정일:** 2026-04-01
+> **최종 수정일:** 2026-06-19
 >
-> Forouzan, TCP/IP Protocol Suite 4th Ed. Ch 1-2
+> TCP/IP Protocol Suite, Forouzan (4th Ed.) - Ch 1-2
 
 > **선수 지식**: [컴퓨터네트워크] 네트워크 사전 지식 불필요.
 >

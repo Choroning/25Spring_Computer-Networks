@@ -1,8 +1,8 @@
 # Chapter 04 — 네트워크 계층 개론
 
-> **최종 수정일:** 2026-04-01
+> **최종 수정일:** 2026-06-19
 >
-> Forouzan, TCP/IP Protocol Suite 4th Ed. Ch 4
+> TCP/IP Protocol Suite, Forouzan (4th Ed.) - Ch 4
 
 > **선수 지식**: [컴퓨터네트워크] 기반 기술 (제1-3장).
 >

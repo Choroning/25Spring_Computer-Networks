@@ -1,8 +1,8 @@
 # Chapter 05 — IPv4 주소
 
-> **최종 수정일:** 2026-04-01
+> **최종 수정일:** 2026-06-19
 >
-> Forouzan, TCP/IP Protocol Suite 4th Ed. Ch 5
+> TCP/IP Protocol Suite, Forouzan (4th Ed.) - Ch 5
 
 > **선수 지식**: [컴퓨터네트워크] 네트워크 계층 기초 (제4장).
 >

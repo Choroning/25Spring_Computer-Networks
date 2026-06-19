@@ -1,8 +1,8 @@
 # Chapter 03 — 기반 기술
 
-> **최종 수정일:** 2026-04-01
+> **최종 수정일:** 2026-06-19
 >
-> Forouzan, TCP/IP Protocol Suite 4th Ed. Ch 3
+> TCP/IP Protocol Suite, Forouzan (4th Ed.) - Ch 3
 
 > **선수 지식**: [컴퓨터네트워크] 네트워크 모델과 계층화 (제1-2장).
 >

@@ -1,8 +1,8 @@
 # Chapter 07 — 인터넷 프로토콜 버전 4 (IPv4)
 
-> **최종 수정일:** 2026-04-01
+> **최종 수정일:** 2026-06-19
 >
-> Forouzan, TCP/IP Protocol Suite 4th Ed. Ch 7
+> TCP/IP Protocol Suite, Forouzan (4th Ed.) - Ch 7
 
 > **선수 지식**: [컴퓨터네트워크] 전달과 포워딩 (제5-6장).
 >

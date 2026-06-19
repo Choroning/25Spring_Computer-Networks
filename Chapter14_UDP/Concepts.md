@@ -1,8 +1,8 @@
 # Chapter 14 — User Datagram Protocol (UDP)
 
-> **Last Updated:** 2026-04-01
+> **Last Updated:** 2026-06-19
 >
-> Forouzan, TCP/IP Protocol Suite 4th Ed. Ch 14
+> TCP/IP Protocol Suite, Forouzan (4th Ed.) - Ch 14
 
 > **Prerequisites**: [Computer Networks] Transport layer basics (Ch 13).
 >

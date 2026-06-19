@@ -1,8 +1,8 @@
 # Chapter 08 — Address Resolution Protocol (ARP)
 
-> **Last Updated:** 2026-04-01
+> **Last Updated:** 2026-06-19
 >
-> Forouzan, TCP/IP Protocol Suite 4th Ed. Ch 8
+> TCP/IP Protocol Suite, Forouzan (4th Ed.) - Ch 8
 
 > **Prerequisites**: [Computer Networks] IPv4 protocol (Ch 5-7).
 >
