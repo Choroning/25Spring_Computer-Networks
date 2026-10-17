@@ -3,9 +3,9 @@
 ![Last Commit](https://img.shields.io/github/last-commit/Choroning/25Spring_Computer-Networks)
 ![Languages](https://img.shields.io/github/languages/top/Choroning/25Spring_Computer-Networks)
 
-This repository organizes and stores networking concepts and protocol analyses written for university lectures and assignments.
+This repository archives bilingual lecture notes and coursework for the Computer Networks course.
 
-*Author: Cheolwon Park (Korea University Sejong, CSE) – Year 2 (Sophomore) as of 2025*
+*Author: Cheolwon Park (Korea University Sejong, CSE) - Year 2 (Sophomore) as of 2025*
 <br><br>
 
 ## 📑 Table of Contents
@@ -22,14 +22,14 @@ This repository organizes and stores networking concepts and protocol analyses w
 <br><a name="about-this-repository"></a>
 ## 📝 About This Repository
 
-This repository contains materials and implementations developed for a university-level Computer Networks course, including:
+This repository contains the lecture notes and the project of a Computer Networks course on the TCP/IP protocol suite.
 
-- **Concepts.md** files for each chapter with comprehensive explanations of networking protocols and theories
-- Lecture notes, protocol analyses, and student presentation materials (DHCP, NAT, ARP, DNS, VPN, Tunneling)
-- Improved Python code files with **Doxygen-style headers** documenting purpose, usage, and structure
-- A **term project** (Simple HTTP Server) designed with references to CS curricula at top universities
+- `Lecture-Notes/` holds lecture notes on the concepts and principles of each textbook chapter. The lecture slides follow the textbook chapters, so the units are also numbered by chapter (`Ch##`).
+- Every lecture note comes as an English file (`.md`) and a Korean file (`.ko.md`) with the same structure.
+- `Coursework/` holds the code of the term project, a Simple HTTP Server.
 
-The course covers the TCP/IP protocol suite from the data link layer through the application layer, including IP addressing, routing, transport protocols, and network security.
+> **🤖 AI Agent Usage**
+> [Claude Code](https://claude.ai/download) was used to organize and translate the lecture notes and to restructure the repository.
 
 <br><a name="course-information"></a>
 ## 📚 Course Information
@@ -39,26 +39,23 @@ The course covers the TCP/IP protocol suite from the data link layer through the
 
 | Course&nbsp;Code| Course            | Type          | Instructor      | Department                              |
 |:----------:|:------------------|:-------------:|:---------------:|:----------------------------------------|
-|`DCCS307-01`|COMPUTER NETWORKS|Major Required|Prof. Seungyeon&nbsp;Kim|Department of Computer Convergence Software|
+|`DCCS307-01`|COMPUTER NETWORKS|Major Required|Prof. Seungyeon&nbsp;Kim|Department of Computer Science and Software Engineering|
 
-- **📖 References**
+### Course Overview
 
-| Type | Contents |
-|:----:|:---------|
-|Textbook|"TCP/IP Protocol Suite, 4th Edition" by Behrouz A. Forouzan (McGraw-Hill)|
-|Reference|"Computer Networking: A Top-Down Approach, 7th Edition" by Kurose and Ross|
-|Lecture Notes|Slides and handwritten notes provided by instructor|
+A required major course on network software and hardware that studies the architecture of the TCP/IP protocol suite following Forouzan's textbook. It covers the Internet and network models, underlying technologies, IPv4 addressing and delivery, ARP and ICMP, and the transport-layer protocols UDP and TCP, and the syllabus also planned routing protocols and the application layer (DNS, TELNET, FTP, SMTP, HTTP). The instructor, schedule and class format, assessment, weekly plan and progress, and references are in the [course information document](Course-Information.md).
 
 <br><a name="prerequisites"></a>
 ## ✅ Prerequisites
 
-- Interest in computer networking and communication protocols
+- There is no designated prerequisite course.
+- An interest in computer networks and communication protocols is enough.
 
 - **💻 Development Environment**
 
 | Tool | Company |  OS  | Notes |
 |:-----|:-------:|:----:|:------|
-|Wireshark|Wireshark Foundation|macOS|packet analysis|
+|Wireshark|Wireshark Foundation|macOS|Packet analysis|
 |Visual Studio Code|Microsoft|macOS|    |
 
 <br><a name="repository-structure"></a>
@@ -66,47 +63,21 @@ The course covers the TCP/IP protocol suite from the data link layer through the
 
 ```plaintext
 25Spring_Computer-Networks
-├── Chapter01-02_Introduction-and-Network-Layer
-│   └── Concepts.md
-├── Chapter03_Underlying-Technology
-│   └── Concepts.md
-├── Chapter04_Introduction-to-Network-Layer
-│   └── Concepts.md
-├── Chapter05_IPv4-Addresses
-│   └── Concepts.md
-├── Chapter06_Delivery-and-Forwarding
-│   └── Concepts.md
-├── Chapter07_Internet-Protocol-IPv4
-│   └── Concepts.md
-├── Chapter08_ARP
-│   └── Concepts.md
-├── Chapter09_ICMPv4
-│   └── Concepts.md
-├── Chapter13_Introduction-to-Transport-Layer
-│   └── Concepts.md
-├── Chapter14_UDP
-│   └── Concepts.md
-├── Chapter15_TCP
-│   └── Concepts.md
-├── Project_Simple-HTTP-Server
-│   ├── static
-│   │   ├── index.html
-│   │   └── style.css
-│   ├── http_client.py
-│   ├── http_parser.py
-│   ├── http_server.py
-│   ├── README.md
-│   └── router.py
-├── LICENSE
+├── Lecture-Notes               Lecture notes by textbook chapter
+├── Coursework                  Term project
+├── Course-Information.ko.md    Course operations
+├── Course-Information.md
+├── LICENSE                     Documentation license (CC BY-NC-SA 4.0)
+├── LICENSE-CODE                Code license (PolyForm Noncommercial 1.0.0)
 ├── README.ko.md
 └── README.md
-
-13 directories, 20 files
 ```
+
+The units are listed in the [`Lecture-Notes` index](Lecture-Notes/README.md), and the project in the [`Coursework` index](Coursework/README.md).
 
 <br><a name="license"></a>
 ## 🤝 License
 
-This repository is released under the [MIT License](LICENSE).
+The documents in this repository (lecture notes, explanations, and summary sheets) are licensed under [CC BY-NC-SA 4.0](LICENSE), and the code under [PolyForm Noncommercial 1.0.0](LICENSE-CODE). Figures and example code taken from lecture slides and textbooks, as well as assignment handouts and template code distributed by the course, belong to their original authors and are not covered by these licenses.
 
 ---
