@@ -22,14 +22,12 @@ This repository archives bilingual lecture notes and coursework for the Computer
 <br><a name="about-this-repository"></a>
 ## 📝 About This Repository
 
-This repository contains the lecture notes and the project of a Computer Networks course on the TCP/IP protocol suite.
-
-- `Lecture-Notes/` holds lecture notes on the concepts and principles of each textbook chapter. The lecture slides follow the textbook chapters, so the units are also numbered by chapter (`Ch##`).
-- Every lecture note comes as an English file (`.md`) and a Korean file (`.ko.md`) with the same structure.
-- `Coursework/` holds the code of the term project, a Simple HTTP Server.
+- `Lecture-Notes/` holds lecture notes that follow the textbook's chapter numbers (`Ch##`).
+- `Coursework/` holds the code of the term project, Simple HTTP Server.
+- Every lecture note comes as an English (`.md`) and Korean (`.ko.md`) pair.
 
 > **🤖 AI Agent Usage**
-> [Claude Code](https://claude.ai/download) was used to organize and translate the lecture notes and to restructure the repository.
+> [Claude Code](https://claude.ai/download) was used to organize and translate the notes and to restructure the repository.
 
 <br><a name="course-information"></a>
 ## 📚 Course Information
@@ -43,13 +41,12 @@ This repository contains the lecture notes and the project of a Computer Network
 
 ### Course Overview
 
-A required major course on network software and hardware that studies the architecture of the TCP/IP protocol suite following Forouzan's textbook. It covers the Internet and network models, underlying technologies, IPv4 addressing and delivery, ARP and ICMP, and the transport-layer protocols UDP and TCP, and the syllabus also planned routing protocols and the application layer (DNS, TELNET, FTP, SMTP, HTTP). The instructor, schedule and class format, assessment, weekly plan and progress, and references are in the [course information document](Course-Information.md).
+A required major course on network software and hardware that studies the TCP/IP protocol suite following Forouzan's textbook. The instructor, schedule, assessment, and progress are in the [course information document](Course-Information.md).
 
 <br><a name="prerequisites"></a>
 ## ✅ Prerequisites
 
-- There is no designated prerequisite course.
-- An interest in computer networks and communication protocols is enough.
+- Interest in computer networking and communication protocols
 
 - **💻 Development Environment**
 
