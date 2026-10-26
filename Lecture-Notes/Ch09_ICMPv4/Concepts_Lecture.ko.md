@@ -2,7 +2,7 @@
 
 [레포지토리 안내](../../README.ko.md) | [English](Concepts_Lecture.md) | [한국어](Concepts_Lecture.ko.md)
 
-> **최종 수정일:** 2026-10-17
+> **최종 수정일:** 2026-10-26
 >
 > TCP/IP Protocol Suite, Forouzan, Ch 9
 
@@ -176,7 +176,7 @@ graph TD
 - 포트 스캔 중에 자주 발생한다.
 
 **Code 4 (단편화 필요)** 는 다음과 같은 점에서 중요하다:
-- 경로 MTU 탐색(Path MTU Discovery)이 이 메시지를 이용한다.
+- 경로 MTU 탐색(Path MTU Discovery, 7장)이 이 메시지를 이용한다.
 - 라우터가 DF 플래그 때문에 데이터그램을 단편화할 수 없을 때 생성되므로, 송신자는 경로의 MTU가 더 작다는 사실을 알 수 있다.
 
 ### 3.2 출발지 억제 (사용 중단)

@@ -2,7 +2,7 @@
 
 [레포지토리 안내](../../README.ko.md) | [English](Concepts_Lecture.md) | [한국어](Concepts_Lecture.ko.md)
 
-> **최종 수정일:** 2026-10-17
+> **최종 수정일:** 2026-10-26
 >
 > TCP/IP Protocol Suite, Forouzan, Ch 15
 
@@ -513,6 +513,8 @@ Tunneled packet:  [New IP Hdr | Tunnel Hdr | IP Header | TCP | Data]
 **IPsec 모드:**
 - **전송 모드(Transport Mode)**: 페이로드만 암호화하며, 원본 IP 헤더는 그대로 보인다.
 - **터널 모드(Tunnel Mode)**: 원본 패킷 전체를 암호화하여 새 IP 패킷에 캡슐화한다.
+
+> **[정보보호]** VPN의 기밀성, 무결성, 인증은 정보보호에서 배우는 암호 기법으로 구현된다. 표 4의 AES나 ChaCha20 같은 대칭 키 암호와 메시지 인증 코드가 터널을 지나는 데이터를 암호화하고 변조를 검출하며, 인증서나 사전 공유 키(PSK)를 이용한 인증과 IKE 같은 키 교환 프로토콜이 양쪽 끝의 신원을 확인하고 이 암호화에 쓸 키를 정한다.
 
 ---
 

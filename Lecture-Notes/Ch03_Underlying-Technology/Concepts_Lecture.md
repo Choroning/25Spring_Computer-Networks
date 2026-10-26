@@ -2,14 +2,15 @@
 
 [Repository Guide](../../README.md) | [English](Concepts_Lecture.md) | [한국어](Concepts_Lecture.ko.md)
 
-> **Last Updated:** 2026-10-17
+> **Last Updated:** 2026-10-26
 >
 > TCP/IP Protocol Suite, Forouzan, Ch 3
 
 > **Learning Objectives:**
 > 1. Describe LAN technologies including Ethernet and Wi-Fi
 > 2. Explain MAC addressing and frame formats
-> 3. Compare connection-oriented and connectionless services
+> 3. Explain how CSMA/CD handles collisions and why it needs a minimum frame size
+> 4. Distinguish connecting devices (hubs, bridges, switches, routers, and gateways) by their operating layer and function
 
 ---
 
@@ -357,8 +358,8 @@ The 48-bit MAC address is divided into:
 A typical home network illustrates underlying technology concepts:
 - **Wi-Fi router**: It combines router (L3), switch (L2), and wireless AP functions in one device.
 - **Ethernet cables (Cat 5e/6)**: They provide physical layer connections at 100/1000 Mbps.
-- **DHCP**: It automatically assigns IP addresses to connected devices.
-- **NAT**: It allows multiple devices to share a single public IP address.
+- **DHCP**: It automatically assigns IP addresses to connected devices (Chapter 5).
+- **NAT**: It allows multiple devices to share a single public IP address (Chapter 4).
 
 ---
 
