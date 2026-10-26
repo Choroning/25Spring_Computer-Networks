@@ -2,7 +2,7 @@
 
 [레포지토리 안내](README.ko.md) | [English](Course-Information.md) | [한국어](Course-Information.ko.md)
 
-> **최종 수정일:** 2026-10-17
+> **최종 수정일:** 2026-10-26
 
 ## 목차
 
@@ -69,22 +69,22 @@
 
 | 주차 | 수업일 (월, 화) | 계획된 주제 | 진행한 강의자료 |
 |:-----|:-----|:-----|:-----|
-| 1 | 3/3, 3/4 | Introduction | - |
-| 2 | 3/10, 3/11 | TCP/IP Underlying Technologies | - |
-| 3 | 3/17, 3/18 | IP Addresses | - |
-| 4 | 3/24, 3/25 | Subnetting/Supernetting | - |
-| 5 | 3/31, 4/1 | Delivery/Routing of IP Packets | - |
-| 6 | 4/7, 4/8 | ARP/RARP | - |
-| 7 | 4/14, 4/15 | IP | - |
-| 8 | 4/21, 4/22 | 중간고사 | 중간고사 |
-| 9 | 4/28, 4/29 | ICMP/IGMP | - |
-| 10 | 5/5, 5/6 | UDP/TCP | 공휴일 휴강 |
-| 11 | 5/12, 5/13 | TCP | - |
-| 12 | 5/19, 5/20 | Unicasting Routing Protocol | - |
-| 13 | 5/26, 5/27 | Application Layer/DNS | - |
-| 14 | 6/2, 6/3 | TELNET/FTP/SMTP | - |
-| 15 | 6/9, 6/10 | SNMP/HTTP/WWW | 기말고사, 종강 |
-| 16 | 6/16, 6/17 | 기말고사 | - |
+| 1주차 | 3/3, 3/4 | Introduction | - |
+| 2주차 | 3/10, 3/11 | TCP/IP Underlying Technologies | - |
+| 3주차 | 3/17, 3/18 | IP Addresses | - |
+| 4주차 | 3/24, 3/25 | Subnetting/Supernetting | - |
+| 5주차 | 3/31, 4/1 | Delivery/Routing of IP Packets | - |
+| 6주차 | 4/7, 4/8 | ARP/RARP | - |
+| 7주차 | 4/14, 4/15 | IP | - |
+| 8주차 | 4/21, 4/22 | 중간고사 | 중간고사 |
+| 9주차 | 4/28, 4/29 | ICMP/IGMP | - |
+| 10주차 | 5/5, 5/6 | UDP/TCP | 공휴일 휴강 |
+| 11주차 | 5/12, 5/13 | TCP | - |
+| 12주차 | 5/19, 5/20 | Unicasting Routing Protocol | - |
+| 13주차 | 5/26, 5/27 | Application Layer/DNS | - |
+| 14주차 | 6/2, 6/3 | TELNET/FTP/SMTP | - |
+| 15주차 | 6/9, 6/10 | SNMP/HTTP/WWW | 기말고사, 종강 |
+| 16주차 | 6/16, 6/17 | 기말고사 | - |
 
 - 기말고사는 계획(16주차)보다 이른 15주차에 치렀다.
 - 강의자료와 강의 노트의 대응은 다음과 같다. 강의자료의 장 번호가 교재의 장 번호와 같다.
