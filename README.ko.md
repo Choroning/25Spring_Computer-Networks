@@ -41,7 +41,7 @@
 
 ### 과목 개요
 
-네트워크 소프트웨어와 하드웨어를 다루는 전공필수 과목으로, Forouzan의 교재를 따라 TCP/IP 프로토콜 스위트를 공부한다. 교수자, 수업 일정, 평가, 진도는 [강의 정보 문서](Course-Information.ko.md)에 정리했다.
+네트워크 소프트웨어와 하드웨어를 다루는 전공필수 과목으로, Forouzan의 교재를 따라 TCP/IP 프로토콜 스위트를 배운다. 교수자, 수업 일정, 평가, 진도는 [강의 정보 문서](Course-Information.ko.md)에 정리했다.
 
 <br><a name="prerequisites"></a>
 ## ✅ 사전 요구사항
