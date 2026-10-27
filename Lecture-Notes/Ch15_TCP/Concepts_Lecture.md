@@ -2,7 +2,7 @@
 
 [Repository Guide](../../README.md) | [English](Concepts_Lecture.md) | [한국어](Concepts_Lecture.ko.md)
 
-> **Last Updated:** 2026-10-17
+> **Last Updated:** 2026-10-26
 >
 > TCP/IP Protocol Suite, Forouzan, Ch 15
 
@@ -513,6 +513,8 @@ Tunneled packet:  [New IP Hdr | Tunnel Hdr | IP Header | TCP | Data]
 **IPsec modes:**
 - **Transport Mode**: Only the payload is encrypted, and the original IP header remains visible.
 - **Tunnel Mode**: The entire original packet is encrypted and encapsulated in a new IP packet.
+
+> **[Information Security]** The confidentiality, integrity, and authentication of a VPN are implemented with the cryptographic techniques studied in Information Security. Symmetric-key ciphers such as AES and ChaCha20 in Table 4, together with message authentication codes, encrypt the data passing through the tunnel and detect modification, while authentication with certificates or pre-shared keys (PSK) and key exchange protocols such as IKE verify the identities of both ends and establish the keys used for this encryption.
 
 ---
 

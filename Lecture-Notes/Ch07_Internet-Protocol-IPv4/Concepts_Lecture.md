@@ -2,7 +2,7 @@
 
 [Repository Guide](../../README.md) | [English](Concepts_Lecture.md) | [한국어](Concepts_Lecture.ko.md)
 
-> **Last Updated:** 2026-10-17
+> **Last Updated:** 2026-10-26
 >
 > TCP/IP Protocol Suite, Forouzan, Ch 7
 
@@ -167,7 +167,7 @@ The IPv4 header format (minimum 20 bytes, maximum 60 bytes):
 **TTL (Time to Live):**
 - It controls the maximum number of **hops** (routers) visited.
 - Each router decrements TTL by one.
-- If TTL reaches zero, the router **discards** the datagram and sends an ICMP Time Exceeded message.
+- If TTL reaches zero, the router **discards** the datagram and sends an ICMP Time Exceeded message (Chapter 9).
 - The initial value set by the source is approximately twice the maximum number of routers between any two hosts.
 - Setting TTL to 1 limits the packet to the **local network**.
 
@@ -246,7 +246,7 @@ Reassembly is performed **only at the destination** (not at intermediate routers
 - A **reassembly timer** ensures fragments do not wait indefinitely.
 - If the timer expires before all fragments arrive, all collected fragments are **discarded**.
 
-> **Key Point:** Fragmentation occurs at any router where the outgoing MTU is smaller than the datagram, but reassembly occurs only at the final destination.
+> **Key Point:** When a datagram with DF = 0 is larger than the MTU of the outgoing link, fragmentation can occur at that point, whether it is the source host or any router on the path, but reassembly occurs only at the final destination.
 
 ---
 
@@ -273,7 +273,7 @@ IP options provide additional functionality but are rarely used. They appear aft
 
 ## 5. Checksum
 
-The **header checksum** protects against corruption of the IP header during transmission:
+The **header checksum** protects the IP header by detecting corruption that occurs during transmission:
 - It is **redundant information** added to the packet.
 - The receiver repeats the calculation and compares the result.
 - If the result is not satisfactory, the packet is **rejected**.
@@ -285,6 +285,8 @@ The **header checksum** protects against corruption of the IP header during tran
 2. Set the checksum field to zero.
 3. Add all 16-bit words using one's complement arithmetic.
 4. Take the one's complement of the sum.
+
+> **[Digital Logic Design]** The one's complement, studied in Digital Logic Design as a complement representation of binary numbers, is the value obtained by inverting every bit. One's complement addition in the checksum does not discard a carry out of the most significant bit but adds it back to the least significant bit of the sum, and a worked example of this calculation is in Section 4.2 of Chapter 14.
 
 ---
 
@@ -368,7 +370,7 @@ Given: Original datagram = 4000 bytes (20-byte header), MTU = 1400
 
 **Path MTU Discovery (PMTUD)** determines the smallest MTU along the entire path:
 1. The source sends datagrams with the DF (Don't Fragment) flag set.
-2. If a router encounters an MTU smaller than the datagram, it drops the packet and sends an ICMP "Fragmentation Needed" message.
+2. If a router encounters an MTU smaller than the datagram, it drops the packet and sends an ICMP "Fragmentation Needed" message (Chapter 9).
 3. The source reduces the datagram size and retries.
 4. The process repeats until the datagram can traverse the entire path without fragmentation.
 

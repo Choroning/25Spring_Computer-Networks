@@ -2,7 +2,7 @@
 
 [Repository Guide](../../README.md) | [English](Concepts_Lecture.md) | [한국어](Concepts_Lecture.ko.md)
 
-> **Last Updated:** 2026-10-17
+> **Last Updated:** 2026-10-26
 >
 > TCP/IP Protocol Suite, Forouzan, Ch 9
 
@@ -176,7 +176,7 @@ The data section of an error message always includes:
 - It is often triggered during port scans.
 
 **Code 4 (Fragmentation Needed)** is important for the following reasons:
-- Path MTU Discovery relies on this message.
+- Path MTU Discovery (Chapter 7) relies on this message.
 - A router generates it when it cannot fragment a datagram because the DF flag is set, so the sender learns that the path MTU is smaller.
 
 ### 3.2 Source Quench (Deprecated)

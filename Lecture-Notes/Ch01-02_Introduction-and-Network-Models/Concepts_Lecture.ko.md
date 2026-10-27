@@ -2,13 +2,13 @@
 
 [레포지토리 안내](../../README.ko.md) | [English](Concepts_Lecture.md) | [한국어](Concepts_Lecture.ko.md)
 
-> **최종 수정일:** 2026-10-17
+> **최종 수정일:** 2026-10-26
 >
 > TCP/IP Protocol Suite, Forouzan, Ch 1, 2
 
 > **학습 목표:**
 > 1. OSI 및 TCP/IP 네트워크 계층 모델을 설명할 수 있다
-> 2. 크기별로 네트워크를 분류할 수 있다(LAN, MAN, WAN)
+> 2. 크기에 따라 네트워크를 LAN, MAN, WAN으로 분류할 수 있다
 > 3. 프로토콜 계층화와 캡슐화 개념을 설명할 수 있다
 
 ---

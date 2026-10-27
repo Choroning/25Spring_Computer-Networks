@@ -2,7 +2,7 @@
 
 [Repository Guide](../../README.md) | [English](Concepts_Lecture.md) | [한국어](Concepts_Lecture.ko.md)
 
-> **Last Updated:** 2026-10-17
+> **Last Updated:** 2026-10-26
 >
 > TCP/IP Protocol Suite, Forouzan, Ch 13
 
@@ -114,6 +114,8 @@ Socket address: 200.23.56.8:69
 - Together, they uniquely identify a communication endpoint within a transport protocol.
 
 > **Key Point:** A socket address (IP:Port) uniquely identifies a process on a specific host, enabling process-to-process communication across the Internet.
+
+> **[Systems Programming]** The socket interface studied in Systems Programming is a set of system calls through which an application process creates and uses a communication endpoint identified by such a socket address. A server attaches its well-known port to a socket with `bind`, while a client usually leaves the port unspecified, so the operating system picks an ephemeral port and attaches it at `connect` or at the first send.
 
 ---
 
@@ -271,15 +273,15 @@ Linear representation:
 
 ### 6.1 Open-Loop Congestion Control
 
-Prevents congestion **before it happens**:
+Open-loop congestion control prevents congestion **before it happens**:
 - It is applied by either the source or the destination.
 - **Retransmission policy**: Retransmission timers are designed to optimize efficiency without adding to congestion.
-- **Window policy**: The type of sender window also affects congestion. Go-Back-N can add to congestion by resending packets that already arrived safely, so Selective Repeat is better for congestion control.
+- **Window policy**: The type of sender window also affects congestion. Go-Back-N (Section 7.2) can add to congestion by resending packets that already arrived safely, so Selective Repeat is better for congestion control.
 - **ACK reply policy**: Timer-based or cumulative ACKs reduce the number of ACKs and thus the network load.
 
 ### 6.2 Closed-Loop Congestion Control
 
-Tries to alleviate congestion **after it happens**:
+Closed-loop congestion control tries to alleviate congestion **after it happens**:
 - The size of the sender's window can be adjusted **flexibly** according to network conditions.
 - Typical mechanisms include the following:
   - **ECN (Explicit Congestion Notification)**: When routers detect congestion, they mark packets to notify the end hosts.
@@ -302,7 +304,7 @@ Tries to alleviate congestion **after it happens**:
 | 22 | SSH | Secure Shell |
 | 23 | Telnet | Remote login |
 | 25 | SMTP | Email sending |
-| 53 | DNS | Domain Name Service |
+| 53 | DNS | Domain Name System |
 | 67/68 | DHCP | Dynamic Host Configuration |
 | 69 | TFTP | Trivial File Transfer |
 | 80 | HTTP | Web |

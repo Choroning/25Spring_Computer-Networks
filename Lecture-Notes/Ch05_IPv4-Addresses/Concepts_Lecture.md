@@ -2,7 +2,7 @@
 
 [Repository Guide](../../README.md) | [English](Concepts_Lecture.md) | [한국어](Concepts_Lecture.ko.md)
 
-> **Last Updated:** 2026-10-17
+> **Last Updated:** 2026-10-26
 >
 > TCP/IP Protocol Suite, Forouzan, Ch 5
 
@@ -152,9 +152,9 @@ Example: 192.168.1.0/24
 ```
 
 The prefix length (n) indicates how many bits are the network prefix:
-- `/8` = 255.0.0.0 (Class A equivalent)
-- `/16` = 255.255.0.0 (Class B equivalent)
-- `/24` = 255.255.255.0 (Class C equivalent)
+- `/8` = 255.0.0.0 (Class A default mask)
+- `/16` = 255.255.0.0 (Class B default mask)
+- `/24` = 255.255.255.0 (Class C default mask)
 
 ### 4.2 Network Address and Mask
 
@@ -164,7 +164,7 @@ The **subnet mask** is a 32-bit value where the first n bits are 1 and the remai
 /24 mask: 11111111.11111111.11111111.00000000 = 255.255.255.0
 ```
 
-**Finding the network address**: Apply AND operation between IP address and mask:
+**Finding the network address**: Apply the bitwise AND operation (Section 5.2) to the IP address and the mask:
 
 ```text
 IP Address:      192.168.1.100  = 11000000.10101000.00000001.01100100
@@ -172,7 +172,7 @@ Subnet Mask:     255.255.255.0  = 11111111.11111111.11111111.00000000
 Network Address: 192.168.1.0    = 11000000.10101000.00000001.00000000
 ```
 
-**Finding the broadcast address**: Apply OR operation between IP address and the complement of the mask.
+**Finding the broadcast address**: Apply the bitwise OR operation (Section 5.3) to the IP address and the complement of the mask (NOT operation, Section 5.1).
 
 ### 4.3 Subnetting
 
@@ -232,7 +232,7 @@ The NOT operation inverts each bit:
 
 *Table 3. Truth table of the NOT operation*
 
-Used to find the **complement of the mask** for calculating broadcast addresses.
+It is used to find the **complement of the mask** for calculating broadcast addresses.
 
 ### 5.2 AND Operation
 
@@ -247,7 +247,7 @@ The AND operation returns 1 only when both inputs are 1:
 
 *Table 4. Truth table of the AND operation*
 
-Used to find the **network address**: IP AND Mask = Network Address.
+It is used to find the **network address**: IP AND Mask = Network Address.
 
 ### 5.3 OR Operation
 
@@ -262,7 +262,9 @@ The OR operation returns 1 when at least one input is 1:
 
 *Table 5. Truth table of the OR operation*
 
-Used to find the **broadcast address**: IP OR (NOT Mask) = Broadcast Address.
+It is used to find the **broadcast address**: IP OR (NOT Mask) = Broadcast Address.
+
+> **[Digital Logic Design]** NOT, AND, and OR are the basic operations of Boolean algebra and the logic gates studied in Digital Logic Design. IP address calculations apply these operations bitwise, to each pair of bits in the same position of the address and the mask, so AND keeps only the network-part bits where the mask is 1 and clears the rest to 0, and OR with the inverted mask sets every host-part bit to 1.
 
 ---
 

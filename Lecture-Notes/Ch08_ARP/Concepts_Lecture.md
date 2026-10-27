@@ -2,7 +2,7 @@
 
 [Repository Guide](../../README.md) | [English](Concepts_Lecture.md) | [한국어](Concepts_Lecture.ko.md)
 
-> **Last Updated:** 2026-10-17
+> **Last Updated:** 2026-10-26
 >
 > TCP/IP Protocol Suite, Forouzan, Ch 8
 
@@ -275,6 +275,8 @@ sequenceDiagram
 - **Session Hijacking**: The attacker takes over an authenticated session.
 - **Denial of Service**: The attacker redirects traffic to a non-existent MAC address.
 - **Traffic Sniffing**: The attacker captures sensitive data such as passwords and credentials.
+
+> **[Information Security]** In terms of the security goals studied in Information Security, traffic sniffing violates confidentiality, the modification of traffic in a man-in-the-middle attack violates integrity, and denial of service by sending traffic to a nonexistent MAC address violates availability. All of these attacks are possible because ARP does not authenticate the sender of a reply.
 
 ### 5.2 Countermeasures
 
