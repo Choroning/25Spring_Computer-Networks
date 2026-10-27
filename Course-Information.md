@@ -2,7 +2,7 @@
 
 [Repository Guide](README.md) | [English](Course-Information.md) | [한국어](Course-Information.ko.md)
 
-> **Last Updated:** 2026-10-26
+> **Last Updated:** 2026-10-27
 
 ## Table of Contents
 
@@ -45,7 +45,7 @@
 | Item | Weight |
 |:-----|-----:|
 | Quizzes | 0% |
-| Midterm Presentation | 40% |
+| Midterm Exam | 40% |
 | Final Exam | 50% |
 | Participation | 10% |
 
