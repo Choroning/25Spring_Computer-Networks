@@ -2,11 +2,11 @@
 
 [Repository Guide](../README.md) | [English](README.md) | [한국어](README.ko.md)
 
-> **Last Updated:** 2026-10-26
+> **Last Updated:** 2026-10-27
 
 | Unit | Topics | Documents |
 |:-----|:-----|:-----|
-| [Chapters 1-2 Introduction to the Internet and Network Models](Ch01-02_Introduction-and-Network-Layer/) | Structure and standardization of the Internet, the OSI model and the TCP/IP protocol suite, encapsulation and multiplexing | [Lecture notes](Ch01-02_Introduction-and-Network-Layer/Concepts_Lecture.md) |
+| [Chapters 1-2 Introduction to the Internet and Network Models](Ch01-02_Introduction-and-Network-Models/) | Structure and standardization of the Internet, the OSI model and the TCP/IP protocol suite, encapsulation and multiplexing | [Lecture notes](Ch01-02_Introduction-and-Network-Models/Concepts_Lecture.md) |
 | [Chapter 3 Underlying Technology](Ch03_Underlying-Technology/) | Wired LANs and CSMA/CD, bridged and switched Ethernet, wireless LANs, WANs, connecting devices | [Lecture notes](Ch03_Underlying-Technology/Concepts_Lecture.md) |
 | [Chapter 4 Introduction to Network Layer](Ch04_Introduction-to-Network-Layer/) | Switching, datagram and virtual-circuit packet switching, network layer performance, NAT | [Lecture notes](Ch04_Introduction-to-Network-Layer/Concepts_Lecture.md) |
 | [Chapter 5 IPv4 Addresses](Ch05_IPv4-Addresses/) | Address notation, classful addressing and CIDR, subnetting and supernetting, special addresses, DHCP | [Lecture notes](Ch05_IPv4-Addresses/Concepts_Lecture.md) |

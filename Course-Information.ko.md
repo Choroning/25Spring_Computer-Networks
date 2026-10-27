@@ -89,7 +89,7 @@
 - 기말고사는 계획(16주차)보다 이른 15주차에 치렀다.
 - 강의자료와 강의 노트의 대응은 다음과 같다. 강의자료의 장 번호가 교재의 장 번호와 같다.
   - `Ch00 Intro Lecture_01`: 과목 소개이므로 강의 노트를 만들지 않았다.
-  - `Chap-01~02`: [Ch01-02](Lecture-Notes/Ch01-02_Introduction-and-Network-Layer/Concepts_Lecture.ko.md)
+  - `Chap-01~02`: [Ch01-02](Lecture-Notes/Ch01-02_Introduction-and-Network-Models/Concepts_Lecture.ko.md)
   - `Chap-03`, `Chap-04`, `Chap-05`(DHCP 자료 `Chap-05 DHCP` 포함), `Chap-06`, `Chap-07`, `Chap-08`, `Chap-09`: Ch03~Ch09
   - `Chap-13`, `Chap-14`, `Chap-15`: Ch13~Ch15
 - 12~15주차에 계획된 라우팅 프로토콜과 응용 계층은 강의 노트에 포함되어 있지 않다.

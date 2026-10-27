@@ -2,11 +2,11 @@
 
 [레포지토리 안내](../README.ko.md) | [English](README.md) | [한국어](README.ko.md)
 
-> **최종 수정일:** 2026-10-26
+> **최종 수정일:** 2026-10-27
 
 | 단원 | 주제 | 문서 |
 |:-----|:-----|:-----|
-| [1~2장 인터넷과 네트워크 모델 개론](Ch01-02_Introduction-and-Network-Layer/) | 인터넷의 구성과 표준화, OSI 모델과 TCP/IP 프로토콜 스위트, 캡슐화와 다중화 | [강의 노트](Ch01-02_Introduction-and-Network-Layer/Concepts_Lecture.ko.md) |
+| [1~2장 인터넷과 네트워크 모델 개론](Ch01-02_Introduction-and-Network-Models/) | 인터넷의 구성과 표준화, OSI 모델과 TCP/IP 프로토콜 스위트, 캡슐화와 다중화 | [강의 노트](Ch01-02_Introduction-and-Network-Models/Concepts_Lecture.ko.md) |
 | [3장 기반 기술](Ch03_Underlying-Technology/) | 유선 LAN과 CSMA/CD, 브리지와 스위치 Ethernet, 무선 LAN, WAN, 연결 장치 | [강의 노트](Ch03_Underlying-Technology/Concepts_Lecture.ko.md) |
 | [4장 네트워크 계층 개론](Ch04_Introduction-to-Network-Layer/) | 교환 방식, 데이터그램 방식과 가상 회선 방식의 패킷 교환, 네트워크 계층 성능, NAT | [강의 노트](Ch04_Introduction-to-Network-Layer/Concepts_Lecture.ko.md) |
 | [5장 IPv4 주소](Ch05_IPv4-Addresses/) | 주소 표기법, 클래스 기반 주소 지정과 CIDR, 서브넷팅과 슈퍼넷팅, 특수 주소, DHCP | [강의 노트](Ch05_IPv4-Addresses/Concepts_Lecture.ko.md) |

@@ -89,7 +89,7 @@
 - The final exam took place in week 15, earlier than planned (week 16).
 - The lecture decks map to the lecture notes as follows. The deck numbers match the textbook chapters.
   - `Ch00 Intro Lecture_01`: a course introduction, so no lecture note was made.
-  - `Chap-01~02`: [Ch01-02](Lecture-Notes/Ch01-02_Introduction-and-Network-Layer/Concepts_Lecture.md)
+  - `Chap-01~02`: [Ch01-02](Lecture-Notes/Ch01-02_Introduction-and-Network-Models/Concepts_Lecture.md)
   - `Chap-03`, `Chap-04`, `Chap-05` (including the DHCP deck `Chap-05 DHCP`), `Chap-06`, `Chap-07`, `Chap-08`, `Chap-09`: Ch03-Ch09
   - `Chap-13`, `Chap-14`, `Chap-15`: Ch13-Ch15
 - The routing protocols and the application layer planned for weeks 12-15 are not part of the lecture notes.
