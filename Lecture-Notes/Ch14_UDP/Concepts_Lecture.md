@@ -2,7 +2,7 @@
 
 [Repository Guide](../../README.md) | [English](Concepts_Lecture.md) | [한국어](Concepts_Lecture.ko.md)
 
-> **Last Updated:** 2026-10-17
+> **Last Updated:** 2026-11-04
 >
 > TCP/IP Protocol Suite, Forouzan, Ch 14
 
@@ -54,18 +54,26 @@ Key characteristics:
 - **Simple**: Overhead is minimal and efficiency is high.
 - If a process wants to send a **small message** and **does not care much about reliability**, it can use UDP.
 
-```text
-+-------------------+
-| Application Layer |  SMTP, FTP, DNS, SNMP, DHCP
-+-------------------+
-| Transport Layer   |  SCTP | TCP | UDP
-+---+-------+-------+
-|IGMP|ICMP |   IP   |  ARP
-+---+-------+-------+
-| Data Link Layer   |
-+-------------------+
-| Physical Layer    |
-+-------------------+
+```mermaid
+graph TD
+    APP["Application Layer<br/>SMTP, FTP, DNS, SNMP, DHCP"]
+    subgraph TRN["Transport Layer"]
+        TCP["TCP"]
+        UDP["UDP"]
+        SCTP["SCTP"]
+    end
+    subgraph NET["Network Layer"]
+        ICMP["ICMP"]
+        IP["IP"]
+        IGMP["IGMP"]
+        ARP["ARP"]
+    end
+    DL["Data Link Layer"]
+    PHY["Physical Layer"]
+    APP --- TRN
+    TRN --- NET
+    NET --- DL
+    DL --- PHY
 ```
 
 *Figure 1. Position of UDP in the TCP/IP protocol suite*
@@ -125,19 +133,25 @@ UDP uses port numbers to identify sending and receiving processes:
 - The IP address selects the **computer** (host).
 - The port number selects the **process** on that computer.
 
-```text
-+-----------+                         +-----------+
-| Process A |                         | Process B |
-| Port 52000|                         | Port 53   |
-+-----------+                         +-----------+
-     |                                     |
-+----+----+                           +----+----+
-|   UDP   |                           |   UDP   |
-+---------+                           +---------+
-     |          (Internet)                 |
-+----+----+ ---- routers ---- +------+----+
-|   IP    |                   |    IP     |
-+---------+                   +-----------+
+```mermaid
+flowchart LR
+    subgraph HA[" "]
+        direction TB
+        PA["Process A<br/>Port 52000"]
+        UA["UDP"]
+        IA["IP"]
+        PA --- UA
+        UA --- IA
+    end
+    subgraph HB[" "]
+        direction TB
+        PB["Process B<br/>Port 53"]
+        UB["UDP"]
+        IB["IP"]
+        PB --- UB
+        UB --- IB
+    end
+    HA ---|"Internet (routers)"| HB
 ```
 
 *Figure 3. Process-to-process communication using port numbers*
@@ -203,17 +217,26 @@ UDP uses port numbers to identify sending and receiving processes:
 
 ### 3.7 Multiplexing and Demultiplexing
 
-```text
-Sender side (Multiplexing):        Receiver side (Demultiplexing):
-  App1  App2  App3                   App1  App2  App3
-   \    |    /                        /    |    \
-    \   |   /                        /     |     \
-   +----------+                   +----------+
-   |   UDP    |                   |   UDP    |
-   |  MUX     |                   |  DEMUX   |
-   +----------+                   +----------+
-       |                               |
-   datagram datagram datagram     datagram datagram datagram
+```mermaid
+graph TD
+    subgraph DEMUX["Receiver side (Demultiplexing)"]
+        direction BT
+        E1["datagram"] --> U2["UDP DEMUX"]
+        E2["datagram"] --> U2
+        E3["datagram"] --> U2
+        U2 --> B2["App2"]
+        U2 --> B3["App3"]
+        U2 --> B1["App1"]
+    end
+    subgraph MUX["Sender side (Multiplexing)"]
+        U1["UDP MUX"]
+        A3["App3"] --> U1
+        A2["App2"] --> U1
+        A1["App1"] --> U1
+        U1 --> D1["datagram"]
+        U1 --> D2["datagram"]
+        U1 --> D3["datagram"]
+    end
 ```
 
 *Figure 4. Multiplexing and demultiplexing in UDP*
@@ -309,14 +332,15 @@ graph LR
 
 **DNS Hierarchy:**
 
-```text
-            . (root)
-           / | \
-        .com .org .kr
-        /       \
-   google.com   example.com
-   /    \
-  www  mail
+```mermaid
+graph TD
+    root[". (root)"] --- com[".com"]
+    root --- org[".org"]
+    root --- kr[".kr"]
+    com --- google["google.com"]
+    com --- example["example.com"]
+    google --- www["www"]
+    google --- mail["mail"]
 ```
 
 *Figure 7. Hierarchy of the DNS name space*
