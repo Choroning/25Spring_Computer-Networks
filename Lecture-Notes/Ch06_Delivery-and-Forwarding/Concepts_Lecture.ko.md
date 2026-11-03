@@ -2,7 +2,7 @@
 
 [레포지토리 안내](../../README.ko.md) | [English](Concepts_Lecture.md) | [한국어](Concepts_Lecture.ko.md)
 
-> **최종 수정일:** 2026-10-17
+> **최종 수정일:** 2026-11-04
 >
 > TCP/IP Protocol Suite, Forouzan, Ch 6
 
@@ -45,12 +45,11 @@
 
 **직접 전달(Direct Delivery)** 은 목적지 호스트가 송신자와 **동일한 물리적 네트워크**에 있을 때 발생한다:
 
-```text
-         Link
-Host A ----------- Host B
-    \              /
-     \  Switch    /
-      +---------+
+```mermaid
+graph LR
+    A["호스트 A"] ---|"링크"| B["호스트 B"]
+    A --- SW["스위치"]
+    SW --- B
 ```
 
 *그림 1. 같은 네트워크에 있는 두 호스트 사이의 직접 전달*
@@ -65,11 +64,17 @@ Host A ----------- Host B
 
 **간접 전달(Indirect Delivery)** 은 목적지 호스트가 **다른 네트워크**에 있을 때 발생한다:
 
-```text
-  A                                              B
-[Host] --- Switch --- Router --- Router --- Switch --- [Host]
-  |                     |          |                    |
-  +-- Indirect Delivery +          +-- Direct Delivery -+
+```mermaid
+graph LR
+    subgraph ID["간접 전달"]
+        A["호스트 A"] --- S1["스위치"]
+        S1 --- R1["라우터"]
+    end
+    subgraph DD["직접 전달"]
+        R2["라우터"] --- S2["스위치"]
+        S2 --- B["호스트 B"]
+    end
+    R1 --- R2
 ```
 
 *그림 2. 라우터를 거치는 간접 전달과 마지막 직접 전달*
