@@ -2,7 +2,7 @@
 
 [Repository Guide](../../README.md) | [English](Concepts_Lecture.md) | [한국어](Concepts_Lecture.ko.md)
 
-> **Last Updated:** 2026-10-26
+> **Last Updated:** 2026-11-04
 >
 > TCP/IP Protocol Suite, Forouzan, Ch 5
 
@@ -178,14 +178,13 @@ Network Address: 192.168.1.0    = 11000000.10101000.00000001.00000000
 
 **Subnetting** divides a network into smaller subnetworks by borrowing bits from the host portion:
 
-```text
-Original: 192.168.1.0/24   (256 addresses)
-         |
-    Subnet into /26 (4 subnets, 64 addresses each):
-         |
-    +----+----+----+----+
-    |    |    |    |    |
- .0/26 .64/26 .128/26 .192/26
+```mermaid
+graph TD
+    N["Original: 192.168.1.0/24 (256 addresses)"] --> S["Subnet into /26 (4 subnets, 64 addresses each)"]
+    S --> S0["192.168.1.0/26"]
+    S --> S1["192.168.1.64/26"]
+    S --> S2["192.168.1.128/26"]
+    S --> S3["192.168.1.192/26"]
 ```
 
 *Figure 2. Subnetting 192.168.1.0/24 into four /26 subnets*
@@ -203,12 +202,12 @@ Original: 192.168.1.0/24   (256 addresses)
 
 **Supernetting** (route aggregation) combines multiple contiguous networks into a single larger block:
 
-```text
-Four /24 networks combined into one /22:
-192.168.0.0/24
-192.168.1.0/24   -->  192.168.0.0/22 (1024 addresses)
-192.168.2.0/24
-192.168.3.0/24
+```mermaid
+graph LR
+    N0["192.168.0.0/24"] --> A["192.168.0.0/22 (1024 addresses)"]
+    N1["192.168.1.0/24"] --> A
+    N2["192.168.2.0/24"] --> A
+    N3["192.168.3.0/24"] --> A
 ```
 
 *Figure 3. Supernetting four /24 networks into one /22*
