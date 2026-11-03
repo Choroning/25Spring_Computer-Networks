@@ -2,7 +2,7 @@
 
 [레포지토리 안내](../../README.ko.md) | [English](Concepts_Lecture.md) | [한국어](Concepts_Lecture.ko.md)
 
-> **최종 수정일:** 2026-10-26
+> **최종 수정일:** 2026-11-04
 >
 > TCP/IP Protocol Suite, Forouzan, Ch 15
 
@@ -71,11 +71,21 @@ TCP는 **스트림 지향 프로토콜**이다:
 - 수신 프로세스는 데이터를 **바이트 스트림**으로 받을 수 있다.
 - TCP는 송신자와 수신자 사이에 연속적인 스트림이 있는 것처럼 보이게 한다.
 
-```text
-Sending              Stream of bytes              Receiving
-process  -------> [==================] -------> process
-  |                                                |
-  TCP                                            TCP
+```mermaid
+flowchart LR
+    subgraph SND[" "]
+        direction TB
+        SP["송신 프로세스"]
+        T1["TCP"]
+        SP --- T1
+    end
+    subgraph RCV[" "]
+        direction TB
+        RP["수신 프로세스"]
+        T2["TCP"]
+        RP --- T2
+    end
+    SND -->|"바이트 스트림"| RCV
 ```
 
 *그림 1. TCP의 바이트 스트림 전달*
@@ -524,20 +534,27 @@ Tunneled packet:  [New IP Hdr | Tunnel Hdr | IP Header | TCP | Data]
 
 ### 10.1 TCP 상태 다이어그램 (간략화)
 
-```text
-CLOSED ---(active open, send SYN)---> SYN-SENT
-SYN-SENT ---(receive SYN+ACK, send ACK)---> ESTABLISHED
-ESTABLISHED ---(send FIN)---> FIN-WAIT-1
-FIN-WAIT-1 ---(receive ACK)---> FIN-WAIT-2
-FIN-WAIT-2 ---(receive FIN, send ACK)---> TIME-WAIT
-TIME-WAIT ---(2MSL timeout)---> CLOSED
-
-CLOSED ---(passive open)---> LISTEN
-LISTEN ---(receive SYN, send SYN+ACK)---> SYN-RECEIVED
-SYN-RECEIVED ---(receive ACK)---> ESTABLISHED
-ESTABLISHED ---(receive FIN, send ACK)---> CLOSE-WAIT
-CLOSE-WAIT ---(send FIN)---> LAST-ACK
-LAST-ACK ---(receive ACK)---> CLOSED
+```mermaid
+stateDiagram-v2
+    state "SYN-SENT" as SYN_SENT
+    state "SYN-RECEIVED" as SYN_RECEIVED
+    state "FIN-WAIT-1" as FIN_WAIT_1
+    state "FIN-WAIT-2" as FIN_WAIT_2
+    state "TIME-WAIT" as TIME_WAIT
+    state "CLOSE-WAIT" as CLOSE_WAIT
+    state "LAST-ACK" as LAST_ACK
+    CLOSED --> SYN_SENT: 능동 개방, SYN 전송
+    SYN_SENT --> ESTABLISHED: SYN+ACK 수신, ACK 전송
+    ESTABLISHED --> FIN_WAIT_1: FIN 전송
+    FIN_WAIT_1 --> FIN_WAIT_2: ACK 수신
+    FIN_WAIT_2 --> TIME_WAIT: FIN 수신, ACK 전송
+    TIME_WAIT --> CLOSED: 2MSL 타임아웃
+    CLOSED --> LISTEN: 수동 개방
+    LISTEN --> SYN_RECEIVED: SYN 수신, SYN+ACK 전송
+    SYN_RECEIVED --> ESTABLISHED: ACK 수신
+    ESTABLISHED --> CLOSE_WAIT: FIN 수신, ACK 전송
+    CLOSE_WAIT --> LAST_ACK: FIN 전송
+    LAST_ACK --> CLOSED: ACK 수신
 ```
 
 *그림 11. 간략화한 TCP 상태 전이*
