@@ -2,7 +2,7 @@
 
 [Repository Guide](../../README.md) | [English](Concepts_Lecture.md) | [한국어](Concepts_Lecture.ko.md)
 
-> **Last Updated:** 2026-10-26
+> **Last Updated:** 2026-11-04
 >
 > TCP/IP Protocol Suite, Forouzan, Ch 7
 
@@ -50,18 +50,22 @@ Key characteristics:
 - **Connectionless**: Each datagram is treated independently, and there is no connection setup.
 - **Best-effort delivery**: IP makes its best effort to deliver but does not guarantee it.
 
-```text
-+-------------------+
-| Application Layer |  SMTP, FTP, DNS, SNMP, DHCP
-+-------------------+
-| Transport Layer   |  SCTP, TCP, UDP
-+---+-------+-------+
-|IGMP|ICMP |   IP    |  ARP
-+---+-------+---------+
-| Data Link Layer   |  Underlying LAN or WAN
-+-------------------+
-| Physical Layer    |
-+-------------------+
+```mermaid
+graph TD
+    APP["Application Layer<br/>SMTP, FTP, DNS, SNMP, DHCP"]
+    TRN["Transport Layer<br/>SCTP, TCP, UDP"]
+    subgraph NET["Network Layer"]
+        ICMP["ICMP"]
+        IP["IP"]
+        IGMP["IGMP"]
+        ARP["ARP"]
+    end
+    DL["Data Link Layer<br/>Underlying LAN or WAN"]
+    PHY["Physical Layer"]
+    APP --- TRN
+    TRN --- NET
+    NET --- DL
+    DL --- PHY
 ```
 
 *Figure 1. Position of IP and related protocols in the TCP/IP protocol suite*
