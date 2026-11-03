@@ -2,7 +2,7 @@
 
 [Repository Guide](../../README.md) | [English](Concepts_Lecture.md) | [한국어](Concepts_Lecture.ko.md)
 
-> **Last Updated:** 2026-10-26
+> **Last Updated:** 2026-11-04
 >
 > TCP/IP Protocol Suite, Forouzan, Ch 8
 
@@ -84,19 +84,18 @@ ARP associates an IP address with its physical (MAC) address. On a typical physi
 
 ARP accepts a logical address from the IP protocol, maps it to the corresponding physical address, and passes it to the data link layer.
 
-```text
-            ICMP    IGMP
-Network  +---+---+---------+
-Layer    |       |   IP    |  Logical
-         |       |         |  address
-         |       +---------+    |
-         |           |    +-----v-----+
-         |           |    |    ARP    |
-         +-----------+----+-----------+
-                                |
-                          Physical address
-                                |
-                          Data Link Layer
+```mermaid
+graph TD
+    subgraph NET["Network Layer"]
+        ICMP["ICMP"]
+        IGMP["IGMP"]
+        IP["IP"]
+        ARP["ARP"]
+        ICMP --- IP
+        IGMP --- IP
+        IP -->|"Logical address"| ARP
+    end
+    ARP -->|"Physical address"| DL["Data Link Layer"]
 ```
 
 *Figure 2. Position of ARP in the network layer*
