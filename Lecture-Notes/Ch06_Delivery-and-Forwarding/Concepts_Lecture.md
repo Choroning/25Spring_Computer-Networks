@@ -2,7 +2,7 @@
 
 [Repository Guide](../../README.md) | [English](Concepts_Lecture.md) | [한국어](Concepts_Lecture.ko.md)
 
-> **Last Updated:** 2026-10-17
+> **Last Updated:** 2026-11-04
 >
 > TCP/IP Protocol Suite, Forouzan, Ch 6
 
@@ -45,12 +45,11 @@ The network layer supervises delivery. The delivery of a packet to its final des
 
 **Direct delivery** occurs when the destination host is on the **same physical network** as the sender:
 
-```text
-         Link
-Host A ----------- Host B
-    \              /
-     \  Switch    /
-      +---------+
+```mermaid
+graph LR
+    A["Host A"] ---|"Link"| B["Host B"]
+    A --- SW["Switch"]
+    SW --- B
 ```
 
 *Figure 1. Direct delivery between two hosts on the same network*
@@ -65,11 +64,17 @@ Key characteristics:
 
 **Indirect delivery** occurs when the destination host is on a **different network**:
 
-```text
-  A                                              B
-[Host] --- Switch --- Router --- Router --- Switch --- [Host]
-  |                     |          |                    |
-  +-- Indirect Delivery +          +-- Direct Delivery -+
+```mermaid
+graph LR
+    subgraph ID["Indirect Delivery"]
+        A["Host A"] --- S1["Switch"]
+        S1 --- R1["Router"]
+    end
+    subgraph DD["Direct Delivery"]
+        R2["Router"] --- S2["Switch"]
+        S2 --- B["Host B"]
+    end
+    R1 --- R2
 ```
 
 *Figure 2. Indirect delivery through routers followed by a final direct delivery*

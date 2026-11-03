@@ -2,7 +2,7 @@
 
 [레포지토리 안내](../../README.ko.md) | [English](Concepts_Lecture.md) | [한국어](Concepts_Lecture.ko.md)
 
-> **최종 수정일:** 2026-10-26
+> **최종 수정일:** 2026-11-04
 >
 > TCP/IP Protocol Suite, Forouzan, Ch 9
 
@@ -62,10 +62,14 @@ IP는 여러 한계를 가진 **비신뢰적이고 비연결형**인 데이터�
 
 ICMP는 IP와 함께 **네트워크 계층**에서 동작한다:
 
-```text
-+---+------+--------+
-|IGMP| ICMP |   IP   |   ARP
-+---+------+--------+
+```mermaid
+graph TD
+    subgraph NET["네트워크 계층"]
+        ICMP["ICMP"]
+        IP["IP"]
+        IGMP["IGMP"]
+    end
+    ARP["ARP"]
 ```
 
 *그림 1. 네트워크 계층에서 ICMP의 위치*

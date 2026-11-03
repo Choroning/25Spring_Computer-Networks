@@ -2,7 +2,7 @@
 
 [Repository Guide](../../README.md) | [English](Concepts_Lecture.md) | [한국어](Concepts_Lecture.ko.md)
 
-> **Last Updated:** 2026-10-17
+> **Last Updated:** 2026-11-04
 >
 > TCP/IP Protocol Suite, Forouzan, Ch 1, 2
 
@@ -106,22 +106,21 @@ A **protocol** defines the rules governing communication between entities. Proto
 
 The **Open Systems Interconnection (OSI)** model is a conceptual framework with seven layers:
 
-```text
-+-------------------+
-| 7. Application    |  -- Network process to application
-+-------------------+
-| 6. Presentation   |  -- Data representation and encryption
-+-------------------+
-| 5. Session        |  -- Interhost communication management
-+-------------------+
-| 4. Transport      |  -- End-to-end connections and reliability
-+-------------------+
-| 3. Network        |  -- Path determination and logical addressing
-+-------------------+
-| 2. Data Link      |  -- Physical addressing and media access
-+-------------------+
-| 1. Physical       |  -- Media, signal, and binary transmission
-+-------------------+
+```mermaid
+graph TD
+    L7["7. Application<br/>Network process to application"]
+    L6["6. Presentation<br/>Data representation and encryption"]
+    L5["5. Session<br/>Interhost communication management"]
+    L4["4. Transport<br/>End-to-end connections and reliability"]
+    L3["3. Network<br/>Path determination and logical addressing"]
+    L2["2. Data Link<br/>Physical addressing and media access"]
+    L1["1. Physical<br/>Media, signal, and binary transmission"]
+    L7 --- L6
+    L6 --- L5
+    L5 --- L4
+    L4 --- L3
+    L3 --- L2
+    L2 --- L1
 ```
 
 *Figure 2. The seven layers of the OSI model*
@@ -144,21 +143,17 @@ Each layer has a specific responsibility:
 
 The **TCP/IP model** is the practical protocol suite used by the Internet. It has five layers (sometimes presented as four by combining physical and data link):
 
-```text
-+-------------------+  Application Layer
-| HTTP, FTP, SMTP,  |  (OSI layers 5-7 combined)
-| DNS, DHCP, SNMP   |
-+-------------------+
-| TCP, UDP, SCTP    |  Transport Layer
-+-------------------+
-| IP, ICMP, IGMP,   |  Network Layer
-| ARP               |
-+-------------------+
-| Ethernet, Wi-Fi,  |  Data Link Layer
-| PPP               |
-+-------------------+
-| Cables, Signals   |  Physical Layer
-+-------------------+
+```mermaid
+graph TD
+    A["Application Layer (OSI layers 5-7 combined)<br/>HTTP, FTP, SMTP, DNS, DHCP, SNMP"]
+    T["Transport Layer<br/>TCP, UDP, SCTP"]
+    N["Network Layer<br/>IP, ICMP, IGMP, ARP"]
+    D["Data Link Layer<br/>Ethernet, Wi-Fi, PPP"]
+    P["Physical Layer<br/>Cables, Signals"]
+    A --- T
+    T --- N
+    N --- D
+    D --- P
 ```
 
 *Figure 3. Protocols at each layer of the TCP/IP protocol suite*
@@ -194,18 +189,12 @@ graph LR
 
 The TCP/IP protocol suite uses four levels of addressing:
 
-```text
-+--------------------------------------------------+
-| Application Layer  -->  Names (e.g., www.ku.ac.kr)|
-+--------------------------------------------------+
-| Transport Layer    -->  Port Numbers (e.g., 80)   |
-+--------------------------------------------------+
-| Network Layer      -->  Logical/IP Addresses      |
-|                        (e.g., 192.168.1.1)        |
-+--------------------------------------------------+
-| Data Link Layer    -->  Physical/MAC Addresses    |
-|                        (e.g., AA:BB:CC:DD:EE:FF)  |
-+--------------------------------------------------+
+```mermaid
+graph LR
+    L4["Application Layer"] --> A4["Names (e.g., www.ku.ac.kr)"]
+    L3["Transport Layer"] --> A3["Port Numbers (e.g., 80)"]
+    L2["Network Layer"] --> A2["Logical/IP Addresses (e.g., 192.168.1.1)"]
+    L1["Data Link Layer"] --> A1["Physical/MAC Addresses (e.g., AA:BB:CC:DD:EE:FF)"]
 ```
 
 *Figure 5. Four levels of addressing in TCP/IP*

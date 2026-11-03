@@ -2,7 +2,7 @@
 
 [레포지토리 안내](../../README.ko.md) | [English](Concepts_Lecture.md) | [한국어](Concepts_Lecture.ko.md)
 
-> **최종 수정일:** 2026-10-17
+> **최종 수정일:** 2026-11-04
 >
 > TCP/IP Protocol Suite, Forouzan, Ch 4
 
@@ -52,13 +52,33 @@
 
 개념적 수준에서 글로벌 인터넷은 전 세계 수백만, 많게는 수십억 대의 컴퓨터를 연결하는 블랙박스 네트워크로 볼 수 있다. 이 관점에서는 한 컴퓨터의 응용 계층에서 보낸 메시지가 다른 컴퓨터의 응용 계층에 도달하는지만 고려한다.
 
-```text
-Application  [===]                          [===]  Application
-Transport    [===]                          [===]  Transport
-Network      [===]                          [===]  Network
-Data link    [===]      (Internet)          [===]  Data link
-Physical     [===] ---- cloud of routers ---[===]  Physical
-             Host A                         Host B
+```mermaid
+flowchart LR
+    subgraph HA["호스트 A"]
+        direction TB
+        A5["응용 계층"]
+        A4["전송 계층"]
+        A3["네트워크 계층"]
+        A2["데이터 링크 계층"]
+        A1["물리 계층"]
+        A5 --- A4
+        A4 --- A3
+        A3 --- A2
+        A2 --- A1
+    end
+    subgraph HB["호스트 B"]
+        direction TB
+        B5["응용 계층"]
+        B4["전송 계층"]
+        B3["네트워크 계층"]
+        B2["데이터 링크 계층"]
+        B1["물리 계층"]
+        B5 --- B4
+        B4 --- B3
+        B3 --- B2
+        B2 --- B1
+    end
+    HA ---|"인터넷 (라우터의 구름)"| HB
 ```
 
 *그림 1. 블랙박스로 본 인터넷과 양 끝 호스트의 계층*
@@ -165,13 +185,15 @@ graph TD
 - 이 유형의 네트워크에서는 스위치를 **라우터**라고 한다.
 - 각 패킷은 헤더의 정보(출발지 주소, 목적지 주소)에 따라 라우팅된다.
 
-```text
-송신자                                              수신자
-  [4|3|2|1] --> R1 --> R2 --> [2]                   [1|3|4|2]
-                 |              \                    순서 불일치
-                 v               v
-                R3 --> R4 --> R5
-                  [3]    [4]    [1]
+```mermaid
+graph LR
+    S["송신자<br/>[4|3|2|1]"] --> R1["R1"]
+    R1 --> R2["R2"]
+    R2 -->|"[2]"| D["수신자<br/>[1|3|4|2]<br/>순서 불일치"]
+    R1 --> R3["R3<br/>[3]"]
+    R3 --> R4["R4<br/>[4]"]
+    R4 --> R5["R5<br/>[1]"]
+    R5 --> D
 ```
 
 *그림 4. 데이터그램 네트워크에서 서로 다른 경로로 전달되어 순서가 바뀐 패킷*

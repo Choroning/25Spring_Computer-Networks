@@ -2,7 +2,7 @@
 
 [Repository Guide](../../README.md) | [English](Concepts_Lecture.md) | [한국어](Concepts_Lecture.ko.md)
 
-> **Last Updated:** 2026-10-26
+> **Last Updated:** 2026-11-04
 >
 > TCP/IP Protocol Suite, Forouzan, Ch 13
 
@@ -51,15 +51,26 @@ The **transport layer** is located between the network layer and the application
 
 While IP delivers packets to the correct **computer** (host-to-host), the transport layer delivers messages to the correct **process** (process-to-process).
 
-```text
-Processes ...                           Processes ...
- |  |  |                                 |  |  |
-+--------+                             +--------+
-|Transport|  <---- End-to-end ---->    |Transport|
-+--------+                             +--------+
-|Network  |  <---- Hop-by-hop ---->    |Network  |
-+--------+       (Internet)            +--------+
-  Host A                                 Host B
+```mermaid
+flowchart LR
+    subgraph HA["Host A"]
+        direction TB
+        PA["Processes ..."]
+        TA["Transport"]
+        NA["Network"]
+        PA --- TA
+        TA --- NA
+    end
+    subgraph HB["Host B"]
+        direction TB
+        PB["Processes ..."]
+        TB["Transport"]
+        NB["Network"]
+        PB --- TB
+        TB --- NB
+    end
+    HA <-->|"End-to-end (Transport)"| HB
+    HA <-->|"Hop-by-hop (Network, Internet)"| HB
 ```
 
 *Figure 1. End-to-end transport-layer communication and hop-by-hop network-layer delivery*
@@ -159,10 +170,17 @@ Socket address: 200.23.56.8:69
 
 **Flow control** balances the production rate and consumption rate between information producer and consumer:
 
-```text
-a. Pushing:                    b. Pulling:
-  Producer --> Consumer          Consumer <-- request --> Producer
-  (sends without request)        (sends only when requested)
+```mermaid
+graph TD
+    subgraph PULL["b. Pulling"]
+        direction LR
+        C2["Consumer"] -->|"request"| P2["Producer"]
+        P2 -->|"sends only when requested"| C2
+    end
+    subgraph PUSH["a. Pushing"]
+        direction LR
+        P1["Producer"] -->|"sends without request"| C1["Consumer"]
+    end
 ```
 
 *Figure 3. Pushing and pulling delivery*

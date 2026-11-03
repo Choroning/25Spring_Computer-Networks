@@ -2,7 +2,7 @@
 
 [Repository Guide](../../README.md) | [English](Concepts_Lecture.md) | [한국어](Concepts_Lecture.ko.md)
 
-> **Last Updated:** 2026-10-26
+> **Last Updated:** 2026-11-04
 >
 > TCP/IP Protocol Suite, Forouzan, Ch 9
 
@@ -62,10 +62,14 @@ IP is an **unreliable and connectionless** datagram delivery protocol with sever
 
 ICMP operates at the **network layer**, alongside IP:
 
-```text
-+---+------+--------+
-|IGMP| ICMP |   IP   |   ARP
-+---+------+--------+
+```mermaid
+graph TD
+    subgraph NET["Network layer"]
+        ICMP["ICMP"]
+        IP["IP"]
+        IGMP["IGMP"]
+    end
+    ARP["ARP"]
 ```
 
 *Figure 1. Position of ICMP in the network layer*

@@ -2,7 +2,7 @@
 
 [레포지토리 안내](../../README.ko.md) | [English](Concepts_Lecture.md) | [한국어](Concepts_Lecture.ko.md)
 
-> **최종 수정일:** 2026-10-26
+> **최종 수정일:** 2026-11-04
 >
 > TCP/IP Protocol Suite, Forouzan, Ch 7
 
@@ -50,18 +50,22 @@
 - **비연결형(Connectionless)**: 각 데이터그램을 독립적으로 처리하며, 연결 설정이 없다.
 - **최선형 전달(Best-effort delivery)**: IP는 전달을 위해 최선을 다하지만 보장하지는 않는다.
 
-```text
-+-------------------+
-| Application Layer |  SMTP, FTP, DNS, SNMP, DHCP
-+-------------------+
-| Transport Layer   |  SCTP, TCP, UDP
-+---+-------+-------+
-|IGMP|ICMP |   IP    |  ARP
-+---+-------+---------+
-| Data Link Layer   |  Underlying LAN or WAN
-+-------------------+
-| Physical Layer    |
-+-------------------+
+```mermaid
+graph TD
+    APP["응용 계층<br/>SMTP, FTP, DNS, SNMP, DHCP"]
+    TRN["전송 계층<br/>SCTP, TCP, UDP"]
+    subgraph NET["네트워크 계층"]
+        ICMP["ICMP"]
+        IP["IP"]
+        IGMP["IGMP"]
+        ARP["ARP"]
+    end
+    DL["데이터 링크 계층<br/>하위 LAN 또는 WAN"]
+    PHY["물리 계층"]
+    APP --- TRN
+    TRN --- NET
+    NET --- DL
+    DL --- PHY
 ```
 
 *그림 1. TCP/IP 프로토콜 스위트에서 IP와 관련 프로토콜의 위치*

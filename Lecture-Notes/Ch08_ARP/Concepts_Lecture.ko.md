@@ -2,7 +2,7 @@
 
 [레포지토리 안내](../../README.ko.md) | [English](Concepts_Lecture.md) | [한국어](Concepts_Lecture.ko.md)
 
-> **최종 수정일:** 2026-10-26
+> **최종 수정일:** 2026-11-04
 >
 > TCP/IP Protocol Suite, Forouzan, Ch 8
 
@@ -84,19 +84,18 @@ ARP는 IP 주소를 물리적(MAC) 주소와 연결한다. 일반적인 물리�
 
 ARP는 IP 프로토콜로부터 논리적 주소를 받아들이고, 해당하는 물리적 주소로 매핑한 후 데이터 링크 계층에 전달한다.
 
-```text
-            ICMP    IGMP
-Network  +---+---+---------+
-Layer    |       |   IP    |  Logical
-         |       |         |  address
-         |       +---------+    |
-         |           |    +-----v-----+
-         |           |    |    ARP    |
-         +-----------+----+-----------+
-                                |
-                          Physical address
-                                |
-                          Data Link Layer
+```mermaid
+graph TD
+    subgraph NET["네트워크 계층"]
+        ICMP["ICMP"]
+        IGMP["IGMP"]
+        IP["IP"]
+        ARP["ARP"]
+        ICMP --- IP
+        IGMP --- IP
+        IP -->|"논리적 주소"| ARP
+    end
+    ARP -->|"물리적 주소"| DL["데이터 링크 계층"]
 ```
 
 *그림 2. 네트워크 계층에서 ARP의 위치*

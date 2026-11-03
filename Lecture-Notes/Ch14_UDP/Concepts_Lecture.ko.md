@@ -2,7 +2,7 @@
 
 [레포지토리 안내](../../README.ko.md) | [English](Concepts_Lecture.md) | [한국어](Concepts_Lecture.ko.md)
 
-> **최종 수정일:** 2026-10-26
+> **최종 수정일:** 2026-11-04
 >
 > TCP/IP Protocol Suite, Forouzan, Ch 14
 
@@ -54,18 +54,26 @@
 - **단순**: 오버헤드가 최소이고 효율이 높다.
 - 프로세스가 **작은 메시지**를 보내려 하고 **신뢰성이 크게 중요하지 않은** 경우 UDP를 사용할 수 있다.
 
-```text
-+-------------------+
-| Application Layer |  SMTP, FTP, DNS, SNMP, DHCP
-+-------------------+
-| Transport Layer   |  SCTP | TCP | UDP
-+---+-------+-------+
-|IGMP|ICMP |   IP   |  ARP
-+---+-------+-------+
-| Data Link Layer   |
-+-------------------+
-| Physical Layer    |
-+-------------------+
+```mermaid
+graph TD
+    APP["응용 계층<br/>SMTP, FTP, DNS, SNMP, DHCP"]
+    subgraph TRN["전송 계층"]
+        TCP["TCP"]
+        UDP["UDP"]
+        SCTP["SCTP"]
+    end
+    subgraph NET["네트워크 계층"]
+        ICMP["ICMP"]
+        IP["IP"]
+        IGMP["IGMP"]
+        ARP["ARP"]
+    end
+    DL["데이터 링크 계층"]
+    PHY["물리 계층"]
+    APP --- TRN
+    TRN --- NET
+    NET --- DL
+    DL --- PHY
 ```
 
 *그림 1. TCP/IP 프로토콜 스위트에서 UDP의 위치*
@@ -125,19 +133,25 @@ UDP는 송수신 프로세스를 식별하기 위해 포트 번호를 사용한�
 - IP 주소는 **컴퓨터**(호스트)를 선택한다.
 - 포트 번호는 해당 컴퓨터의 **프로세스**를 선택한다.
 
-```text
-+-----------+                         +-----------+
-| Process A |                         | Process B |
-| Port 52000|                         | Port 53   |
-+-----------+                         +-----------+
-     |                                     |
-+----+----+                           +----+----+
-|   UDP   |                           |   UDP   |
-+---------+                           +---------+
-     |          (Internet)                 |
-+----+----+ ---- routers ---- +------+----+
-|   IP    |                   |    IP     |
-+---------+                   +-----------+
+```mermaid
+flowchart LR
+    subgraph HA[" "]
+        direction TB
+        PA["프로세스 A<br/>포트 52000"]
+        UA["UDP"]
+        IA["IP"]
+        PA --- UA
+        UA --- IA
+    end
+    subgraph HB[" "]
+        direction TB
+        PB["프로세스 B<br/>포트 53"]
+        UB["UDP"]
+        IB["IP"]
+        PB --- UB
+        UB --- IB
+    end
+    HA ---|"인터넷 (라우터)"| HB
 ```
 
 *그림 3. 포트 번호를 이용한 프로세스 간 통신*
@@ -203,17 +217,26 @@ UDP는 송수신 프로세스를 식별하기 위해 포트 번호를 사용한�
 
 ### 3.7 다중화와 역다중화
 
-```text
-Sender side (Multiplexing):        Receiver side (Demultiplexing):
-  App1  App2  App3                   App1  App2  App3
-   \    |    /                        /    |    \
-    \   |   /                        /     |     \
-   +----------+                   +----------+
-   |   UDP    |                   |   UDP    |
-   |  MUX     |                   |  DEMUX   |
-   +----------+                   +----------+
-       |                               |
-   datagram datagram datagram     datagram datagram datagram
+```mermaid
+graph TD
+    subgraph DEMUX["수신측 (역다중화)"]
+        direction BT
+        E1["데이터그램"] --> U2["UDP DEMUX"]
+        E2["데이터그램"] --> U2
+        E3["데이터그램"] --> U2
+        U2 --> B2["App2"]
+        U2 --> B3["App3"]
+        U2 --> B1["App1"]
+    end
+    subgraph MUX["송신측 (다중화)"]
+        U1["UDP MUX"]
+        A3["App3"] --> U1
+        A2["App2"] --> U1
+        A1["App1"] --> U1
+        U1 --> D1["데이터그램"]
+        U1 --> D2["데이터그램"]
+        U1 --> D3["데이터그램"]
+    end
 ```
 
 *그림 4. UDP의 다중화와 역다중화*
@@ -309,14 +332,15 @@ graph LR
 
 **DNS 계층 구조:**
 
-```text
-            . (root)
-           / | \
-        .com .org .kr
-        /       \
-   google.com   example.com
-   /    \
-  www  mail
+```mermaid
+graph TD
+    root[". (루트)"] --- com[".com"]
+    root --- org[".org"]
+    root --- kr[".kr"]
+    com --- google["google.com"]
+    com --- example["example.com"]
+    google --- www["www"]
+    google --- mail["mail"]
 ```
 
 *그림 7. DNS 이름 공간의 계층 구조*

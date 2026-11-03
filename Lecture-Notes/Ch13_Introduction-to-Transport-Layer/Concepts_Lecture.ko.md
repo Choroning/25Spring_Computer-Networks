@@ -2,7 +2,7 @@
 
 [레포지토리 안내](../../README.ko.md) | [English](Concepts_Lecture.md) | [한국어](Concepts_Lecture.ko.md)
 
-> **최종 수정일:** 2026-10-26
+> **최종 수정일:** 2026-11-04
 >
 > TCP/IP Protocol Suite, Forouzan, Ch 13
 
@@ -51,15 +51,26 @@
 
 IP가 패킷을 올바른 **컴퓨터**(호스트 간)로 전달하는 반면, 전송 계층은 메시지를 올바른 **프로세스**(프로세스 간)로 전달한다.
 
-```text
-Processes ...                           Processes ...
- |  |  |                                 |  |  |
-+--------+                             +--------+
-|Transport|  <---- End-to-end ---->    |Transport|
-+--------+                             +--------+
-|Network  |  <---- Hop-by-hop ---->    |Network  |
-+--------+       (Internet)            +--------+
-  Host A                                 Host B
+```mermaid
+flowchart LR
+    subgraph HA["호스트 A"]
+        direction TB
+        PA["프로세스 ..."]
+        TA["전송 계층"]
+        NA["네트워크 계층"]
+        PA --- TA
+        TA --- NA
+    end
+    subgraph HB["호스트 B"]
+        direction TB
+        PB["프로세스 ..."]
+        TB["전송 계층"]
+        NB["네트워크 계층"]
+        PB --- TB
+        TB --- NB
+    end
+    HA <-->|"종단 간 (전송 계층)"| HB
+    HA <-->|"홉 간 (네트워크 계층, 인터넷)"| HB
 ```
 
 *그림 1. 전송 계층의 종단 간 통신과 네트워크 계층의 홉 간 전달*
@@ -159,10 +170,17 @@ Socket address: 200.23.56.8:69
 
 **흐름 제어**는 정보 생산자와 소비자 간의 생산 속도와 소비 속도를 균형 있게 조절한다:
 
-```text
-a. Pushing:                    b. Pulling:
-  Producer --> Consumer          Consumer <-- request --> Producer
-  (sends without request)        (sends only when requested)
+```mermaid
+graph TD
+    subgraph PULL["b. 풀링"]
+        direction LR
+        C2["소비자"] -->|"요청"| P2["생산자"]
+        P2 -->|"요청받을 때만 전송"| C2
+    end
+    subgraph PUSH["a. 푸싱"]
+        direction LR
+        P1["생산자"] -->|"요청 없이 전송"| C1["소비자"]
+    end
 ```
 
 *그림 3. 푸싱 방식과 풀링 방식의 전달*

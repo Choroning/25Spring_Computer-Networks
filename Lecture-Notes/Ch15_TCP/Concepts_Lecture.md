@@ -2,7 +2,7 @@
 
 [Repository Guide](../../README.md) | [English](Concepts_Lecture.md) | [한국어](Concepts_Lecture.ko.md)
 
-> **Last Updated:** 2026-10-26
+> **Last Updated:** 2026-11-04
 >
 > TCP/IP Protocol Suite, Forouzan, Ch 15
 
@@ -71,11 +71,21 @@ TCP is a **stream-oriented protocol**:
 - It allows the receiving process to obtain data as a **stream of bytes**.
 - TCP creates an illusion of a continuous stream between sender and receiver.
 
-```text
-Sending              Stream of bytes              Receiving
-process  -------> [==================] -------> process
-  |                                                |
-  TCP                                            TCP
+```mermaid
+flowchart LR
+    subgraph SND[" "]
+        direction TB
+        SP["Sending process"]
+        T1["TCP"]
+        SP --- T1
+    end
+    subgraph RCV[" "]
+        direction TB
+        RP["Receiving process"]
+        T2["TCP"]
+        RP --- T2
+    end
+    SND -->|"Stream of bytes"| RCV
 ```
 
 *Figure 1. Byte stream delivery in TCP*
@@ -524,20 +534,27 @@ Tunneled packet:  [New IP Hdr | Tunnel Hdr | IP Header | TCP | Data]
 
 ### 10.1 TCP State Diagram (Simplified)
 
-```text
-CLOSED ---(active open, send SYN)---> SYN-SENT
-SYN-SENT ---(receive SYN+ACK, send ACK)---> ESTABLISHED
-ESTABLISHED ---(send FIN)---> FIN-WAIT-1
-FIN-WAIT-1 ---(receive ACK)---> FIN-WAIT-2
-FIN-WAIT-2 ---(receive FIN, send ACK)---> TIME-WAIT
-TIME-WAIT ---(2MSL timeout)---> CLOSED
-
-CLOSED ---(passive open)---> LISTEN
-LISTEN ---(receive SYN, send SYN+ACK)---> SYN-RECEIVED
-SYN-RECEIVED ---(receive ACK)---> ESTABLISHED
-ESTABLISHED ---(receive FIN, send ACK)---> CLOSE-WAIT
-CLOSE-WAIT ---(send FIN)---> LAST-ACK
-LAST-ACK ---(receive ACK)---> CLOSED
+```mermaid
+stateDiagram-v2
+    state "SYN-SENT" as SYN_SENT
+    state "SYN-RECEIVED" as SYN_RECEIVED
+    state "FIN-WAIT-1" as FIN_WAIT_1
+    state "FIN-WAIT-2" as FIN_WAIT_2
+    state "TIME-WAIT" as TIME_WAIT
+    state "CLOSE-WAIT" as CLOSE_WAIT
+    state "LAST-ACK" as LAST_ACK
+    CLOSED --> SYN_SENT: active open, send SYN
+    SYN_SENT --> ESTABLISHED: receive SYN+ACK, send ACK
+    ESTABLISHED --> FIN_WAIT_1: send FIN
+    FIN_WAIT_1 --> FIN_WAIT_2: receive ACK
+    FIN_WAIT_2 --> TIME_WAIT: receive FIN, send ACK
+    TIME_WAIT --> CLOSED: 2MSL timeout
+    CLOSED --> LISTEN: passive open
+    LISTEN --> SYN_RECEIVED: receive SYN, send SYN+ACK
+    SYN_RECEIVED --> ESTABLISHED: receive ACK
+    ESTABLISHED --> CLOSE_WAIT: receive FIN, send ACK
+    CLOSE_WAIT --> LAST_ACK: send FIN
+    LAST_ACK --> CLOSED: receive ACK
 ```
 
 *Figure 11. Simplified TCP state transitions*

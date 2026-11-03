@@ -2,7 +2,7 @@
 
 [Repository Guide](../../README.md) | [English](Concepts_Lecture.md) | [한국어](Concepts_Lecture.ko.md)
 
-> **Last Updated:** 2026-10-17
+> **Last Updated:** 2026-11-04
 >
 > TCP/IP Protocol Suite, Forouzan, Ch 4
 
@@ -52,13 +52,33 @@
 
 At the conceptual level, the global Internet can be viewed as a black box network that connects millions (if not billions) of computers worldwide. From this viewpoint, the only concern is that a message from the application layer in one computer reaches the application layer in another computer.
 
-```text
-Application  [===]                          [===]  Application
-Transport    [===]                          [===]  Transport
-Network      [===]                          [===]  Network
-Data link    [===]      (Internet)          [===]  Data link
-Physical     [===] ---- cloud of routers ---[===]  Physical
-             Host A                         Host B
+```mermaid
+flowchart LR
+    subgraph HA["Host A"]
+        direction TB
+        A5["Application"]
+        A4["Transport"]
+        A3["Network"]
+        A2["Data link"]
+        A1["Physical"]
+        A5 --- A4
+        A4 --- A3
+        A3 --- A2
+        A2 --- A1
+    end
+    subgraph HB["Host B"]
+        direction TB
+        B5["Application"]
+        B4["Transport"]
+        B3["Network"]
+        B2["Data link"]
+        B1["Physical"]
+        B5 --- B4
+        B4 --- B3
+        B3 --- B2
+        B2 --- B1
+    end
+    HA ---|"Internet (cloud of routers)"| HB
 ```
 
 *Figure 1. The Internet as a black box between the layers of two hosts*
@@ -165,13 +185,15 @@ In a **connectionless packet-switched network**, each packet is treated independ
 - The switches in this type of network are called **routers**.
 - Each packet is routed based on the information in its header (source address, destination address).
 
-```text
-Sender                                              Receiver
-  [4|3|2|1] --> R1 --> R2 --> [2]                   [1|3|4|2]
-                 |              \                    Out of order
-                 v               v
-                R3 --> R4 --> R5
-                  [3]    [4]    [1]
+```mermaid
+graph LR
+    S["Sender<br/>[4|3|2|1]"] --> R1["R1"]
+    R1 --> R2["R2"]
+    R2 -->|"[2]"| D["Receiver<br/>[1|3|4|2]<br/>Out of order"]
+    R1 --> R3["R3<br/>[3]"]
+    R3 --> R4["R4<br/>[4]"]
+    R4 --> R5["R5<br/>[1]"]
+    R5 --> D
 ```
 
 *Figure 4. Packets taking different paths and arriving out of order in a datagram network*
