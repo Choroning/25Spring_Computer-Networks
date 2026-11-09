@@ -3,7 +3,7 @@
 ![Last Commit](https://img.shields.io/github/last-commit/Choroning/25Spring_Computer-Networks)
 ![Languages](https://img.shields.io/github/languages/top/Choroning/25Spring_Computer-Networks)
 
-이 레포지토리는 컴퓨터네트워크 과목의 이중 언어 강의 노트와 수업 결과물을 정리한 아카이브입니다.
+이 레포지토리는 컴퓨터네트워크 과목의 강의 노트와 수업 결과물을 정리한 아카이브입니다.
 
 *작성자: 박철원 (고려대학교(세종), 컴퓨터소프트웨어학과) - 2025년 기준 2학년*
 <br><br>
@@ -26,8 +26,8 @@
 - `Coursework/`에는 텀 프로젝트인 Simple HTTP Server의 코드가 있습니다.
 - 모든 강의 노트는 영어(`.md`)와 한국어(`.ko.md`) 파일이 짝을 이룹니다.
 
-> **🤖 AI 에이전트 활용**
-> [Claude Code](https://claude.ai/download)를 노트 정리와 번역, 레포지토리 정리에 활용했습니다.
+> **🤖 생성형 AI 도구 사용**
+> 이 과목은 생성형 AI 도구 사용을 허용하며, 이 레포지토리는 문서화에 [Claude Code](https://claude.ai/download)를 사용합니다.
 
 <br><a name="course-information"></a>
 ## 📚 강의 정보

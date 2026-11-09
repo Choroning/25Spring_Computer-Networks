@@ -3,7 +3,7 @@
 ![Last Commit](https://img.shields.io/github/last-commit/Choroning/25Spring_Computer-Networks)
 ![Languages](https://img.shields.io/github/languages/top/Choroning/25Spring_Computer-Networks)
 
-This repository archives bilingual lecture notes and coursework for the Computer Networks course.
+This repository archives lecture notes and coursework for the Computer Networks course.
 
 *Author: Cheolwon Park (Korea University Sejong, CSE) - Year 2 (Sophomore) as of 2025*
 <br><br>
@@ -26,8 +26,8 @@ This repository archives bilingual lecture notes and coursework for the Computer
 - `Coursework/` holds the code of the term project, Simple HTTP Server.
 - Every lecture note comes as an English (`.md`) and Korean (`.ko.md`) pair.
 
-> **🤖 AI Agent Usage**
-> [Claude Code](https://claude.ai/download) was used to organize and translate the notes and to restructure the repository.
+> **🤖 Use of Generative AI Tools**
+> This course permits the use of generative AI tools; this repository uses [Claude Code](https://claude.ai/download) for documentation.
 
 <br><a name="course-information"></a>
 ## 📚 Course Information
