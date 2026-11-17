@@ -18,7 +18,7 @@
 
 ## Table of Contents
 
-- [1. Why IPv6](#1-why-ipv6)
+- [1. The Need for IPv6](#1-the-need-for-ipv6)
   - [1.1 Address Depletion and Other Motivations](#11-address-depletion-and-other-motivations)
   - [1.2 Why Adoption Has Been Slow](#12-why-adoption-has-been-slow)
 - [2. IPv6 Addresses](#2-ipv6-addresses)
@@ -56,7 +56,7 @@
 
 <br>
 
-## 1. Why IPv6
+## 1. The Need for IPv6
 
 ### 1.1 Address Depletion and Other Motivations
 

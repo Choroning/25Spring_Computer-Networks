@@ -18,7 +18,7 @@
 
 ## Table of Contents
 
-- [1. What Is Network Security](#1-what-is-network-security)
+- [1. Overview of Network Security](#1-overview-of-network-security)
   - [1.1 Four Properties of Secure Communication](#11-four-properties-of-secure-communication)
   - [1.2 What an Intruder Can Do, and the Real Alice and Bob](#12-what-an-intruder-can-do-and-the-real-alice-and-bob)
   - [1.3 Security Goals and a Classification of Attacks](#13-security-goals-and-a-classification-of-attacks)
@@ -74,7 +74,7 @@
 
 <br>
 
-## 1. What Is Network Security
+## 1. Overview of Network Security
 
 ### 1.1 Four Properties of Secure Communication
 

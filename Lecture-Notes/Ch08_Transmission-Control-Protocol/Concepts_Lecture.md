@@ -76,7 +76,7 @@
   - [9.8 Fast Retransmit](#98-fast-retransmit)
   - [9.9 Error-Control Scenarios Viewed Through the ACK Rules](#99-error-control-scenarios-viewed-through-the-ack-rules)
   - [9.10 Simplified FSMs of the Sender and Receiver](#910-simplified-fsms-of-the-sender-and-receiver)
-  - [9.11 Is TCP GBN or SR](#911-is-tcp-gbn-or-sr)
+  - [9.11 TCP Compared with GBN and SR](#911-tcp-compared-with-gbn-and-sr)
 - [10. RTT Estimation and Timers](#10-rtt-estimation-and-timers)
   - [10.1 RTT Samples](#101-rtt-samples)
   - [10.2 Estimated RTT](#102-estimated-rtt)
@@ -1430,7 +1430,7 @@ Forouzan presents simplified FSMs similar to the SR protocol of Chapter 7 but mo
 
 This FSM differs from the SR FSM of Chapter 7 in the sender's fast retransmission (three duplicate ACKs), the adjustment of the window size according to rwnd, the receiver's ACK delaying, and the receiver's sending of duplicate ACKs so that the sender can use the fast-retransmission policy. A receiver FSM for bidirectional communication is not as simple as the one for SR, since it must consider policies such as sending an immediate ACK when the receiver has data to return.
 
-### 9.11 Is TCP GBN or SR
+### 9.11 TCP Compared with GBN and SR
 
 TCP acknowledgments are cumulative, and correctly received but out-of-order segments are not individually acknowledged by the receiver. The TCP sender therefore need only maintain the smallest sequence number of a transmitted but unacknowledged byte (`SendBase`) and the sequence number of the next byte to be sent (`NextSeqNum`). In this sense TCP looks a lot like a GBN-style protocol. But there are striking differences between TCP and GBN.
 

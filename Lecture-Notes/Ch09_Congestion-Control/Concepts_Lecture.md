@@ -18,7 +18,7 @@
 
 ## Table of Contents
 
-- [1. What Is Congestion](#1-what-is-congestion)
+- [1. The Concept of Congestion](#1-the-concept-of-congestion)
   - [1.1 Load and Capacity](#11-load-and-capacity)
   - [1.2 Congestion Control and Flow Control](#12-congestion-control-and-flow-control)
   - [1.3 Congestion Seen from the Network Layer](#13-congestion-seen-from-the-network-layer)
@@ -69,7 +69,7 @@
 
 <br>
 
-## 1. What Is Congestion
+## 1. The Concept of Congestion
 
 Chapters 7 and 8 covered the general principles of providing reliable data transfer in the face of packet loss and the specific mechanisms of TCP. In practice, such loss typically results from router buffers overflowing as the network becomes congested. Packet retransmission treats a symptom of congestion, the loss of a segment, but not its cause: too many sources attempting to send data at too high a rate. To treat the cause, mechanisms are needed to throttle senders when the network is congested, and these mechanisms are the subject of this chapter, congestion control. Together with reliable data transfer, congestion control is one of the most fundamental problems in networking.
 

@@ -715,7 +715,7 @@ In Figure 23, the dark packets at the heads of input 1 and input 3 are both dest
 
 **Output queuing.** Queues can form at the output ports even if $`R_{\text{switch}}`$ is N times $`R_{\text{line}}`$. If packets arriving at all N inputs are destined for the same output, N packets arrive at that output in the time it takes to send one packet on the outgoing link, and they must wait. Then N more packets may arrive while just one is sent, and so on, until the output port's memory is exhausted. When there is no room for an arriving packet, the router either drops the arriving packet, a policy called **drop-tail**, or removes already queued packets to make room. It may also drop or mark a packet before the buffer is full, to signal congestion to the sender; such policies are called active queue management (AQM), and one of the most widely studied is Random Early Detection (RED).
 
-**How much buffering?** For many years the rule of thumb was that the amount of buffering B should equal an average round-trip time times the link capacity C. A 10 Gbps link with an RTT of 250 ms would then need B = RTT × C = 0.25 s × 10 Gbps = 2.5 Gbits. More recent work suggests that when a large number N of TCP flows pass through a link, much less is needed.
+**Amount of buffering needed.** For many years the rule of thumb was that the amount of buffering B should equal an average round-trip time times the link capacity C. A 10 Gbps link with an RTT of 250 ms would then need B = RTT × C = 0.25 s × 10 Gbps = 2.5 Gbits. More recent work suggests that when a large number N of TCP flows pass through a link, much less is needed.
 
 ```math
 B = \frac{\text{RTT} \cdot C}{\sqrt{N}}

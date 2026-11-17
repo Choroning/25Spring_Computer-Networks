@@ -17,7 +17,7 @@
 
 ## Table of Contents
 
-- [1. What Is Network Management](#1-what-is-network-management)
+- [1. Overview of Network Management](#1-overview-of-network-management)
   - [1.1 The Need for Network Management](#11-the-need-for-network-management)
   - [1.2 Components of Network Management](#12-components-of-network-management)
   - [1.3 Managers and Agents](#13-managers-and-agents)
@@ -50,7 +50,7 @@
 
 <br>
 
-## 1. What Is Network Management
+## 1. Overview of Network Management
 
 ### 1.1 The Need for Network Management
 

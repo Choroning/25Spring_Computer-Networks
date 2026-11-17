@@ -380,7 +380,7 @@ There is a main difference between communication at the network layer and commun
 
 **Application layer.** The application layer of TCP/IP is equivalent to the combined session, presentation, and application layers of the OSI model, and it allows a user to access the services of the private internet or the global Internet. Many protocols are defined at this layer to provide services such as electronic mail, file transfer, and access to the World Wide Web. Communication at the application layer, like that at the transport layer, is end to end, and a **message** generated at computer A is delivered to computer B without being changed during the transmission.
 
-| Layer | Unit of communication | Scope of communication | Do routers on the path take part |
+| Layer | Unit of communication | Scope of communication | Involvement of routers on the path |
 |:-----|:-----|:-----|:-----|
 | Application | Message | End to end | No |
 | Transport | Segment, user datagram, packet | End to end | No |

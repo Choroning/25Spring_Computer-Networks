@@ -473,7 +473,7 @@ All five kinds of LSA share the same general header.
 - **Link state checksum:** Not the usual checksum, but a value computed with Fletcher's checksum over the whole packet except the age field.
 - **Length:** The length of the whole packet in bytes.
 
-| Type | LSA | Who advertises it | Content | Link state ID |
+| Type | LSA | Advertiser | Content | Link state ID |
 |:-----|:-----|:-----|:-----|:-----|
 | 1 | Router link | Every router | All its links and what is at the other side (neighbors) | IP address of the router |
 | 2 | Network link | Designated router of a transient network | All routers attached to the network | IP address of the designated router |

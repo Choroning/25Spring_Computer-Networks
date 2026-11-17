@@ -18,7 +18,7 @@
 
 ## Table of Contents
 
-- [1. What Is the Internet](#1-what-is-the-internet)
+- [1. The Concept of the Internet](#1-the-concept-of-the-internet)
   - [1.1 The Internet as Components](#11-the-internet-as-components)
   - [1.2 The Internet as Services](#12-the-internet-as-services)
   - [1.3 Protocols](#13-protocols)
@@ -66,7 +66,7 @@
 
 <br>
 
-## 1. What Is the Internet
+## 1. The Concept of the Internet
 
 There are two ways to answer the question of what the Internet is. One is to list, piece by piece, the hardware and software components that make up the Internet; the other is to view the Internet as an infrastructure that provides services to distributed applications. This section examines the two views in turn and then defines the protocol, the key concept that appears in both.
 
