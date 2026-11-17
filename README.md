@@ -22,7 +22,7 @@ This repository archives lecture notes and coursework for the Computer Networks 
 <br><a name="about-this-repository"></a>
 ## 📝 About This Repository
 
-- `Lecture-Notes/` holds lecture notes that follow the textbook's chapter numbers (`Ch##`).
+- `Lecture-Notes/` holds lecture notes arranged in chapters (`Ch##`) that follow the organization of Computer Networking: A Top-Down Approach, and `Ch23`-`Ch26` are supplementary units on topics outside the course plan.
 - `Coursework/` holds the code of the term project, Simple HTTP Server.
 - Every lecture note comes as an English (`.md`) and Korean (`.ko.md`) pair.
 
@@ -41,7 +41,7 @@ This repository archives lecture notes and coursework for the Computer Networks 
 
 ### Course Overview
 
-A required major course on network software and hardware that studies the TCP/IP protocol suite following Forouzan's textbook. The instructor, schedule, assessment, and progress are in the [course information document](Course-Information.md).
+A required major course on network software and hardware that studies the TCP/IP protocol suite following Forouzan's textbook. The lecture notes take Kurose and Ross's textbook as the main reference and follow its organization. The instructor, schedule, assessment, and progress are in the [course information document](Course-Information.md).
 
 <br><a name="prerequisites"></a>
 ## ✅ Prerequisites
@@ -60,8 +60,9 @@ A required major course on network software and hardware that studies the TCP/IP
 
 ```plaintext
 25Spring_Computer-Networks
-├── Lecture-Notes               Lecture notes by textbook chapter
+├── Lecture-Notes               Lecture notes (arranged in the order of Kurose's textbook)
 ├── Coursework                  Term project
+├── images                      Figures for all documents
 ├── Course-Information.ko.md    Course operations
 ├── Course-Information.md
 ├── LICENSE                     Documentation license (CC BY-NC-SA 4.0)

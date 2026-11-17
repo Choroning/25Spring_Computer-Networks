@@ -22,7 +22,7 @@
 <br><a name="about-this-repository"></a>
 ## 📝 레포지토리 소개
 
-- `Lecture-Notes/`에는 교재의 장 번호(`Ch##`)를 따른 강의 노트가 있습니다.
+- `Lecture-Notes/`에는 Computer Networking: A Top-Down Approach의 구성을 따라 장(`Ch##`)으로 배열한 강의 노트가 있고, `Ch23`~`Ch26`은 강의계획에 없는 주제를 보충한 단원입니다.
 - `Coursework/`에는 텀 프로젝트인 Simple HTTP Server의 코드가 있습니다.
 - 모든 강의 노트는 영어(`.md`)와 한국어(`.ko.md`) 파일이 짝을 이룹니다.
 
@@ -41,7 +41,7 @@
 
 ### 과목 개요
 
-네트워크 소프트웨어와 하드웨어를 다루는 전공필수 과목으로, Forouzan의 교재를 따라 TCP/IP 프로토콜 스위트를 배웁니다. 교수자, 수업 일정, 평가, 진도는 [강의 정보 문서](Course-Information.ko.md)에 정리했습니다.
+네트워크 소프트웨어와 하드웨어를 다루는 전공필수 과목으로, Forouzan의 교재를 따라 TCP/IP 프로토콜 스위트를 배웁니다. 강의 노트는 Kurose와 Ross의 교재를 주 참고 도서로 삼고 그 구성을 따릅니다. 교수자, 수업 일정, 평가, 진도는 [강의 정보 문서](Course-Information.ko.md)에 정리했습니다.
 
 <br><a name="prerequisites"></a>
 ## ✅ 사전 요구사항
@@ -60,8 +60,9 @@
 
 ```plaintext
 25Spring_Computer-Networks
-├── Lecture-Notes               교재 장별 강의 노트
+├── Lecture-Notes               강의 노트 (Kurose의 교재 순서로 배열)
 ├── Coursework                  텀 프로젝트
+├── images                      모든 문서의 그림
 ├── Course-Information.ko.md    수업 운영 정보
 ├── Course-Information.md
 ├── LICENSE                     문서 라이선스 (CC BY-NC-SA 4.0)

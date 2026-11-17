@@ -2,23 +2,23 @@
 
 [레포지토리 안내](../../README.ko.md) | [English](README.md) | [한국어](README.ko.md)
 
-> **최종 수정일:** 2026-10-26
+> **최종 수정일:** 2026-11-18
 
 ---
 
 ## 개요
 
-Python `socket` 모듈로 처음부터 구현한 기본 HTTP/1.1 서버이다. 이 프로젝트는 고수준 HTTP 라이브러리에 의존하지 않고 요청 파싱, 응답 생성, URL 라우팅, 정적 파일 제공을 구현하여 HTTP 프로토콜의 기초를 보여 준다.
+Python `socket` 모듈로 처음부터 구현한 기본 HTTP/1.1 서버입니다. 이 프로젝트는 고수준 HTTP 라이브러리에 의존하지 않고 요청 파싱, 응답 생성, URL 라우팅, 정적 파일 제공을 구현하여 HTTP 프로토콜의 기초를 보여 줍니다.
 
 ## 기능
 
-- **HTTP/1.1 프로토콜**: HTTP/1.1 명세에 따라 요청 줄(request line), 헤더, 본문을 파싱한다.
-- **GET과 POST 지원**: 자원을 가져오는 GET 요청과 데이터를 제출하는 POST 요청을 처리한다.
-- **정적 파일 제공**: `static/` 디렉터리의 HTML, CSS, JavaScript, 이미지 파일을 제공한다.
-- **URL 라우팅**: 경로 매칭과 메서드 필터링을 지원하는 라우트 등록 기능을 제공한다.
-- **멀티스레드**: 클라이언트 연결마다 스레드를 하나씩 만들어 요청을 동시에 처리한다.
-- **상태 코드**: 상황에 맞는 HTTP 상태 코드(200, 404, 405, 500)를 반환한다.
-- **보안**: 정적 파일 요청에서 디렉터리 순회(directory traversal)를 막는다.
+- **HTTP/1.1 프로토콜**: HTTP/1.1 명세에 따라 요청 줄(request line), 헤더, 본문을 파싱합니다.
+- **GET과 POST 지원**: 자원을 가져오는 GET 요청과 데이터를 제출하는 POST 요청을 처리합니다.
+- **정적 파일 제공**: `static/` 디렉터리의 HTML, CSS, JavaScript, 이미지 파일을 제공합니다.
+- **URL 라우팅**: 경로 매칭과 메서드 필터링을 지원하는 라우트 등록 기능을 제공합니다.
+- **멀티스레드**: 클라이언트 연결마다 스레드를 하나씩 만들어 요청을 동시에 처리합니다.
+- **상태 코드**: 상황에 맞는 HTTP 상태 코드(200, 404, 405, 500)를 반환합니다.
+- **보안**: 정적 파일 요청에서 디렉터리 순회(directory traversal)를 막습니다.
 
 ## 프로젝트 구조
 
@@ -83,17 +83,17 @@ quit                      # Exit the client
 
 ## 동작 방식
 
-1. **소켓 바인딩**: 서버가 TCP 소켓을 만들고 지정한 호스트와 포트에 바인딩한다.
-2. **연결 수락**: 메인 루프가 들어오는 연결을 수락하고 연결마다 새 스레드를 만든다.
-3. **요청 파싱**: 수신한 바이트를 메서드, 경로, 헤더, 본문으로 구성된 `HTTPRequest` 객체로 파싱한다.
-4. **라우팅**: `Router`가 요청의 메서드와 경로에 맞는 등록된 핸들러 함수를 찾는다.
-5. **응답 생성**: 핸들러가 반환한 `HTTPResponse` 객체를 올바른 HTTP 응답 바이트로 직렬화한다.
-6. **정적 파일**: `/static/*` 요청은 MIME 타입을 판별하여 파일 시스템에서 바로 제공한다.
+1. **소켓 바인딩**: 서버가 TCP 소켓을 만들고 지정한 호스트와 포트에 바인딩합니다.
+2. **연결 수락**: 메인 루프가 들어오는 연결을 수락하고 연결마다 새 스레드를 만듭니다.
+3. **요청 파싱**: 수신한 바이트를 메서드, 경로, 헤더, 본문으로 구성된 `HTTPRequest` 객체로 파싱합니다.
+4. **라우팅**: `Router`가 요청의 메서드와 경로에 맞는 등록된 핸들러 함수를 찾습니다.
+5. **응답 생성**: 핸들러가 반환한 `HTTPResponse` 객체를 올바른 HTTP 응답 바이트로 직렬화합니다.
+6. **정적 파일**: `/static/*` 요청은 MIME 타입을 판별하여 파일 시스템에서 바로 제공합니다.
 
 ## 참고 문헌
 
-- **Stanford CS144: Introduction to Computer Networking**, 네트워크 프로토콜과 HTTP 프로토콜, 소켓 프로그래밍의 기초 개념을 다룬다. 강의 자료는 [cs144.github.io](https://cs144.github.io/)에서 볼 수 있다.
-- **CMU 15-441/641: Computer Networks**, 전송 프로토콜과 응용 계층 프로토콜, 네트워크 프로그래밍을 깊이 다룬다. 과목 페이지는 [computer-networks.cs.cmu.edu](https://computer-networks.cs.cmu.edu/)이다.
+- **Stanford CS144: Introduction to Computer Networking**, 네트워크 프로토콜과 HTTP 프로토콜, 소켓 프로그래밍의 기초 개념을 다룹니다. 강의 자료는 [cs144.github.io](https://cs144.github.io/)에서 볼 수 있습니다.
+- **CMU 15-441/641: Computer Networks**, 전송 프로토콜과 응용 계층 프로토콜, 네트워크 프로그래밍을 깊이 다룹니다. 과목 페이지는 [computer-networks.cs.cmu.edu](https://computer-networks.cs.cmu.edu/)입니다.
 - **RFC 7230**: Hypertext Transfer Protocol (HTTP/1.1): Message Syntax and Routing
 - **RFC 7231**: Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content
 - **Python `socket` 모듈 문서**: [docs.python.org/3/library/socket.html](https://docs.python.org/3/library/socket.html)
