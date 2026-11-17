@@ -2,7 +2,7 @@
 
 [레포지토리 안내](../../README.ko.md) | [English](Concepts_Lecture.md) | [한국어](Concepts_Lecture.ko.md)
 
-> **최종 수정일:** 2026-11-04
+> **최종 수정일:** 2026-11-17
 >
 > TCP/IP Protocol Suite, Forouzan, Ch 7
 
@@ -118,7 +118,7 @@ IPv4 헤더 형식 (최소 20바이트, 최대 60바이트):
 |-------|------|-------------|
 | VER (Version) | 4 | IP 프로토콜 버전 (IPv4의 경우 4) |
 | HLEN (Header Length) | 4 | 4바이트 워드 단위의 헤더 길이 (최소 5 = 20바이트, 최대 15 = 60바이트) |
-| Service Type | 8 | 차별화 서비스 (DSCP + ECN) |
+| Service Type | 8 | 차별화 서비스 (6비트 DSCP와 2비트 ECN(Explicit Congestion Notification)) |
 | Total Length | 16 | 헤더를 포함한 전체 데이터그램 길이 (최대 65,535바이트) |
 | Identification | 16 | 단편화/재조립을 위한 고유 식별자 |
 | Flags | 3 | 단편화 제어 비트 |
@@ -135,7 +135,7 @@ IPv4 헤더 형식 (최소 20바이트, 최대 60바이트):
 
 ```text
 +---+---+---+---+---+---+---+---+
-|     Codepoint (6 bits)  | ECN (Explicit Congestion Notification)|
+|   Codepoint (6 bits)  |  ECN  |
 +---+---+---+---+---+---+---+---+
 ```
 

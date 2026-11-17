@@ -2,7 +2,7 @@
 
 [Repository Guide](../../README.md) | [English](Concepts_Lecture.md) | [한국어](Concepts_Lecture.ko.md)
 
-> **Last Updated:** 2026-11-04
+> **Last Updated:** 2026-11-17
 >
 > TCP/IP Protocol Suite, Forouzan, Ch 7
 
@@ -118,7 +118,7 @@ The IPv4 header format (minimum 20 bytes, maximum 60 bytes):
 |-------|------|-------------|
 | VER (Version) | 4 | IP protocol version (4 for IPv4) |
 | HLEN (Header Length) | 4 | Header length in 4-byte words (min 5 = 20 bytes, max 15 = 60 bytes) |
-| Service Type | 8 | Differentiated services (DSCP + ECN) |
+| Service Type | 8 | Differentiated services (6-bit DSCP and 2-bit ECN (Explicit Congestion Notification)) |
 | Total Length | 16 | Total datagram length including header (max 65,535 bytes) |
 | Identification | 16 | Unique identifier for fragmentation/reassembly |
 | Flags | 3 | Fragmentation control bits |
@@ -135,7 +135,7 @@ The IPv4 header format (minimum 20 bytes, maximum 60 bytes):
 
 ```text
 +---+---+---+---+---+---+---+---+
-|     Codepoint (6 bits)  | ECN (Explicit Congestion Notification)|
+|   Codepoint (6 bits)  |  ECN  |
 +---+---+---+---+---+---+---+---+
 ```
 

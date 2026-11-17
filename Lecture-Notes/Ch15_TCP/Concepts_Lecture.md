@@ -2,7 +2,7 @@
 
 [Repository Guide](../../README.md) | [English](Concepts_Lecture.md) | [한국어](Concepts_Lecture.ko.md)
 
-> **Last Updated:** 2026-11-04
+> **Last Updated:** 2026-11-17
 >
 > TCP/IP Protocol Suite, Forouzan, Ch 15
 
@@ -294,6 +294,8 @@ sequenceDiagram
 2. **ACK**: The server acknowledges the FIN.
 3. **FIN**: The server sends its own FIN when it is done sending.
 4. **ACK**: The client acknowledges the server's FIN and enters the TIME-WAIT state.
+
+If the server has no more data to send when it receives the FIN, it can combine the ACK of step 2 and the FIN of step 3 into a single FIN+ACK segment. Connection termination then becomes a three-way handshake of three segments: FIN, FIN+ACK, and ACK. Like SYN, a FIN segment or a FIN+ACK segment that carries no data consumes one sequence number.
 
 **TIME-WAIT state**: The side that closes first (the client in this example) waits for 2MSL, twice the MSL (Maximum Segment Lifetime), before closing. This wait serves the following purposes:
 - If the final ACK is lost and the server retransmits its FIN, the ACK can be sent again.

@@ -2,7 +2,7 @@
 
 [레포지토리 안내](../../README.ko.md) | [English](Concepts_Lecture.md) | [한국어](Concepts_Lecture.ko.md)
 
-> **최종 수정일:** 2026-10-26
+> **최종 수정일:** 2026-11-17
 >
 > TCP/IP Protocol Suite, Forouzan, Ch 3
 
@@ -56,8 +56,8 @@ IEEE는 데이터 링크 계층을 두 개의 부계층으로 분할하여 LAN �
 
 ```text
 +------------------------------+
-|         LLC (Logical          |
-|       Link Control)           |  -- 모든 LAN 유형에 공통
+|         LLC (Logical         |
+|       Link Control)          |  -- 모든 LAN 유형에 공통
 +-----+--------+--------+------+
 | Eth | Token  | Token  | ...  |  -- MAC 부계층
 | MAC | Ring   | Bus    |      |     (매체별 특화)

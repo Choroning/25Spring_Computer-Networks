@@ -2,7 +2,7 @@
 
 [Repository Guide](../../README.md) | [English](Concepts_Lecture.md) | [한국어](Concepts_Lecture.ko.md)
 
-> **Last Updated:** 2026-11-04
+> **Last Updated:** 2026-11-17
 >
 > TCP/IP Protocol Suite, Forouzan, Ch 9
 
@@ -68,8 +68,8 @@ graph TD
         ICMP["ICMP"]
         IP["IP"]
         IGMP["IGMP"]
+        ARP["ARP"]
     end
-    ARP["ARP"]
 ```
 
 *Figure 1. Position of ICMP in the network layer*

@@ -2,7 +2,7 @@
 
 [Repository Guide](../../README.md) | [English](Concepts_Lecture.md) | [한국어](Concepts_Lecture.ko.md)
 
-> **Last Updated:** 2026-10-26
+> **Last Updated:** 2026-11-17
 >
 > TCP/IP Protocol Suite, Forouzan, Ch 3
 
@@ -56,8 +56,8 @@ The IEEE has defined the standards for LANs, dividing the data link layer into t
 
 ```text
 +------------------------------+
-|         LLC (Logical          |
-|       Link Control)           |  -- Common to all LAN types
+|         LLC (Logical         |
+|       Link Control)          |  -- Common to all LAN types
 +-----+--------+--------+------+
 | Eth | Token  | Token  | ...  |  -- MAC sublayer
 | MAC | Ring   | Bus    |      |     (media-specific)
