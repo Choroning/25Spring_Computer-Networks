@@ -2,7 +2,7 @@
 
 [Repository Guide](../../README.md) | [English](Concepts_Lecture.md) | [한국어](Concepts_Lecture.ko.md)
 
-> **Last Updated:** 2026-11-18
+> **Last Updated:** 2026-11-19
 >
 > Computer Networking: A Top-Down Approach, Kurose and Ross, Ch 3; TCP/IP Protocol Suite, Forouzan, Ch 13, 14
 
@@ -1056,16 +1056,7 @@ Suppose the control-block table is initially as shown in Table 13.
 
    </details>
 
-7. **DNS and transport protocols:** The round-trip time (RTT) between a client and a DNS server is 40 ms, and the query and the response each fit in one packet. Ignoring processing and transmission times, find the minimum time from when the client decides to send the query until it receives the response, for UDP and for TCP.
-
-   <details>
-   <summary>Answer</summary>
-
-   UDP sends the query right away without connection setup, so it takes 1 RTT = 40 ms. TCP must establish a connection before the query (the three-way handshake of Chapter 8), and the exchange of SYN and SYN+ACK takes 1 RTT. The client can send the query with the third segment, the ACK, so the query and response take one more RTT, for a minimum of 2 RTT = 80 ms. Segments for connection teardown are also exchanged afterward. This is why DNS uses UDP for small queries and responses.
-
-   </details>
-
-8. **UDP queues and ICMP:** In the state of Table 14, a user datagram arrives for port 52,014 and then another user datagram arrives for port 52,013. For each event, state what the UDP package does and how the table changes.
+7. **UDP queues and ICMP:** In the state of Table 14, a user datagram arrives for port 52,014 and then another user datagram arrives for port 52,013. For each event, state what the UDP package does and how the table changes.
 
    <details>
    <summary>Answer</summary>

@@ -2,7 +2,7 @@
 
 [레포지토리 안내](../../README.ko.md) | [English](Concepts_Lecture.md) | [한국어](Concepts_Lecture.ko.md)
 
-> **최종 수정일:** 2026-11-18
+> **최종 수정일:** 2026-11-19
 >
 > Computer Networking: A Top-Down Approach, Kurose and Ross, Ch 2; TCP/IP Protocol Suite, Forouzan, Ch 17, 22
 
@@ -566,26 +566,15 @@ Content-Type: text/html
 | 범주 | 코드 | 상태 메시지 | 뜻 |
 |:-----|:-----|:-----|:-----|
 | 정보 | 100 | Continue | 요청의 첫 부분을 받았으니 계속하라 |
-| 정보 | 101 | Switching | 서버가 프로토콜 전환에 응함 |
 | 성공 | 200 | OK | 요청이 성공했고 응답에 정보가 담겨 있음 |
-| 성공 | 201 | Created | 새 URL이 만들어짐 |
-| 성공 | 202 | Accepted | 요청을 받아들였지만 바로 처리하지는 않음 |
-| 성공 | 204 | No content | 본문에 내용이 없음 |
 | 재지정 | 301 | Moved permanently | 요청한 객체가 영구히 옮겨짐. 새 URL은 응답의 Location: 헤더에 있으며 클라이언트 소프트웨어가 자동으로 새 URL을 가져옴 |
-| 재지정 | 302 | Moved temporarily | 요청한 URL이 임시로 옮겨짐 |
 | 재지정 | 304 | Not modified | 문서가 바뀌지 않았다 (7.3절) |
 | 클라이언트 오류 | 400 | Bad request | 서버가 요청을 이해할 수 없음 (요청의 구문 오류) |
-| 클라이언트 오류 | 401 | Unauthorized | 요청에 알맞은 권한이 없음 |
-| 클라이언트 오류 | 403 | Forbidden | 서비스가 거부됨 |
 | 클라이언트 오류 | 404 | Not found | 요청한 문서가 이 서버에 없음 |
-| 클라이언트 오류 | 405 | Method not allowed | 이 URL에서 지원하지 않는 메서드임 |
-| 클라이언트 오류 | 406 | Not acceptable | 요청한 형식을 받아들일 수 없음 |
 | 서버 오류 | 500 | Internal server error | 서버 쪽에서 다운 같은 오류가 생김 |
-| 서버 오류 | 501 | Not implemented | 요청한 동작을 수행할 수 없음 |
-| 서버 오류 | 503 | Service unavailable | 서비스를 일시적으로 쓸 수 없음 |
 | 서버 오류 | 505 | HTTP Version Not Supported | 요청한 HTTP 버전을 서버가 지원하지 않음 |
 
-*표 8. HTTP 상태 코드*
+*표 8. 주요 HTTP 상태 코드*
 
 | 헤더 | 설명 |
 |:-----|:-----|

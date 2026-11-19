@@ -2,7 +2,7 @@
 
 [Repository Guide](../../README.md) | [English](Concepts_Lecture.md) | [한국어](Concepts_Lecture.ko.md)
 
-> **Last Updated:** 2026-11-18
+> **Last Updated:** 2026-11-19
 >
 > Computer Networking: A Top-Down Approach, Kurose and Ross, Ch 2; TCP/IP Protocol Suite, Forouzan, Ch 20, 21, 23
 
@@ -195,7 +195,7 @@ SMTP uses **persistent connections**. If the sending mail server has several mes
 
 ### 2.3 Commands and Responses
 
-SMTP uses **commands** and **responses** to transfer messages between an MTA client and an MTA server. Commands go from the client to the server and responses from the server to the client, and each command or response is terminated by a two-character (CR and LF) end-of-line token. A command consists of a keyword followed by zero or more arguments, and Forouzan lists SMTP's 14 commands as follows.
+SMTP uses **commands** and **responses** to transfer messages between an MTA client and an MTA server. Commands go from the client to the server and responses from the server to the client, and each command or response is terminated by a two-character (CR and LF) end-of-line token. A command consists of a keyword followed by zero or more arguments, and the main commands are as follows.
 
 | Keyword | Argument | Description |
 |:-----|:-----|:-----|
@@ -206,43 +206,23 @@ SMTP uses **commands** and **responses** to transfer messages between an MTA cli
 | QUIT | - | Terminates the message transfer |
 | RSET | - | Aborts the current mail transaction and deletes the stored sender and recipient information |
 | VRFY | Name of recipient | Asks for confirmation that the recipient's address is valid |
-| NOOP | - | Checks the status of the recipient, requiring an answer |
-| TURN | - | Lets the sender and recipient switch roles; most implementations today do not support it |
-| EXPN | Mailing list | Asks the receiving host to expand the mailing list and return the mailbox addresses of its members |
-| HELP | Command name | Asks for information about the command given as the argument |
-| SEND FROM | Sender | Delivers the mail to the recipient's terminal rather than the mailbox; bounced back if the recipient is not logged in |
-| SOML FROM | Sender | Delivers to the terminal only if the recipient is logged in, otherwise to the mailbox |
-| SAML FROM | Sender | Delivers to both terminal and mailbox if the recipient is logged in, otherwise only to the mailbox |
 
-*Table 2. SMTP commands*
+*Table 2. Main SMTP commands*
 
 A response is a three-digit code that may be followed by textual information. As with the HTTP status codes of Chapter 3, the first digit indicates the category: 2 means positive completion, 3 positive intermediate, 4 transient negative completion, and 5 permanent negative completion.
 
 | Category | Code | Description |
 |:-----|:-----|:-----|
-| Positive completion | 211 | System status or help reply |
-| Positive completion | 214 | Help message |
 | Positive completion | 220 | Service ready |
 | Positive completion | 221 | Service closing transmission channel |
 | Positive completion | 250 | Request command completed |
-| Positive completion | 251 | User not local; the message will be forwarded |
 | Positive intermediate | 354 | Start mail input |
 | Transient negative | 421 | Service not available |
 | Transient negative | 450 | Mailbox not available |
-| Transient negative | 451 | Command aborted: local error |
-| Transient negative | 452 | Command aborted: insufficient storage |
 | Permanent negative | 500 | Syntax error; unrecognized command |
-| Permanent negative | 501 | Syntax error in parameters or arguments |
-| Permanent negative | 502 | Command not implemented |
-| Permanent negative | 503 | Bad sequence of commands |
-| Permanent negative | 504 | Command parameter not implemented |
 | Permanent negative | 550 | Command not executed; mailbox unavailable |
-| Permanent negative | 551 | User not local |
-| Permanent negative | 552 | Requested action aborted; exceeded storage allocation |
-| Permanent negative | 553 | Requested action not taken; mailbox name not allowed |
-| Permanent negative | 554 | Transaction failed |
 
-*Table 3. SMTP response codes*
+*Table 3. Main SMTP response codes*
 
 > **Definition:** **SMTP (Simple Mail Transfer Protocol)** is a push-style application-layer protocol over TCP port 25 that transfers mail messages from the sending side to the receiving mail server by exchanging commands and responses.
 

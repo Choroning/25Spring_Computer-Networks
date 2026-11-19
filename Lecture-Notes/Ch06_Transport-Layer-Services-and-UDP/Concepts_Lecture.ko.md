@@ -2,7 +2,7 @@
 
 [레포지토리 안내](../../README.ko.md) | [English](Concepts_Lecture.md) | [한국어](Concepts_Lecture.ko.md)
 
-> **최종 수정일:** 2026-11-18
+> **최종 수정일:** 2026-11-19
 >
 > Computer Networking: A Top-Down Approach, Kurose and Ross, Ch 3; TCP/IP Protocol Suite, Forouzan, Ch 13, 14
 
@@ -1056,16 +1056,7 @@ graph TB
 
    </details>
 
-7. **DNS와 전송 프로토콜:** 클라이언트와 DNS 서버 사이의 왕복 시간(RTT)이 40 ms이고, 질의와 응답은 각각 패킷 하나에 들어간다. 처리 시간과 전송 시간을 무시할 때, 클라이언트가 질의를 보내기로 한 시점부터 응답을 받을 때까지 걸리는 최소 시간을 UDP와 TCP 각각에 대해 구하라.
-
-   <details>
-   <summary>정답</summary>
-
-   UDP는 연결 설정 없이 바로 질의를 보내므로 1 RTT = 40 ms가 걸린다. TCP는 질의 전에 연결을 설정해야 하며(8장의 3방향 핸드셰이크), SYN과 SYN+ACK가 오가는 데 1 RTT가 걸린다. 클라이언트는 세 번째 세그먼트인 ACK와 함께 질의를 보낼 수 있으므로 질의와 응답에 1 RTT가 더 걸려 최소 2 RTT = 80 ms가 필요하다. 그 뒤 연결 해제를 위한 세그먼트 교환도 추가로 일어난다. 작은 질의와 응답에 DNS가 UDP를 쓰는 이유가 여기에 있다.
-
-   </details>
-
-8. **UDP 큐와 ICMP:** 표 14의 상태에서 포트 52,014로 사용자 데이터그램이 도착한 뒤 포트 52,013으로 다른 사용자 데이터그램이 도착한다. 각 사건에서 UDP 패키지가 하는 일과 테이블의 변화를 쓰라.
+7. **UDP 큐와 ICMP:** 표 14의 상태에서 포트 52,014로 사용자 데이터그램이 도착한 뒤 포트 52,013으로 다른 사용자 데이터그램이 도착한다. 각 사건에서 UDP 패키지가 하는 일과 테이블의 변화를 쓰라.
 
    <details>
    <summary>정답</summary>

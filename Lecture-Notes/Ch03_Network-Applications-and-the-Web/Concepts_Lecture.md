@@ -2,7 +2,7 @@
 
 [Repository Guide](../../README.md) | [English](Concepts_Lecture.md) | [한국어](Concepts_Lecture.ko.md)
 
-> **Last Updated:** 2026-11-18
+> **Last Updated:** 2026-11-19
 >
 > Computer Networking: A Top-Down Approach, Kurose and Ross, Ch 2; TCP/IP Protocol Suite, Forouzan, Ch 17, 22
 
@@ -566,26 +566,15 @@ The status code is a three-digit number whose first digit determines its categor
 | Category | Code | Status phrase | Meaning |
 |:-----|:-----|:-----|:-----|
 | Informational | 100 | Continue | The initial part of the request was received; continue |
-| Informational | 101 | Switching | The server is complying with a switch of protocols |
 | Success | 200 | OK | The request succeeded and the information is returned in the response |
-| Success | 201 | Created | A new URL was created |
-| Success | 202 | Accepted | The request is accepted but not immediately acted upon |
-| Success | 204 | No content | There is no content in the body |
 | Redirection | 301 | Moved permanently | The requested object has been permanently moved; the new URL is in the Location: header of the response, and the client software automatically retrieves the new URL |
-| Redirection | 302 | Moved temporarily | The requested URL has moved temporarily |
 | Redirection | 304 | Not modified | The document has not been modified (Section 7.3) |
 | Client error | 400 | Bad request | The server could not understand the request (syntax error in the request) |
-| Client error | 401 | Unauthorized | The request lacks proper authorization |
-| Client error | 403 | Forbidden | Service is denied |
 | Client error | 404 | Not found | The requested document does not exist on this server |
-| Client error | 405 | Method not allowed | The method is not supported for this URL |
-| Client error | 406 | Not acceptable | The requested format is not acceptable |
 | Server error | 500 | Internal server error | An error, such as a crash, occurred at the server site |
-| Server error | 501 | Not implemented | The requested action cannot be performed |
-| Server error | 503 | Service unavailable | The service is temporarily unavailable |
 | Server error | 505 | HTTP Version Not Supported | The requested HTTP version is not supported by the server |
 
-*Table 8. HTTP status codes*
+*Table 8. Main HTTP status codes*
 
 | Header | Description |
 |:-----|:-----|

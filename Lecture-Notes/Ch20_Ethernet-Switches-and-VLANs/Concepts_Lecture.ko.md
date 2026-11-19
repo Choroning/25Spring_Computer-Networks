@@ -2,7 +2,7 @@
 
 [레포지토리 안내](../../README.ko.md) | [English](Concepts_Lecture.md) | [한국어](Concepts_Lecture.ko.md)
 
-> **최종 수정일:** 2026-11-18
+> **최종 수정일:** 2026-11-19
 >
 > Computer Networking: A Top-Down Approach, Kurose and Ross, Ch 6; TCP/IP Protocol Suite, Forouzan, Ch 3
 
@@ -141,8 +141,6 @@ IEEE 802 위원회는 주제별 **작업 그룹(working group)** 으로 나뉘�
 *표 2. 이더넷 토폴로지의 변화*
 
 **허브(hub)** 는 프레임이 아니라 개별 비트에 작용하는 물리 계층 장치이다. 한 인터페이스로 0이나 1을 나타내는 비트가 들어오면 허브는 그 비트를 다시 만들어 에너지 세기를 키운 뒤 다른 모든 인터페이스로 내보낸다.
-
-> **참고:** **Metcalfe와 이더넷.** Metcalfe는 박사 과정 중 ARPAnet 연구에 참여하면서 Abramson의 ALOHA와 랜덤 접근 프로토콜(18장)을 접했고, 하와이 대학에 머물며 ALOHAnet을 직접 보았다. 이후 Xerox PARC에서 Boggs와 함께 이더넷을 발명했다. 최초의 이더넷은 2.94 Mbps로 동작했고 최대 1마일 거리에 있는 호스트를 256대까지 연결했다. 이후 Xerox, Digital, Intel의 협력으로 10 Mbps 이더넷 표준이 만들어져 IEEE의 승인을 받았다.
 
 ---
 

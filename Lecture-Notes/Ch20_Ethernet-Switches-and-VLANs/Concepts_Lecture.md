@@ -2,7 +2,7 @@
 
 [Repository Guide](../../README.md) | [English](Concepts_Lecture.md) | [한국어](Concepts_Lecture.ko.md)
 
-> **Last Updated:** 2026-11-18
+> **Last Updated:** 2026-11-19
 >
 > Computer Networking: A Top-Down Approach, Kurose and Ross, Ch 6; TCP/IP Protocol Suite, Forouzan, Ch 3
 
@@ -141,8 +141,6 @@ The original Ethernet LAN was invented in the mid-1970s by Bob Metcalfe and Davi
 *Table 2. Changes in Ethernet topology*
 
 A **hub** is a physical-layer device that acts on individual bits rather than frames. When a bit representing a 0 or a 1 arrives on one interface, the hub re-creates the bit, boosts its energy strength, and transmits it onto all the other interfaces.
-
-> **Note:** **Metcalfe and Ethernet.** As a PhD student, Metcalfe worked on the ARPAnet, became exposed to Abramson's ALOHA and random access protocols (Chapter 18), and visited the University of Hawaii to see ALOHAnet firsthand. He later invented Ethernet with Boggs at Xerox PARC. The original Ethernet ran at 2.94 Mbps and linked up to 256 hosts separated by up to one mile. An alliance of Xerox, Digital, and Intel then produced the 10 Mbps Ethernet standard, which the IEEE ratified.
 
 ---
 
