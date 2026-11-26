@@ -2,7 +2,7 @@
 
 [레포지토리 안내](../../README.ko.md) | [English](Concepts_Lecture.md) | [한국어](Concepts_Lecture.ko.md)
 
-> **최종 수정일:** 2026-11-18
+> **최종 수정일:** 2026-11-27
 >
 > Computer Networking: A Top-Down Approach, Kurose and Ross, Ch 1; TCP/IP Protocol Suite, Forouzan, Ch 2
 
@@ -632,15 +632,15 @@ Kurose는 회사 지점 사이의 사내 메모를 공중 우편으로 보내는
 캡슐화는 이보다 복잡할 수 있다. 큰 메시지는 여러 전송 계층 세그먼트로 나뉘고, 각 세그먼트가 다시 여러 네트워크 계층 데이터그램으로 나뉠 수 있다. 수신 쪽에서는 이렇게 나뉜 데이터그램으로 세그먼트를 다시 만들어야 한다.
 
 ```text
-응용 계층:       [        데이터        ]
+Application:     [        Data          ]
                          |
-전송 계층:       [ H_t |    데이터      ]     --> 세그먼트 (TCP) / 사용자 데이터그램 (UDP)
+Transport:       [ H_t |    Data        ]     --> Segment (TCP) / User datagram (UDP)
                          |
-네트워크 계층:    [ H_n | H_t | 데이터   ]     --> 데이터그램
+Network:         [ H_n | H_t | Data     ]     --> Datagram
                          |
-데이터 링크 계층: [ H_d | H_n | H_t | 데이터 | T_d ]  --> 프레임
+Data link:       [ H_d | H_n | H_t | Data | T_d ]  --> Frame
                          |
-물리 계층:       101010011101...             --> 비트
+Physical:        101010011101...             --> Bits
 ```
 
 *그림 15. 계층별 캡슐화 과정*

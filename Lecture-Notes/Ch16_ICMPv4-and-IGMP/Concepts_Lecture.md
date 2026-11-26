@@ -2,7 +2,7 @@
 
 [Repository Guide](../../README.md) | [English](Concepts_Lecture.md) | [한국어](Concepts_Lecture.ko.md)
 
-> **Last Updated:** 2026-11-18
+> **Last Updated:** 2026-11-27
 >
 > Computer Networking: A Top-Down Approach, Kurose and Ross, Ch 5; TCP/IP Protocol Suite, Forouzan, Ch 9, 12
 
@@ -813,8 +813,8 @@ If an IP packet has a multicast IP destination address, ARP cannot find a corres
 ```text
  32-bit IPv4 multicast address
  ┌──────┬─────────┬─────────────────────────────┐
- │ 1110 │ 5 bits  │  23 bits of multicast address│
- └──────┴─────────┴──────────────┬──────────────┘
+ │ 1110 │ 5 bits  │ 23 bits of multicast address│
+ └──────┴─────────┴───────────────┬─────────────┘
           (unused)                │ copied as is
                                   ▼
  ┌───────────────────────────┬─────────────────────────────┐

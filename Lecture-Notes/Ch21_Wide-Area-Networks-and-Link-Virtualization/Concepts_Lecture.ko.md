@@ -2,7 +2,7 @@
 
 [레포지토리 안내](../../README.ko.md) | [English](Concepts_Lecture.md) | [한국어](Concepts_Lecture.ko.md)
 
-> **최종 수정일:** 2026-11-18
+> **최종 수정일:** 2026-11-27
 >
 > Computer Networking: A Top-Down Approach, Kurose and Ross, Ch 6; TCP/IP Protocol Suite, Forouzan, Ch 3, 6, 7
 
@@ -126,10 +126,10 @@ T-1의 속도는 프레임 구조에서 나온다. 음성 채널 24개를 각각
   ┌───┬──────┬──────┬──────┬─────┬──────┐
   │ F │  1   │  2   │  3   │ ... │  24  │
   └───┴──────┴──────┴──────┴─────┴──────┘
-    1     8      8      8            8      (비트)
+    1     8      8      8            8      (bits)
 
-  F: 동기 비트, 1~24: 각 음성 채널의 8비트 표본
-  프레임 하나 = 1 + 24 × 8 = 193비트, 초당 8000개 (125 μs마다 한 프레임)
+  F: synchronization bit, 1-24: 8-bit sample of each voice channel
+  One frame = 1 + 24 × 8 = 193 bits, 8000 per second (one frame every 125 μs)
 ```
 
 *그림 2. T-1 프레임의 구조*
@@ -343,10 +343,10 @@ ATM은 **셀 네트워크(cell network)** 이다. 셀 네트워크에서는 모�
 ATM은 서로 다른 채널에서 오는 셀을 **비동기 시분할 다중화(asynchronous time-division multiplexing)** 로 다중화하며, 그래서 이름이 비동기 전송 모드이다. 다중화기는 셀 크기의 고정 슬롯을 쓰며, 셀이 있는 아무 입력 채널의 셀로 슬롯을 채운다. 어느 채널에도 보낼 셀이 없으면 슬롯은 빈다. 동기 TDM(18장)처럼 슬롯을 채널마다 고정 배정하지 않으므로 빈 채널 때문에 슬롯이 낭비되지 않는다.
 
 ```text
-  입력 1:   A3   A2   A1
-  입력 2:        B2   B1
-  입력 3:   C3   C2   C1
-                               출력 (먼저 나가는 셀이 오른쪽)
+  Input 1:  A3   A2   A1
+  Input 2:       B2   B1
+  Input 3:  C3   C2   C1
+                               Output (the cell sent first is on the right)
                        ──►  ... │ C3 │ B2 │ A3 │ C2 │ B1 │ A2 │ C1 │ A1 │
 ```
 
@@ -363,7 +363,7 @@ ATM은 교환형 네트워크이다. **끝점(end point)** 이라 부르는 사�
 - **가상 회선(virtual circuit, VC):** 한 메시지에 속한 모든 셀이 따라가는 논리적 연결이며, 셀들은 목적지에 닿을 때까지 원래의 순서를 유지한다. 고속도로의 차선이 가상 회선이다.
 
 ```text
-                    전송 경로 (TP)
+                    Transmission path (TP)
   ┌───────────────────────────────────────────────────┐
   │  VP (VPI = 14)  ═══ VC (VCI = 21) ═══             │
   │                 ═══ VC (VCI = 32) ═══             │
@@ -372,7 +372,7 @@ ATM은 교환형 네트워크이다. **끝점(end point)** 이라 부르는 사�
   │                 ═══ VC (VCI = 32) ═══             │
   │                 ═══ VC (VCI = 45) ═══             │
   └───────────────────────────────────────────────────┘
-  가상 연결 하나는 (VPI, VCI) 쌍으로 정해짐 (예: (14, 21))
+  One virtual connection is defined by a (VPI, VCI) pair (e.g., (14, 21))
 ```
 
 *그림 11. 전송 경로, 가상 경로, 가상 회선의 관계*
@@ -438,9 +438,9 @@ AAL은 음성, 데이터, 오디오, 비디오 같은 어떤 종류의 전송이
   │  5  │    48    │
   └─────┴──────────┘
 
-  위: 최대 65,535바이트의 IP 패킷에 패딩과 8바이트 트레일러를 붙임
-  가운데: 48바이트 조각으로 나눔 (트레일러는 마지막 조각의 끝 8바이트)
-  아래: ATM 계층이 5바이트 헤더를 붙여 53바이트 셀을 만듦 (헤더의 대부분은 VPI와 VCI)
+  Top: padding and an 8-byte trailer are added to an IP packet of at most 65,535 bytes
+  Middle: divided into 48-byte segments (the trailer is the last 8 bytes of the last segment)
+  Bottom: the ATM layer adds a 5-byte header to make a 53-byte cell (the header is mostly VPI and VCI)
 ```
 
 *그림 14. AAL5의 분할과 ATM 셀*
@@ -497,7 +497,7 @@ MPLS는 1990년대 중후반 IP 라우터의 포워딩 속도를 높이려는 �
                     ┌──────────────────────┬─────┬───┬──────────┐
                     │        Label         │ Exp │ S │   TTL    │
                     └──────────────────────┴─────┴───┴──────────┘
-                              20              3    1      8        (비트)
+                              20              3    1      8        (bits)
 ```
 
 *그림 15. 링크 계층 헤더와 네트워크 계층 헤더 사이에 놓이는 MPLS 헤더*

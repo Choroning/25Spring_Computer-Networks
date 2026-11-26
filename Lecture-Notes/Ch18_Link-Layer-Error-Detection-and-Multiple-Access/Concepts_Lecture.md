@@ -2,7 +2,7 @@
 
 [Repository Guide](../../README.md) | [English](Concepts_Lecture.md) | [한국어](Concepts_Lecture.ko.md)
 
-> **Last Updated:** 2026-11-18
+> **Last Updated:** 2026-11-27
 >
 > Computer Networking: A Top-Down Approach, Kurose and Ross, Ch 6; TCP/IP Protocol Suite, Forouzan, Ch 3
 
@@ -403,7 +403,7 @@ TDM has no collisions and is perfectly fair. Each node gets a dedicated transmis
   (a) TDM: time divided into slots
 
    │ 1 │ 2 │ 3 │ 4 │ 1 │ 2 │ 3 │ 4 │ 1 │ 2 │ ...   → time
-   └───────────────┘└───────────────┘
+   └──────────────┘└───────────────┘
       TDM frame         TDM frame
 
   (b) FDM: frequency divided into bands

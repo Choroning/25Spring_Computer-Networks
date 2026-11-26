@@ -2,7 +2,7 @@
 
 [레포지토리 안내](../../README.ko.md) | [English](Concepts_Lecture.md) | [한국어](Concepts_Lecture.ko.md)
 
-> **최종 수정일:** 2026-11-18
+> **최종 수정일:** 2026-11-27
 >
 > Computer Networking: A Top-Down Approach, Kurose and Ross, Ch 2; TCP/IP Protocol Suite, Forouzan, Ch 19
 
@@ -173,7 +173,7 @@ flowchart TD
 **도메인 이름(domain name).** 트리의 각 노드는 도메인 이름을 가진다. 완전한 도메인 이름은 레이블들을 점(.)으로 구분하여 나열한 것으로, 항상 그 노드에서 시작하여 루트 쪽으로 올라가며 읽는다. 마지막 레이블은 루트의 레이블, 즉 빈 문자열이다. 따라서 완전한 도메인 이름은 항상 빈 레이블로 끝나며, 빈 문자열은 아무것도 아니므로 마지막 문자가 점이 된다.
 
 ```text
-레이블        도메인 이름
+Label         Domain name
 edu           edu.
 fhda          fhda.edu.
 atc           atc.fhda.edu.
@@ -582,18 +582,18 @@ DNS 메시지는 **질의(query)** 와 **응답(response)** 의 두 종류뿐이
 ```text
 +--------------------------------+--------------------------------+
 | Identification (16 bits)       | Flags (16 bits)                |
-+--------------------------------+--------------------------------+  헤더
-| Number of questions            | Number of answer RRs           |  (12바이트)
++--------------------------------+--------------------------------+  Header
+| Number of questions            | Number of answer RRs           |  (12 bytes)
 +--------------------------------+--------------------------------+
 | Number of authority RRs        | Number of additional RRs       |
 +--------------------------------+--------------------------------+
-| Questions (variable number of questions)                        |  질의 부분
+| Questions (variable number of questions)                        |  Question section
 +-----------------------------------------------------------------+
-| Answers (variable number of RRs)                                |  답 부분
+| Answers (variable number of RRs)                                |  Answer section
 +-----------------------------------------------------------------+
-| Authority (variable number of RRs)                              |  책임 부분
+| Authority (variable number of RRs)                              |  Authority section
 +-----------------------------------------------------------------+
-| Additional information (variable number of RRs)                 |  추가 부분
+| Additional information (variable number of RRs)                 |  Additional section
 +-----------------------------------------------------------------+
 ```
 

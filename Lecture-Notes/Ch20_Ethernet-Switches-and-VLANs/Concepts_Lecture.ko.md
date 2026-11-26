@@ -2,7 +2,7 @@
 
 [레포지토리 안내](../../README.ko.md) | [English](Concepts_Lecture.md) | [한국어](Concepts_Lecture.ko.md)
 
-> **최종 수정일:** 2026-11-19
+> **최종 수정일:** 2026-11-27
 >
 > Computer Networking: A Top-Down Approach, Kurose and Ross, Ch 6; TCP/IP Protocol Suite, Forouzan, Ch 3
 
@@ -200,10 +200,10 @@ IEEE 802 위원회는 주제별 **작업 그룹(working group)** 으로 나뉘�
   │ Destination │   Source    │ Length  │      Data and padding        │ CRC │
   │   address   │   address   │ or type │                              │     │
   └─────────────┴─────────────┴─────────┴──────────────────────────────┴─────┘
-         6             6            2       최소 46, 최대 1500              4
+         6             6            2       min 46, max 1500               4
 
-  최소 프레임 길이: 512비트 또는 64바이트
-  최대 프레임 길이: 12,144비트 또는 1518바이트
+  Minimum frame length: 512 bits or 64 bytes
+  Maximum frame length: 12,144 bits or 1518 bytes
 ```
 
 *그림 3. 이더넷 프레임의 최소 길이와 최대 길이*
@@ -734,19 +734,19 @@ graph LR
 그러면 트렁크 포트로 들어온 프레임이 어느 VLAN에 속하는지 스위치는 어떻게 아는가? IEEE는 VLAN 트렁크를 지나는 프레임을 위해 확장된 이더넷 프레임 형식 **802.1Q**를 정의했다. 802.1Q 프레임은 표준 이더넷 프레임의 헤더에 프레임이 속한 VLAN의 식별 정보를 담은 4바이트 **VLAN 태그(VLAN tag)** 를 더한 것이다.
 
 ```text
-  표준 이더넷 프레임
+  Standard Ethernet frame
   ┌──────────┬───────────┬───────────┬──────┬──────────────┬─────┐
   │ Preamble │ Dest addr │ Src addr  │ Type │     Data     │ CRC │
   └──────────┴───────────┴───────────┴──────┴──────────────┴─────┘
 
-  802.1Q 태그가 붙은 이더넷 프레임
+  802.1Q-tagged Ethernet frame
   ┌──────────┬───────────┬───────────┬──────┬──────┬──────┬──────────────┬──────┐
   │ Preamble │ Dest addr │ Src addr  │ TPID │ TCI  │ Type │     Data     │ CRC' │
   └──────────┴───────────┴───────────┴──────┴──────┴──────┴──────────────┴──────┘
                                        2      2
-  TPID: Tag Protocol Identifier, 고정값 0x8100
-  TCI:  Tag Control Information = Priority (3비트) + 1비트 + VLAN ID (12비트)
-  CRC': 다시 계산한 CRC
+  TPID: Tag Protocol Identifier, fixed value 0x8100
+  TCI:  Tag Control Information = Priority (3 bits) + 1 bit + VLAN ID (12 bits)
+  CRC': recomputed CRC
 ```
 
 *그림 14. 표준 이더넷 프레임과 802.1Q 태그가 붙은 프레임*

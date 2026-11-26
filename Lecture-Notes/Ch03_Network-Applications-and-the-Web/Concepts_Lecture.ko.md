@@ -2,7 +2,7 @@
 
 [레포지토리 안내](../../README.ko.md) | [English](Concepts_Lecture.md) | [한국어](Concepts_Lecture.ko.md)
 
-> **최종 수정일:** 2026-11-19
+> **최종 수정일:** 2026-11-27
 >
 > Computer Networking: A Top-Down Approach, Kurose and Ross, Ch 2; TCP/IP Protocol Suite, Forouzan, Ch 17, 22
 
@@ -346,10 +346,10 @@ Forouzan은 같은 개념을 트랜잭션의 수로 설명한다. 그림이 문�
 protocol :// host : port / path
 
 http://www.someSchool.edu/someDepartment/picture.gif
-  프로토콜: http
-  호스트:   www.someSchool.edu
-  포트:     생략 (HTTP의 기본 포트 80)
-  경로:     /someDepartment/picture.gif
+  protocol: http
+  host:     www.someSchool.edu
+  port:     omitted (default HTTP port 80)
+  path:     /someDepartment/picture.gif
 ```
 
 - **프로토콜:** 문서를 가져오는 클라이언트-서버 응용 프로그램이다. FTP, HTTP, TELNET 등 여러 프로토콜이 문서를 가져올 수 있지만 오늘날 가장 흔한 것은 HTTP이다.
@@ -484,14 +484,14 @@ Accept-language: fr
 헤더 줄은 다음 뜻을 가진다. `Host: www.someschool.edu`는 객체가 있는 호스트를 지정한다. 이미 그 호스트와 TCP 연결이 있으므로 불필요해 보이지만, 7절의 웹 프록시 캐시가 이 정보를 필요로 한다. `Connection: close`는 브라우저가 지속 연결을 원하지 않으며 서버가 요청한 객체를 보낸 뒤 연결을 닫기를 원한다는 뜻이다. `User-agent:`는 요청을 보내는 사용자 에이전트, 곧 브라우저의 종류(여기서는 Firefox인 Mozilla/5.0)를 지정한다. 서버는 같은 URL에 대해 사용자 에이전트마다 다른 버전의 객체를 보낼 수 있으므로 이 헤더가 쓸모 있다. `Accept-language:`는 사용자가 객체의 프랑스어 버전을 선호하며, 서버에 그런 객체가 없으면 기본 버전을 보내라는 뜻이다. 이는 HTTP의 여러 내용 협상 헤더 중 하나이다.
 
 ```text
-요청 줄    : 메서드 sp URL sp 버전 cr lf
-헤더 줄    : 헤더 이름: sp 값 cr lf
-             ...
-             헤더 이름: sp 값 cr lf
-빈 줄      : cr lf
-엔터티 본문: (일부 메시지에만 있음)
+Request line : method sp URL sp version cr lf
+Header lines : header name: sp value cr lf
+               ...
+               header name: sp value cr lf
+Blank line   : cr lf
+Entity body  : (present only in some messages)
 
-sp: 공백, cr: 캐리지 리턴, lf: 라인 피드
+sp: space, cr: carriage return, lf: line feed
 ```
 
 *그림 8. HTTP 요청 메시지의 일반 형식*
@@ -552,11 +552,11 @@ Content-Type: text/html
 헤더 줄의 뜻은 다음과 같다. `Connection: close`는 서버가 메시지를 보낸 뒤 TCP 연결을 닫겠다는 뜻이다. `Date:`는 서버가 응답을 만들어 보낸 날짜와 시각이며, 객체가 만들어지거나 마지막으로 바뀐 시각이 아니라 서버가 파일 시스템에서 객체를 꺼내 응답 메시지에 넣어 보낸 시각이다. `Server:`는 메시지가 Apache 웹 서버에서 만들어졌다는 뜻으로, 요청 메시지의 `User-agent:`에 해당한다. `Last-Modified:`는 객체가 만들어지거나 마지막으로 바뀐 날짜와 시각이며, 지역 클라이언트와 네트워크 캐시 서버(프록시 서버)의 객체 캐싱에 매우 중요하다. `Content-Length:`는 보내는 객체의 바이트 수이고, `Content-Type:`은 엔터티 본문의 객체가 HTML 텍스트라는 뜻이다. 객체의 종류는 파일 확장자가 아니라 `Content-Type:` 헤더로 공식적으로 나타낸다.
 
 ```text
-상태 줄    : 버전 sp 상태 코드 sp 상태 메시지 cr lf
-헤더 줄    : 헤더 이름: sp 값 cr lf
-             ...
-빈 줄      : cr lf
-엔터티 본문: (오류 메시지가 아니면 문서를 담음)
+Status line  : version sp status code sp status phrase cr lf
+Header lines : header name: sp value cr lf
+               ...
+Blank line   : cr lf
+Entity body  : (contains the document unless the response is an error message)
 ```
 
 *그림 9. HTTP 응답 메시지의 일반 형식*
@@ -601,41 +601,41 @@ HTTP 메시지는 ASCII 문자로 이루어지므로, TELNET 같은 프로그램
 **예제 22.4 (문서 가져오기).** 클라이언트가 GET 메서드로 경로가 /usr/bin/image1인 이미지를 가져온다. 요청 줄은 메서드(GET), URL, HTTP 버전(1.1)을 보여 주고, 두 헤더 줄은 클라이언트가 GIF나 JPEG 형식의 이미지를 받아들일 수 있다는 뜻이다. 요청에는 본문이 없다. 응답 메시지는 상태 줄과 네 줄의 헤더(날짜, 서버, MIME 버전, 문서의 길이)로 이루어지고, 헤더 뒤에 문서 본문이 온다.
 
 ```text
-요청:
+Request:
 GET /usr/bin/image1 HTTP/1.1
 Accept: image/gif
 Accept: image/jpeg
 
-응답:
+Response:
 HTTP/1.1 200 OK
 Date: Mon, 07-Jan-05 13:15:14 GMT
 Server: Challenger
 MIME-version: 1.0
 Content-length: 2048
 
-(문서 본문)
+(Body of the document)
 ```
 
 **예제 22.5 (데이터 보내기).** 클라이언트가 POST 메서드로 서버에 데이터를 보낸다. 요청에는 네 줄의 헤더가 있고, 본문에 입력 정보가 담긴다. 응답의 본문은 서버가 만든 CGI 문서이다.
 
 ```text
-요청:
+Request:
 POST /cgi-bin/doc.pl HTTP/1.1
 Accept: */*
 Accept: image/gif
 Accept: image/jpeg
 Content-length: 50
 
-(입력 정보)
+(Input information)
 
-응답:
+Response:
 HTTP/1.1 200 OK
 Date: Mon, 07-Jan-02 13:15:14 GMT
 Server: Challenger
 MIME-version: 1.0
 Content-length: 2000
 
-(문서 본문)
+(Body of the document)
 ```
 
 ### 5.8 HTTP와 보안
@@ -811,7 +811,7 @@ HTTP/1.1 304 Not Modified
 Date: Sat, 10 Oct 2015 15:39:29
 Server: Apache/1.3.0 (Unix)
 
-(엔터티 본문 없음)
+(empty entity body)
 ```
 
 ```mermaid

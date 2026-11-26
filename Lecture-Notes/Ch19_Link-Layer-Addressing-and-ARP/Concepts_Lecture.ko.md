@@ -2,7 +2,7 @@
 
 [레포지토리 안내](../../README.ko.md) | [English](Concepts_Lecture.md) | [한국어](Concepts_Lecture.ko.md)
 
-> **최종 수정일:** 2026-11-18
+> **최종 수정일:** 2026-11-27
 >
 > Computer Networking: A Top-Down Approach, Kurose and Ross, Ch 6; TCP/IP Protocol Suite, Forouzan, Ch 3, 8
 
@@ -105,11 +105,11 @@
 이더넷 MAC 주소는 6바이트이므로 가능한 주소는 $`2^{48}`$개이다. 보통 각 바이트를 16진수 두 자리로 나타내고 바이트 사이를 콜론이나 하이픈으로 구분한다.
 
 ```text
-  d1 d2 : d3 d4 : d5 d6 : d7 d8 : d9 d10 : d11 d12      (d는 16진수 한 자리)
+  d1 d2 : d3 d4 : d5 d6 : d7 d8 : d9 d10 : d11 d12      (d is one hexadecimal digit)
 
-  6바이트 = 16진수 12자리 = 48비트
+  6 bytes = 12 hexadecimal digits = 48 bits
 
-  예: 4A:30:10:21:10:1A
+  Example: 4A:30:10:21:10:1A
 ```
 
 *그림 1. 16진수로 나타낸 이더넷 주소*
@@ -124,8 +124,8 @@ MAC 주소는 원래 바뀌지 않도록 설계되었지만, 지금은 소프트
   ┌─────────────────────────┬─────────────────────────┐
   │            A            │            B            │
   └─────────────────────────┴─────────────────────────┘
-  A: 앞 24비트, IEEE가 제조사에 배정 (제조사마다 고정)
-  B: 뒤 24비트, 제조사가 어댑터마다 다르게 부여
+  A: first 24 bits, assigned by the IEEE to the manufacturer (fixed per manufacturer)
+  B: last 24 bits, set differently for each adapter by the manufacturer
 ```
 
 *그림 2. MAC 주소의 할당 구조*
@@ -161,7 +161,7 @@ MAC 주소는 원래 바뀌지 않도록 설계되었지만, 지금은 소프트
   └─┴─┴─┴─┴─┴─┴─┴─┘ └─┴─┴─┴─┴─┴─┴─┴─┘       └─┴─┴─┴─┴─┴─┴─┴─┘
           1                  2                         6
                  ↑
-                 x: 첫 바이트의 최하위 비트 (0이면 유니캐스트, 1이면 멀티캐스트)
+                 x: least significant bit of the first byte (0 for unicast, 1 for multicast)
 ```
 
 *그림 3. 유니캐스트 주소와 멀티캐스트 주소를 구분하는 비트*
@@ -183,9 +183,9 @@ MAC 주소는 원래 바뀌지 않도록 설계되었지만, 지금은 소프트
 예를 들어 47:20:1B:2E:08:EE는 다음 순서로 전송된다. 첫 바이트 47은 2진수로 01000111이며, 이를 최하위 비트부터 보내면 11100010이 된다.
 
 ```text
-     47        20        1B        2E        08        EE        ← 주소 (16진수)
-  01000111  00100000  00011011  00101110  00001000  11101110     ← 2진수
-  11100010  00000100  11011000  01110100  00010000  01110111     ← 전송 순서 (왼쪽 비트가 먼저)
+     47        20        1B        2E        08        EE        ← address (hex)
+  01000111  00100000  00011011  00101110  00001000  11101110     ← binary
+  11100010  00000100  11011000  01110100  00010000  01110111     ← transmission order (leftmost bit first)
 ```
 
 *그림 4. 47:20:1B:2E:08:EE의 회선 전송 순서*

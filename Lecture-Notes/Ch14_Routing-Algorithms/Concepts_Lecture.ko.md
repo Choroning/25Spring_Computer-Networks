@@ -2,7 +2,7 @@
 
 [레포지토리 안내](../../README.ko.md) | [English](Concepts_Lecture.md) | [한국어](Concepts_Lecture.ko.md)
 
-> **최종 수정일:** 2026-11-18
+> **최종 수정일:** 2026-11-27
 >
 > Computer Networking: A Top-Down Approach, Kurose and Ross, Ch 5; TCP/IP Protocol Suite, Forouzan, Ch 11
 
@@ -397,8 +397,8 @@ n + (n - 1) + \cdots + 1 = \frac{n(n+1)}{2}
             \   /
               y
 
- 시계 방향 경로:   y → z → w,   x → y → z → w
- 반시계 방향 경로: y → x → w,   z → y → x → w
+ Clockwise paths:        y → z → w,   x → y → z → w
+ Counterclockwise paths: y → x → w,   z → y → x → w
 ```
 
 *그림 6. 네 라우터로 이루어진 고리 모양 네트워크*
@@ -684,14 +684,14 @@ y의 추정값은 6, 8, 10, ..., 50으로, z의 추정값은 7, 9, ..., 49로 2�
 링크가 끊겨 비용이 무한대가 되는 경우를 본다. 이상적으로는 링크가 끊기면 다른 모든 라우터가 그 사실을 바로 알아야 하지만, 거리 벡터 라우팅에서는 모든 라우터가 그 목적지의 비용을 무한대로 기록할 때까지 여러 번의 갱신이 필요하다.
 
 ```text
-                       A의 항목        B의 항목
-                       (X까지 비용, 다음 홉)
- 장애 전               X 1  -          X 2  A
- 링크 X-A 장애 직후    X ∞  -          X 2  A
- B의 갱신을 A가 받음   X 3  B          X 2  A
- A의 갱신을 B가 받음   X 3  B          X 4  A
- ...                   (비용이 계속 증가)
- 결국                  X ∞  -          X ∞  -
+                         A's entry       B's entry
+                         (cost to X, next hop)
+ Before failure          X 1  -          X 2  A
+ Right after X-A fails   X ∞  -          X 2  A
+ A receives B's update   X 3  B          X 2  A
+ B receives A's update   X 3  B          X 4  A
+ ...                     (cost keeps rising)
+ Finally                 X ∞  -          X ∞  -
 ```
 
 *그림 11. 두 노드 불안정*

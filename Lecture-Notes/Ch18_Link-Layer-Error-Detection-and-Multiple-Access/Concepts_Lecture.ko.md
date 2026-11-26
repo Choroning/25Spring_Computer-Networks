@@ -2,7 +2,7 @@
 
 [레포지토리 안내](../../README.ko.md) | [English](Concepts_Lecture.md) | [한국어](Concepts_Lecture.ko.md)
 
-> **최종 수정일:** 2026-11-18
+> **최종 수정일:** 2026-11-27
 >
 > Computer Networking: A Top-Down Approach, Kurose and Ross, Ch 6; TCP/IP Protocol Suite, Forouzan, Ch 3
 
@@ -180,9 +180,9 @@ flowchart LR
   ┌─────────────────────────────────┐ ┌───┐
   │ 0 1 1 1 0 0 0 1 1 0 1 0 1 0 1 1 │ │ 1 │
   └─────────────────────────────────┘ └───┘
-   ◄──────────── d = 16 ────────────►  패리티 비트
+   ◄──────────── d = 16 ────────────►  parity bit
 
-  데이터의 1은 9개이므로 패리티 비트는 1이고, 17비트 전체의 1은 10개(짝수)
+  The data contain nine 1s, so the parity bit is 1, and all 17 bits contain ten 1s (even)
 ```
 
 *그림 4. 1비트 짝수 패리티의 예*
@@ -201,12 +201,12 @@ flowchart LR
   (a)                          (b)
 
    1  0  1  1  0 │ 1            1  0  1  1  0 │ 1
-   0  1  1  0  1 │ 1            0  1 (0) 0  1 │ 1   ← 2행 패리티 불일치
+   0  1  1  0  1 │ 1            0  1 (0) 0  1 │ 1   ← row 2 parity mismatch
    1  1  0  0  0 │ 0            1  1  0  0  0 │ 0
   ───────────────┼───          ───────────────┼───
    0  0  0  1  1 │ 0            0  0  0  1  1 │ 0
                                       ↑
-                                      3열 패리티 불일치
+                                      column 3 parity mismatch
 ```
 
 *그림 5. 2차원 짝수 패리티와 단일 비트 오류의 위치 찾기*
@@ -250,7 +250,7 @@ CRC 부호는 보낼 비트열을 계수가 0과 1인 다항식으로 보고 비
   │                 D                 │       R       │
   └───────────────────────────────────┴───────────────┘
 
-  비트 패턴 = D × 2^r XOR R (G로 나누어떨어짐)
+  Bit pattern = D × 2^r XOR R (divisible by G)
 ```
 
 *그림 6. CRC가 덧붙인 송신 비트 패턴*
@@ -280,9 +280,9 @@ R = \text{remainder}\left(\frac{D \cdot 2^r}{G}\right)
 이다. D = 101110, d = 6, G = 1001, r = 3인 경우를 계산해 본다. D 뒤에 0을 r = 3개 붙인 101110000을 G로 모듈로 2 나눗셈한다. 매 단계에서 현재 앞자리가 1이면 G를 XOR하고(몫 비트 1), 0이면 0000을 XOR한다(몫 비트 0).
 
 ```text
-                 1 0 1 0 1 1        ← 몫
+                 1 0 1 0 1 1        ← quotient
           ┌──────────────────
-  1 0 0 1 │ 1 0 1 1 1 0 0 0 0      ← D 뒤에 0 세 개
+  1 0 0 1 │ 1 0 1 1 1 0 0 0 0      ← D followed by three zeros
             1 0 0 1
             ───────
               0 1 0 1
@@ -300,7 +300,7 @@ R = \text{remainder}\left(\frac{D \cdot 2^r}{G}\right)
                       1 0 1 0
                       1 0 0 1
                       ───────
-                        0 1 1      ← 나머지 R
+                        0 1 1      ← remainder R
 ```
 
 *그림 7. D = 101110, G = 1001일 때 CRC의 모듈로 2 나눗셈*
@@ -400,20 +400,20 @@ TDM은 충돌이 없고 완벽하게 공정하다. 각 노드는 매 프레임 �
 **주파수 분할 다중화(frequency-division multiplexing, FDM)** 는 R bps 채널을 대역폭이 각각 R/N인 서로 다른 주파수 대역으로 나누어 N개의 노드에 하나씩 배정한다. 하나의 큰 채널에서 R/N bps인 작은 채널 N개를 만드는 방식이므로, TDM의 장점과 단점을 그대로 갖는다. 충돌이 없고 대역폭을 공정하게 나누지만, 보낼 패킷이 있는 노드가 하나뿐이어도 R/N의 대역폭밖에 쓰지 못한다.
 
 ```text
-  (a) TDM: 시간을 슬롯으로 나눔
+  (a) TDM: time divided into slots
 
-   │ 1 │ 2 │ 3 │ 4 │ 1 │ 2 │ 3 │ 4 │ 1 │ 2 │ ...   → 시간
-   └───────────────┘└───────────────┘
-      TDM 프레임        TDM 프레임
+   │ 1 │ 2 │ 3 │ 4 │ 1 │ 2 │ 3 │ 4 │ 1 │ 2 │ ...   → time
+   └──────────────┘└───────────────┘
+      TDM frame         TDM frame
 
-  (b) FDM: 주파수를 대역으로 나눔
+  (b) FDM: frequency divided into bands
 
-   ↑ 주파수
-   │ ████████████████████████████████████   대역 4: 노드 4 (R/4)
-   │ ████████████████████████████████████   대역 3: 노드 3 (R/4)
-   │ ████████████████████████████████████   대역 2: 노드 2 (R/4)
-   │ ████████████████████████████████████   대역 1: 노드 1 (R/4)
-   └─────────────────────────────────────►  시간
+   ↑ frequency
+   │ ████████████████████████████████████   band 4: node 4 (R/4)
+   │ ████████████████████████████████████   band 3: node 3 (R/4)
+   │ ████████████████████████████████████   band 2: node 2 (R/4)
+   │ ████████████████████████████████████   band 1: node 1 (R/4)
+   └─────────────────────────────────────►  time
 ```
 
 *그림 8. 네 노드가 공유하는 채널의 TDM과 FDM*
@@ -453,11 +453,11 @@ p를 0과 1 사이의 확률이라 하자. 각 노드의 동작은 다음과 같
 확률 p로 재전송한다는 것은 앞면이 나올 확률이 p인 동전을 던져, 앞면이면 재전송하고 뒷면(확률 1 − p)이면 그 슬롯을 건너뛰고 다음 슬롯에서 다시 던진다는 뜻이다. 충돌에 관련된 노드들은 서로 독립적으로 동전을 던진다.
 
 ```text
-   1   2   3   4   5   6   7   8   9    ← 슬롯 번호
-   ■       ■           ■       ■        ← 노드 1
-   ■       ■   ■                        ← 노드 2
-   ■                   ■           ■    ← 노드 3
-   C   E   C   S   E   C   E   S   S    ← 결과
+   1   2   3   4   5   6   7   8   9    ← slot number
+   ■       ■           ■       ■        ← node 1
+   ■       ■   ■                        ← node 2
+   ■                   ■           ■    ← node 3
+   C   E   C   S   E   C   E   S   S    ← result
 ```
 
 *그림 9. 슬롯 ALOHA의 동작 예*
@@ -521,9 +521,9 @@ N이 주어졌을 때 효율을 최대로 하는 p\*는 E(p)를 p로 미분하�
           t₀ − 1                   t₀                   t₀ + 1
             ◄────────── (a) ───────►◄────────── (b) ───────►
 
-  (a) 여기서 시작한 전송은 노드 i 프레임의 앞부분과 겹침
-  (b) 여기서 시작한 전송은 노드 i 프레임의 뒷부분과 겹침
-  (a)와 (b)를 합친 취약 구간은 프레임 전송 시간 2개
+  (a) A transmission starting here overlaps the beginning of node i's frame
+  (b) A transmission starting here overlaps the end of node i's frame
+  The vulnerable period, (a) and (b) together, is two frame transmission times
 ```
 
 *그림 11. 순수 ALOHA에서 노드 i의 프레임과 간섭하는 전송 구간*
@@ -651,12 +651,12 @@ CSMA/CD가 동작하려면 프레임 크기에 제한이 필요하다. 송신 �
      │                                                │
      │ ◄───────────────────────────────────────────── │
      │ 2Tp − ε                                        │
-     ▼ 시간                                            ▼ 시간
+     ▼ time                                           ▼ time
 
-  시각 0: A가 첫 비트를 보냄
-  시각 Tp − ε: A의 첫 비트가 닿기 직전에 D가 매체를 비었다고 판단하고 보냄
-  시각 2Tp − ε: D의 첫 비트가 A에 닿아 A가 충돌을 감지함
-  따라서 A는 시각 2Tp까지 전송 중이어야 모든 충돌을 감지할 수 있음
+  Time 0: A sends its first bit
+  Time Tp − ε: just before A's first bit arrives, D finds the medium idle and sends
+  Time 2Tp − ε: D's first bit reaches A, and A detects the collision
+  A must therefore still be transmitting at time 2Tp to detect every collision
 ```
 
 *그림 15. 최소 프레임 크기를 정하는 최악의 경우*
@@ -779,15 +779,15 @@ graph LR
 - 상향 트래픽이 적을 때는 요청 프레임용 슬롯에서 데이터 프레임을 바로 보내 미니 슬롯 배정을 기다리지 않을 수도 있다.
 
 ```text
-  하향 채널 (CMTS에서 모든 모뎀으로 브로드캐스트)
+  Downstream channel (broadcast from the CMTS to all modems)
   ──►│ MAP │ data │ data │ MAP │ data │ ...
 
-  상향 채널 (여러 모뎀이 공유)
+  Upstream channel (shared by many modems)
   ──►│ R │ R │ R │ R │   A   │   A   │   B   │   C   │ ...
 
-  MAP: 다음 구간의 미니 슬롯 배정을 알리는 제어 메시지
-  R: 미니 슬롯 요청 프레임용 슬롯 (랜덤 접근, 충돌 가능)
-  A, B, C: MAP 메시지로 모뎀 A, B, C에 배정된 미니 슬롯 (충돌 없음)
+  MAP: control message announcing the mini-slot assignments of the next interval
+  R: slot for mini-slot-request frames (random access, collisions possible)
+  A, B, C: mini-slots assigned to modems A, B, and C by a MAP message (no collisions)
 ```
 
 *그림 18. DOCSIS의 하향 채널과 상향 채널*

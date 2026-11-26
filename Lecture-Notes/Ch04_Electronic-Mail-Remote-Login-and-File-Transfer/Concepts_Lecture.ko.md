@@ -2,7 +2,7 @@
 
 [레포지토리 안내](../../README.ko.md) | [English](Concepts_Lecture.md) | [한국어](Concepts_Lecture.ko.md)
 
-> **최종 수정일:** 2026-11-19
+> **최종 수정일:** 2026-11-27
 >
 > Computer Networking: A Top-Down Approach, Kurose and Ross, Ch 2; TCP/IP Protocol Suite, Forouzan, Ch 20, 21, 23
 
@@ -135,7 +135,7 @@ Kurose의 구성 요소와 대응시키면, Kurose의 메일 서버는 Forouzan�
 
 ```text
 local part @ domain name
-(수신자의 메일함 주소) @ (메일 서버의 도메인 이름)
+(mailbox address of the recipient) @ (domain name of the mail server)
 ```
 
 로컬 부분은 사용자에게 온 모든 메일을 메시지 접근 에이전트가 가져갈 때까지 보관하는 특수 파일, 곧 **사용자 메일함**의 이름이다. 도메인 이름은 조직이 전자 메일을 주고받으려고 정한 호스트, 곧 메일 서버(메일 교환기)의 이름이다. 메일 교환기의 도메인 이름은 DNS 데이터베이스에서 오거나 조직 이름 같은 논리적 이름이다. 메일 서버의 실제 주소를 찾는 DNS의 MX 레코드는 5장에서 다룬다.
@@ -323,13 +323,13 @@ Subject: Searching for the meaning of life.
 MIME은 비ASCII 데이터를 ASCII 데이터로, 또 그 반대로 바꾸는 소프트웨어 함수의 모음이라고 생각할 수 있다. MIME은 변환 매개변수를 정의하기 위해 원래의 전자 메일 헤더 부분에 더할 수 있는 다섯 헤더를 정의한다.
 
 ```text
-전자 메일 헤더
-MIME-Version: (사용하는 MIME의 버전)
+E-mail header
+MIME-Version: (version of MIME used)
 Content-Type: type/subtype
 Content-Transfer-Encoding: encoding type
 Content-Id: message id
 Content-Description: textual explanation of nontextual contents
-전자 메일 본문
+E-mail body
 ```
 
 *그림 4. MIME 헤더*
@@ -414,10 +414,10 @@ Content-Type: image/gif;
 예를 들어 바이트 세 개 `11001100 10000001 00111001`을 부호화하면 다음과 같다.
 
 ```text
-비ASCII 데이터 (24비트) : 11001100 10000001 00111001
-6비트씩 나누기          : 110011   001000   000100   111001
-값                      : 51       8        4        57
-base64 문자             : z        I        E        5
+Non-ASCII data (24 bits) : 11001100 10000001 00111001
+Split into 6 bits        : 110011   001000   000100   111001
+Values                   : 51       8        4        57
+Base64 characters        : z        I        E        5
 ```
 
 *그림 5. base64 부호화의 예*
@@ -429,9 +429,9 @@ base64는 **중복이 있는(redundant)** 부호화이다. 24비트가 문자 �
 **Quoted-printable.** 데이터가 대부분 ASCII 문자이고 비ASCII 부분이 조금뿐이라면 quoted-printable 부호화를 쓴다. ASCII 문자는 그대로 보내고, 비ASCII 문자는 세 문자로 보낸다. 첫 문자는 등호(=)이고, 다음 두 문자는 그 바이트의 16진수 표현이다. 예를 들어 `& L (10011101) 9 K`에서 비ASCII 바이트 10011101은 16진수 9D이므로 `=9D`로 바뀌어 `&L=9D9K`가 된다.
 
 ```text
-원래 데이터    : 00100110 01001100 10011101 00111001 01001011
-                 &        L        (9D)     9        K
-quoted-printable: &  L  =  9  D  9  K
+Original data   : 00100110 01001100 10011101 00111001 01001011
+                  &        L        (9D)     9        K
+Quoted-printable: &  L  =  9  D  9  K
 ```
 
 *그림 6. quoted-printable 부호화의 예*
@@ -606,8 +606,8 @@ TELNET은 TCP 연결 하나만 쓴다. 서버는 잘 알려진 **포트 23**을,
 예를 들어 사용자가 원격 서버에서 파일 file1의 내용을 보려고 UNIX 명령 `cat file1`을 입력하다가 파일 이름을 filea로 잘못 입력하여 백스페이스로 고쳤다고 가정한다.
 
 ```text
-입력           : cat filea<backspace>1
-서버로 가는 것 : c a t   f i l e a IAC EC 1
+Typed            : cat filea<backspace>1
+Sent to server   : c a t   f i l e a IAC EC 1
 ```
 
 *그림 8. 제어 문자를 데이터에 끼워 넣는 임베딩의 예*
@@ -689,10 +689,10 @@ sequenceDiagram
 **대역 외 신호(out-of-band signaling).** 원격 서버의 응용 프로그램이 무한 루프에 빠져 입력을 더 받지 않는다고 가정한다. 프로그램이 버퍼의 데이터를 읽지 않으므로 서버의 TCP는 버퍼가 가득 찼다는 것을 알고 클라이언트의 윈도우 크기를 0으로 알리는 세그먼트를 보낸다. 곧 서버의 TCP는 일반 트래픽을 더 받지 않는다. 이때 사용자가 보낸 IAC IP는 일반 데이터처럼 버퍼에 막혀 전달되지 않는다. 이 상황을 해결하려면 클라이언트가 서버로 **긴급(urgent) TCP 세그먼트**를 보내야 하며, 긴급 세그먼트는 일반 흐름 제어 메커니즘을 무시하고 받아들여진다(8장의 긴급 데이터). TELNET 프로세스는 대역 외로 보낼 제어 문자열을 데이터 흐름에 끼워 넣고 **DM(data mark)** 이라는 특수 문자를 덧붙인 뒤, 긴급 비트를 켜고 긴급 포인터가 DM 문자를 가리키는 TCP 세그먼트를 만든다. 수신 프로세스는 데이터를 읽으면서 제어 문자(예: IAC와 IP) 앞의 데이터를 버리고, DM 문자에 이르면 나머지 데이터를 정상적으로 처리한다. 곧 DM은 수신 프로세스를 긴급 모드에서 일반 모드로 되돌리고 양쪽을 다시 동기화하는 문자이다.
 
 ```text
-               버려짐             유지됨
-서버 쪽 수신: | Data | IAC IP DM | Data |
-                              ^
-                        긴급 포인터
+               Discarded            Kept
+At the server: | Data | IAC IP DM | Data |
+                               ^
+                        Urgent pointer
 ```
 
 *그림 11. 대역 외 신호에서 DM과 긴급 포인터*
@@ -781,7 +781,7 @@ flowchart LR
 
 ```text
 | Length (4 bytes) | Padding (1-8 bytes) | Type (1 byte) | Data (variable) | CRC (4 bytes) |
-                   |<------------------- 기밀성을 위해 암호화 ------------------------>|
+                   |<------------------- Encrypted for confidentiality -------------->|
 ```
 
 *그림 15. 교재가 제시하는 SSH 패킷 형식*
