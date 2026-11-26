@@ -2,7 +2,7 @@
 
 [레포지토리 안내](../../README.ko.md) | [English](Concepts_Lecture.md) | [한국어](Concepts_Lecture.ko.md)
 
-> **최종 수정일:** 2026-11-18
+> **최종 수정일:** 2026-11-26
 >
 > Computer Networking: A Top-Down Approach, Kurose and Ross, Ch 5; TCP/IP Protocol Suite, Forouzan, Ch 11
 
@@ -85,7 +85,7 @@
 
 > **용어 정의:** **자율 시스템(autonomous system, AS)** 은 하나의 관리 주체 아래에 있는 네트워크와 라우터의 모임으로, 그 안의 라우터들은 같은 라우팅 알고리즘을 실행하고 서로에 관한 정보를 가진다.
 
-흔히 한 ISP의 라우터들과 그것들을 잇는 링크가 하나의 AS를 이룬다. 그러나 자기 네트워크를 여러 AS로 나누는 ISP도 있다. 어떤 tier-1 ISP는 네트워크 전체를 하나의 거대한 AS로 운영하고, 다른 ISP는 수십 개의 서로 연결된 AS로 나눈다. 대기업도 자기 네트워크를 하나의 AS로 운영할 수 있다. AS는 전역적으로 유일한 **자율 시스템 번호(autonomous system number, ASN)** 로 식별하며, ASN은 IP 주소처럼 ICANN의 지역 등록 기관이 할당한다.
+흔히 한 ISP의 라우터들과 그것들을 잇는 링크가 하나의 AS를 이룬다. 그러나 자기 네트워크를 여러 AS로 나누는 ISP도 있다. 어떤 1계층 ISP는 네트워크 전체를 하나의 거대한 AS로 운영하고, 다른 ISP는 수십 개의 서로 연결된 AS로 나눈다. 대기업도 자기 네트워크를 하나의 AS로 운영할 수 있다. AS는 전역적으로 유일한 **자율 시스템 번호(autonomous system number, ASN)** 로 식별하며, ASN은 IP 주소처럼 ICANN의 지역 등록 기관이 할당한다.
 
 ```mermaid
 graph LR
